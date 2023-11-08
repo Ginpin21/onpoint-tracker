@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
-    require_once('..\inc\head.php');
-    ?>
+    <?php require_once('..\inc\head.php');?>
 </head>
 <body>
-    <h1 class="text-2xl text-blue-500 font-bold">Onpoint Tracker</h1>
+    <?php require_once('..\inc\navbar.php'); ?>
+    <h1 class="text-5xl text-center font-bold">Welcome to Onpoint Tracker</h1>
 </body>
 </html>
