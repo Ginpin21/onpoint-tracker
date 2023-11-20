@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../inc/registeration.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="script.js"></script>
+    <script src="../inc/script.js"></script>
 </head>
 
 <body>
