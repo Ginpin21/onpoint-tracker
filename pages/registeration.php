@@ -9,31 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="script.js"></script>
-
-    <style>
-        .navbar {
-            padding: 10px
-        }
-
-        .navbar-nav .active a {
-            font-weight: bold;
-        }
-
-        .navbar-brand {
-            font-size: 30px;
-            font-weight: 600;
-        }
-
-        a {
-            font-size: 23px;
-            font-weight: 600;
-        }
-
-        button {
-            padding: 10px 10px 10px 10px;
-            margin-right: 10px;
-        }
-    </style>
 </head>
 
 <body>
