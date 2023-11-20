@@ -13,7 +13,7 @@ body {
 }
 
 
-nav ul {
+.list-1{
     margin: 0;
     padding: 0;
     height: 100%;
@@ -22,11 +22,6 @@ nav ul {
     top: 0;
     left: 0;
     background-color: #003DB2;
-}
-
-nav ul li {
-    list-style: none;
-    text-align: center;
 }
 
 nav ul li a {
@@ -47,6 +42,8 @@ nav ul li a {
     height: 60px;
     margin: 30px 20px 20px 40px;
     padding-top: 20px;
+    list-style: none;
+    text-align: center;
 }
 
 nav ul li:hover {
@@ -57,7 +54,6 @@ nav ul li:hover {
 
 .container {
     width: 45%;
-    position: relative;
     margin: 80px 700px 80px 700px;
     outline: none;
     border-radius: 15px;
@@ -102,7 +98,7 @@ nav ul li:hover {
     font-weight: 600;
 }
 
-button {
+.register {
     margin: 25px 0;
     background-color: #003DB2;
     width: 40%;
@@ -118,7 +114,7 @@ button {
     margin-left: 170px;
 }
 
-button:hover {
+.register:hover {
     background-color: #fff;
     color: black;
     border: 2px solid black;
