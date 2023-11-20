@@ -30,7 +30,7 @@
                         <i class="bi bi-eye-slash-fill" id="eye" onclick="toggle()"></i>
                     </span>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" class="login-btn">Login</button>
                 <p>Please contact the admin if you forgot your password</p>
             </form>
         </div>
