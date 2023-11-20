@@ -72,7 +72,7 @@
                     </span>
                 </div>
 
-                <button type="submit" class="register">Register</button>
+                <button type="submit" class="register-btn">Register</button>
 
             </form>
         </div>
