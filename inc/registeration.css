@@ -130,15 +130,11 @@ body {
 
 i{
     position: absolute;
-    left: 10px; 
-    top: 50%;
+    left: 38px; 
+    top: 20px;
     transform: translateY(-50%);
     font-size: 20px;
     color: black;
-}
-
-span i{
-    left: 35px;
 }
 
 .reg-form p {

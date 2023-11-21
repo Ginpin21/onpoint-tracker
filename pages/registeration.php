@@ -48,25 +48,25 @@
 
                 <div class="flex-container">
                     <div class="input-container">
-                        <i class='bx bxs-user'></i>
+                        <label for="">User Firstname:</label>
                         <input type="text" name="" id="firstName" placeholder="First Name" autofocus>
                     </div>
 
                     <div class="input-container">
-                        <i class='bx bxs-user'></i>
+                        <label for="">User Lastname:</label>
                         <input type="text" name="" id="lastName" placeholder="Last Name">
                     </div>
                 </div>
 
                 <div class="input-container">
-                    <i class='bx bxs-envelope'></i>
+                <label for="">User Email:</label>
                     <input type="email" name="" id="email" placeholder="Emaii ID" class="email-input">
                 </div>
 
 
                 <div class="flex-container-2">
                     <div class="input-container">
-                        <i class='bx bxs-lock-alt'></i>
+                    <label for="">User Password:</label>
                         <input type="password" name="" id="password" placeholder="Password">
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="input-container">
-                        <i class='bx bxs-lock-alt'></i>
+                    <label for="">Confirm Password:</label>
                         <input type="password" name="" id="password" placeholder="Confirm Password">
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
