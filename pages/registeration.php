@@ -44,30 +44,30 @@
 
         <div class="reg-form">
             <form action="" id="registrationForm">
-                <h1 id="heading">Registeration</h1>
+                <h1 id="heading">User Registeration</h1>
 
                 <div class="flex-container">
                     <div class="input-container">
                         <label for="">User Firstname:</label>
-                        <input type="text" name="" id="firstName" placeholder="First Name" autofocus>
+                        <input type="text" name="" id="firstName" placeholder="eg: First Name" autofocus>
                     </div>
 
                     <div class="input-container">
                         <label for="">User Lastname:</label>
-                        <input type="text" name="" id="lastName" placeholder="Last Name">
+                        <input type="text" name="" id="lastName" placeholder="eg: Last Name">
                     </div>
                 </div>
 
                 <div class="input-container">
                 <label for="">User Email:</label>
-                    <input type="email" name="" id="email" placeholder="Emaii ID" class="email-input">
+                    <input type="email" name="" id="email" placeholder="eg: abc@gmail.com" class="email-input">
                 </div>
 
 
                 <div class="flex-container-2">
                     <div class="input-container">
                     <label for="">User Password:</label>
-                        <input type="password" name="" id="password" placeholder="Password">
+                        <input type="password" name="" id="password" placeholder="eg: ********">
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
                         </span>
@@ -75,9 +75,9 @@
 
                     <div class="input-container">
                     <label for="">Confirm Password:</label>
-                        <input type="password" name="" id="password" placeholder="Confirm Password">
+                        <input type="password" name="" id="confmpass" placeholder="eg: ********">
                         <span class="password-icon">
-                            <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
+                            <i class='bx bx-low-vision' id="eye2" onclick="toggle2()"></i>
                         </span>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                 </select>
 
 
-                <button type="submit" class="register-btn">Register</button>
+                <button type="submit" class="register-btn">Register User</button>
             </form>
         </div>
     </div>
