@@ -14,17 +14,19 @@ body {
 
 
 .list-1{
-    margin: 0;
     padding: 0;
-    height: 100%;
-    width: 400px;
+    height: 100vh;
+    width: 350px;
     position: fixed;
-    top: 0;
-    left: 0;
     background-color: #003DB2;
 }
 
-nav ul li a {
+.container-fluid{
+    position: fixed;
+    z-index: 1000;
+}
+
+.a-tag {
     display: block;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
@@ -32,29 +34,18 @@ nav ul li a {
     font-size: 20px;
     color: #003DB2;
     position: relative;
+    margin: 20px 50px 20px 20px;
+    width: 85%;
     font-weight: 600;
 }
 
-.border {
-    border-radius: 10px;
-    background-color: white;
-    width: 80%;
-    height: 60px;
-    margin: 30px 20px 20px 40px;
-    padding-top: 20px;
-    list-style: none;
-    text-align: center;
+.li-tag{
+    margin: 40px 0;
 }
 
-nav ul li:hover {
-    background-color: #fff;
-    color: #003DB2;
-    border: 2px solid black;
-}
-
-.container {
-    width: 45%;
-    margin: 80px 700px 80px 700px;
+ .container-1 {
+    width: 50%;
+    margin: 50px 700px 80px 700px;
     outline: none;
     border-radius: 15px;
     align-items: center;
@@ -170,6 +161,6 @@ label{
     color: black;
     font-size: 20px;
     font-weight: 600;
-    margin: 25px 0;
+    margin: 5px 0;
 
-}
+} 

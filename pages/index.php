@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Screen</title>
     <link rel="stylesheet" href="../inc/home.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <?php require_once('..\inc\head.php'); ?>
     <style>
         .navbar {
@@ -15,21 +15,6 @@
 
         .navbar-nav .active a {
             font-weight: bold;
-        }
-
-        .navbar-brand {
-            font-size: 30px;
-            font-weight: 600;
-        }
-
-        a {
-            font-size: 23px;
-            font-weight: 600;
-        }
-
-        button {
-            padding: 10px 10px 10px 10px;
-            margin-right: 10px;
         }
     </style>
 </head>
@@ -48,28 +33,28 @@
                 <div class="textbox-1">
                     <h2>Students</h2>
                     <hr>
-                    <ul>
-                        <li>View Attendance History</li>
-                        <li>View Classes</li>
-                        <li>View Absent Notifications</li>
+                    <ul class="ul-tag">
+                        <li class="li-tag">View Attendance History</li>
+                        <li class="li-tag">View Classes</li>
+                        <li class="li-tag">View Absent Notifications</li>
                     </ul>
                 </div>
                 <div class="textbox-2">
                     <h2>Teachers</h2>
                     <hr>
-                    <ul>
-                        <li>Mark and correct attendance</li>
-                        <li>View their class and student list</li>
-                        <li>Generate attendance report</li>
+                    <ul class="ul-tag">
+                        <li class="li-tag">Mark and correct attendance</li>
+                        <li class="li-tag">View their class and student list</li>
+                        <li class="li-tag">Generate attendance report</li>
                     </ul>
                 </div>
                 <div class="textbox-3">
                     <h2>Admins</h2>
                     <hr>
-                    <ul>
-                        <li>Mark and correct attendance</li>
-                        <li>Enroll new teachers and students</li>
-                        <li>User Management</li>
+                    <ul class="ul-tag">
+                        <li class="li-tag">Mark and correct attendance</li>
+                        <li class="li-tag">Enroll new teachers and students</li>
+                        <li class="li-tag">User Management</li>
                     </ul>
                 </div>
             </div>
@@ -86,7 +71,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 
