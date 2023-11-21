@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registeration Screen</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../inc/registeration.css">
@@ -47,36 +46,55 @@
             <form action="" id="registrationForm">
                 <h1 id="heading">Registeration</h1>
 
+                <div class="flex-container">
+                    <div class="input-container">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" name="" id="firstName" placeholder="First Name" autofocus>
+                    </div>
 
-                <div class="input-container">
-                    <i class="bi bi-person-fill"></i>
-                    <input type="text" name="" id="firstName" placeholder="First Name" autofocus>
-                </div>
-
-                <div class="input-container">
-                    <i class="bi bi-person-fill"></i>
-                    <input type="text" name="" id="lastName" placeholder="Last Name">
+                    <div class="input-container">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" name="" id="lastName" placeholder="Last Name">
+                    </div>
                 </div>
 
                 <div class="input-container">
                     <i class='bx bxs-envelope'></i>
-                    <input type="email" name="" id="email" placeholder="Emaii ID">
+                    <input type="email" name="" id="email" placeholder="Emaii ID" class="email-input">
                 </div>
 
-                <label for="">Select a Role: </label>
+
+                <div class="flex-container-2">
+                    <div class="input-container">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" name="" id="password" placeholder="Password">
+                        <span class="password-icon">
+                            <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
+                        </span>
+                    </div>
+
+                    <div class="input-container">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" name="" id="password" placeholder="Confirm Password">
+                        <span class="password-icon">
+                            <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <label for="">User Role: </label>
                 <select name="" id="">
                     <option value="Teacher">Teacher</option>
                     <option value="Student">Student</option>
                 </select>
 
-                <div class="input-container">
-                    <i class='bx bxs-lock-alt'></i>
-                    <input type="password" name="" id="password" placeholder="Password">
-                    <span class="password-icon">
-                        <i class="bi bi-eye-slash-fill" id="eye" onclick="toggle()"></i>
-                    </span>
-                </div>
-                
+                <label for="">User Course: </label>
+                <select name="" id="">
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                </select>
+
+
                 <button type="submit" class="register-btn">Register</button>
             </form>
         </div>
