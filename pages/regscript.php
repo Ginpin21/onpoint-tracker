@@ -7,8 +7,9 @@ if (isset($_POST['Register'])) { // the script will execute once the button is c
     $lname = $_POST['lastName']; 
     $email = $_POST['email'];
     $pass = $_POST['password']; 
+    $role_id = $_POST['role_id'];
 
-    $sql = "INSERT into user (user_fname, user_lname, user_email, user_password) VALUES ('$fname', '$lname', '$email', '$pass')";
+    $sql = "INSERT into user (user_fname, user_lname, user_email, user_password, user_role_id) VALUES ('$fname', '$lname', '$email', '$pass', '$role_id')";
 
     $result = mysqli_query($conn, $sql); // will execute the query
     $final = mysqli_num_rows($result); // will check whether the table is empty or not

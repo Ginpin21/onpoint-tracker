@@ -83,9 +83,9 @@
                 </div>
 
                 <label for="">User Role: </label>
-                <select name="" id="">
+                <select name="role_id" id="">
                     <option value="Teacher">Teacher</option>
-                    <option value="Student">Student</option>
+                    <option value="100">Student</option>
                 </select>
 
                 <label for="">User Course: </label>

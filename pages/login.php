@@ -20,7 +20,7 @@
             <form action="loginscript.php" method="post">
                 <div class="input-container">
                     <i class='bx bxs-user'></i>
-                    <input type="text" name="name" id="username" placeholder="Username" autofocus><br>
+                    <input type="text" name="email" id="email" placeholder="Email" autofocus><br>
                 </div>
                 <div class="input-container">
                     <i class='bx bxs-lock-alt'></i>
