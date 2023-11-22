@@ -31,8 +31,8 @@
                 <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'teacher_dashboard.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="teacher_dashboard.php">Teacher Dashboard</a>
                 </li>
-                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'login_page.php' ? 'active' : ''; ?>">
-                    <a class="nav-link" href="login_page.php">Login</a>
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="login.php">Login</a>
                 </li>
             </ul>
         </div>
