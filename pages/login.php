@@ -14,6 +14,10 @@
 </head>
 
 <body>
+    <?php
+        require_once('..\inc\navbar.php');
+
+    ?>
 
     <div class="container-fluid">
         <div class="form">

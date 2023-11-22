@@ -5,10 +5,6 @@
     require_once('..\inc\head.php');
     ?>
     <style>
-        .sidebar {
-            width:25%;
-            float:left;
-        }
         .dashboard-section {
             padding:10px;
             width:75%;
@@ -25,7 +21,7 @@
         require_once('..\inc\teacher_sidebar.php');
         ?>
         <section class="dashboard-section">
-            <h1 class="">Teacher Dashboard</h1>
+            <h1 class="text-center">Teacher Dashboard</h1>
         </section>
         
      </main>    

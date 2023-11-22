@@ -4,6 +4,7 @@
             width: 25%;
             padding: 5px; 
             background-color: #003DB2;
+            float:left;
         }
 
         .sidebar a {
@@ -22,16 +23,13 @@
             background-color: #e9ecef;
         }
 
-        .main-content {
-            margin-left: 250px;
-            padding: 15px;
-        }
     </style>
     <div class="sidebar">
         <a href="teacher_dashboard.php">Home</a>
-        <a href="teacher_dashboard.php">Mark Attendance</a>
+        <a href="attendance_menu.php">Mark Attendance</a>
         <a href="teacher_dashboard.php">View Courses</a>
-        <a href="teacher_dashboard.php">View Students List</a>
+        <a href="teacher_dashboard.php">View Timetable</a>
+        <a href="teacher_dashboard.php">Generate Attendance Report</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
