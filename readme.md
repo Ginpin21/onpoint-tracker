@@ -7,7 +7,7 @@
 - includes static image assets
 
 ## inc folder
-- includes components that need to be included in most pages
+- includes components javascript and css that need to be included in most pages
 
 ## pages folder
 - contains all the pages

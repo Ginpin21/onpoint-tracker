@@ -95,12 +95,12 @@ body {
 }
 
 
-ul {
+.ul-tag{
     list-style-type: decimal;
 }
 
 
-li {
+.li-tag {
     margin: 30px 0; 
     color: black;
     font-size: 21px; 
@@ -115,6 +115,8 @@ ul li:before {
     width: 2em; 
     margin-left: -1em; 
 }
+
+
 
 
 
