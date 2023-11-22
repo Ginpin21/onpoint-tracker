@@ -17,15 +17,6 @@
                 <a href="#">home</a>
             </li>
             <li class="border">
-                <a href="#">Edit user</a>
-            </li>
-            <li class="border">
-                <a href="#">manage Users</a>
-            </li>
-            <li class="border">
-                <a href="#">Add New Courses</a>
-            </li>
-            <li class="border">
                 <a href="#">Manage Courses</a>
             </li>
             <li class="border">
@@ -35,10 +26,11 @@
     </nav>
 
     <div class="container">
-        <p class="heading">Course Overview</p>
+        <p class="heading">Modules</p>
+
         <div class="courses">
             <div class="card" style="width: 25rem;">
-                <img src="./art-7087003_640.jpg" class="card-img-top" alt="...">
+                <img src="./WhatsApp Image 2023-11-22 at 23.18.53_6e14fb8b.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Ramesh Kumar | SWE4206</h5>
                   <p class="card-text">Agile Programming</p>
@@ -47,23 +39,35 @@
               </div>
 
               <div class="card" style="width: 25rem;">
-                <img src="./pexels-pixabay-235985.jpg" class="card-img-top" alt="..." height="227px">
+                <img src="./WhatsApp Image 2023-11-22 at 23.18.53_6e14fb8b.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Ramesh Kumar | SWE4206 </h5>
                   <p class="card-text">Agile Programming</p>
                   <a href="studentlist.html" class="btn">Student List</a>
                 </div>
               </div>
-
-              <div class="card" style="width: 25rem;">
-                <img src="./pexels-pixabay-268415.jpg" class="card-img-top" alt="..." height="227px">   
+        </div>
+        <br> <br>
+        <div class="courses-2">
+            <div class="card" style="width: 25rem;">
+                <img src="./WhatsApp Image 2023-11-22 at 23.18.53_6e14fb8b.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Ramesh Kumar | SWE4206</h5>
                   <p class="card-text">Agile Programming</p>
                   <a href="studentlist.html" class="btn">Student List</a>
                 </div>
               </div>
+
+              <div class="card" style="width: 25rem;">
+                <img src="./WhatsApp Image 2023-11-22 at 23.18.53_6e14fb8b.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Ramesh Kumar | SWE4206 </h5>
+                  <p class="card-text">Agile Programming</p>
+                  <a href="studentlist.html" class="btn">Student List</a>
+                </div>
+              </div>
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
