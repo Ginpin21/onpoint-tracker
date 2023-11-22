@@ -43,31 +43,31 @@
     <div class="container-1">
 
         <div class="reg-form">
-            <form action="" id="registrationForm">
+            <form action="regscript.php" id="registrationForm" method="post">
                 <h1 id="heading">User Registeration</h1>
 
                 <div class="flex-container">
                     <div class="input-container">
                         <label for="">User Firstname:</label>
-                        <input type="text" name="" id="firstName" placeholder="eg: First Name" autofocus>
+                        <input type="text" name="firstName" id="firstName" placeholder="eg: First Name" autofocus>
                     </div>
 
                     <div class="input-container">
                         <label for="">User Lastname:</label>
-                        <input type="text" name="" id="lastName" placeholder="eg: Last Name">
+                        <input type="text" name="lastName" id="lastName" placeholder="eg: Last Name">
                     </div>
                 </div>
 
                 <div class="input-container">
                 <label for="">User Email:</label>
-                    <input type="email" name="" id="email" placeholder="eg: abc@gmail.com" class="email-input">
+                    <input type="email" name="email" id="email" placeholder="eg: abc@gmail.com" class="email-input">
                 </div>
 
 
                 <div class="flex-container-2">
                     <div class="input-container">
                     <label for="">User Password:</label>
-                        <input type="password" name="" id="password" placeholder="eg: ********">
+                        <input type="password" name="password" id="password" placeholder="eg: ********">
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
                         </span>
@@ -93,9 +93,7 @@
                     <option value="Teacher">Teacher</option>
                     <option value="Student">Student</option>
                 </select>
-
-
-                <button type="submit" class="register-btn">Register User</button>
+                <button type="submit" class="register-btn" name="Register">Register User</button>
             </form>
         </div>
     </div>

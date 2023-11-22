@@ -17,19 +17,19 @@
     <div class="container">
         <div class="form">
             <h1>Login</h1>
-            <form action="">
+            <form action="loginscript.php" method="post">
                 <div class="input-container">
                     <i class='bx bxs-user'></i>
-                    <input type="text" name="" id="username" placeholder="Username" autofocus><br>
+                    <input type="text" name="name" id="username" placeholder="Username" autofocus><br>
                 </div>
                 <div class="input-container">
                     <i class='bx bxs-lock-alt'></i>
-                    <input type="password" name="" id="password" placeholder="Password">
+                    <input type="password" name="pass" id="password" placeholder="Password">
                     <span class="password-icon">
                         <i class="bi bi-eye-slash-fill" id="eye" onclick="toggle()"></i>
                     </span>
                 </div>
-                <button type="submit" class="login-btn">Login</button>
+                <button type="submit" class="login-btn" name="Login">Login</button>
                 <p>Please contact the admin if you forgot your password</p>
             </form>
         </div>
