@@ -9,6 +9,7 @@
             padding:10px;
             width:75%;
             float:right;
+
         }
     </style>
 </head>
