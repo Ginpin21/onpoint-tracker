@@ -85,7 +85,8 @@
                 <label for="">User Role: </label>
                 <select name="role_id" id="">
                     <option value="Teacher">Teacher</option>
-                    <option value="100">Student</option>
+                    <option value="1">Student</option>
+                    <option value="">Administrator</option>
                 </select>
 
                 <label for="">User Course: </label>
