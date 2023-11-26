@@ -33,7 +33,7 @@
         .buttons {
 
             display: flex;
-            gap: 5px;
+            gap: 20px;
             justify-content: center;
             
 
@@ -42,7 +42,7 @@
 
         .button {
             border: none;
-            padding: 5px;
+            padding: 20px;
             border-radius: 10px;
             
             
@@ -63,7 +63,7 @@
         }
         .yellow {
             background-color: yellow;
-            padding: 10px;
+           
         }
         .container {
             padding-left: 300px;
