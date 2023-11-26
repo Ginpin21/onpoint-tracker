@@ -25,6 +25,7 @@
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 10px;
+            
         }
 
         .buttons {
@@ -32,6 +33,8 @@
             display: flex;
             gap: 5px;
             justify-content: center;
+            
+
 
         }
 
@@ -39,11 +42,15 @@
             border: none;
             padding: 5px;
             border-radius: 10px;
+            
+            
 
         }
 
         .green {
             background-color: #13E76C;
+            padding-left: 100px;
+            
 
 
         }
@@ -51,14 +58,21 @@
         .red {
             background-color: #FF0000;
 
-
         }
+        .yellow {
+            background-color: yellow;
+            padding: 10px;
+        }
+       
     </style>
 </head>
 
 <body>
+    
+    
 
     <?php require_once('..\inc\navbar.php'); ?>
+    <?php require_once('..\inc\teacher_sidebar.php'); ?>
 
     <section class= "container">
 
@@ -86,6 +100,8 @@
 
                         <button class="green button">present</button>
                         <button class="red button">Absent</button>
+                        <button class="yellow button">Late</button>
+                        
                     </div>
 
                 </div>
@@ -100,6 +116,7 @@
 
                         <button class="green button">present</button>
                         <button class="red button">Absent</button>
+                        <button class="yellow button">Late</button>
                     </div>
 
                 </div>
@@ -114,6 +131,7 @@
 
                         <button class="green button">present</button>
                         <button class="red button">Absent</button>
+                        <button class="yellow button">Late</button>
                     </div>
 
                 </div>
@@ -130,6 +148,7 @@
 
                         <button class="green button">present</button>
                         <button class="red button">Absent</button>
+                        <button class="yellow button">Late</button>
                     </div>
 
                 </div>
