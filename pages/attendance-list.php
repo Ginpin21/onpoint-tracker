@@ -49,7 +49,7 @@
 
         .green {
             background-color: #13E76C;
-            padding-left: 100px;
+            
             
 
 
