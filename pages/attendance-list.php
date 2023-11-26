@@ -26,6 +26,8 @@
             border-radius: 10px;
             margin-bottom: 10px;
             
+          
+            
         }
 
         .buttons {
@@ -63,6 +65,9 @@
             background-color: yellow;
             padding: 10px;
         }
+        .container {
+            padding-left: 300px;
+        }
        
     </style>
 </head>
@@ -76,25 +81,38 @@
 
     <section class= "container">
 
-        <h1 class= "mb-5">Attendance List</h1>
+        <h1 class= "mb-5">SWE 6202 Attendance</h1>
+
+        <h5>Name: Introduction to Scrum  </h5>
+       
+        <h5>Name: Date: 23-12-2023  Time: 09:30 AM  Location: Computer Lab 2  Tutor: Renuka Nyayadish    </h5>
 
 
 
 
-        <select name="course" id="course">
+
+
+        <!-- <select name="course" id="course">
             <option value="course">Course</option>
             <option value="course1">Course1</option>
             <option value="course2">Course2</option>
             <option value="course3">Course3</option>
-        </select>
+        </select> -->
         <div class= "mt-5">
             <div class="row">
-                <div class="col-2">
+                <div class="col-4">
                     <div class="name">
                         <h5>1.</h5>
                         <h5>Nihaal</h5>
 
-                    </div>
+<!-- <input type="radio" id="html" name="fav_language" value="HTML">
+<label for="html">Present</label><br>
+<input type="radio" id="css" name="fav_language" value="CSS">
+<label for="css">Absent</label><br>
+<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+<label for="javascript">JavaScript</label> -->
+
+                   </div>
 
                     <div class="buttons">
 
@@ -105,7 +123,7 @@
                     </div>
 
                 </div>
-                <div class="col-2">
+                <div class="col-4">
                     <div class="name">
                         <h5>2.</h5>
                         <h5>Ayesha</h5>
@@ -120,7 +138,7 @@
                     </div>
 
                 </div>
-                <div class="col-2">
+                <div class="col-4">
                     <div class="name">
                         <h5>3.</h5>
                         <h5>Hamza</h5>
@@ -137,7 +155,7 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-2">
+                <div class="col-4">
                     <div class="name">
                         <h5>4.</h5>
                         <h5>Kashif</h5>
