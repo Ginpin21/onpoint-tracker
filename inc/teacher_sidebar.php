@@ -1,10 +1,11 @@
 <style>
         .sidebar {
+            position: fixed;
             height: 100vh;
             width: 25%;
             padding: 5px; 
             background-color: #003DB2;
-            float:left;
+            margin: right 500px;
         }
 
         .sidebar a {
