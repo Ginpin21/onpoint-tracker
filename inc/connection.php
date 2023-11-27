@@ -4,7 +4,8 @@ $server = "localhost";
 $username = "root";
 $password = "";
 $db = "onpoint_tracker";
-$conn = mysqli_connect($server, $username, $password, $db);
+global $conn;
+$conn= mysqli_connect($server, $username, $password, $db);
 
 
 if(!$conn){
