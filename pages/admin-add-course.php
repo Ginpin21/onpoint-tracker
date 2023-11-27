@@ -25,9 +25,9 @@
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 10px;
-            
-          
-            
+
+
+
         }
 
         .buttons {
@@ -35,31 +35,31 @@
             display: flex;
             gap: 10px;
             justify-content: center;
-           
 
-            
-            
+
+
+
 
 
         }
 
         .button {
             border: none;
-           
+
             border-radius: 10px;
             padding-left: 500px;
             padding-right: 500px;
             color: white;
-          
-            
-            
+
+
+
 
         }
 
-        .blue   {
+        .blue {
             background-color: #003DB2;
-            
-            
+
+
 
 
         }
@@ -74,74 +74,71 @@
         } */
         .container {
             padding-left: 300px;
-            
+
         }
+
         .textbox {
             padding-left: 200px;
             gap: 50px;
             margin-left: 200px;
-            
+
 
         }
-
-       
-        
-       
     </style>
 </head>
 
 <body>
-    
-    
+
+
 
     <?php require_once('..\inc\navbar.php'); ?>
     <?php require_once('..\inc\teacher_sidebar.php'); ?>
 
-    <section class= "container">
+    <section class="container">
 
-        <h1 class= "mb-5">Add Course</h1>
-
-        
-       
-        
+        <h1 class="mb-5">Add Course</h1>
 
 
-     <div >        
-        <h5>Course Manager</h5>
-        <select name="coursemanager" id="coursemanager">
-            <option value="coursemanager">Course Manager</option>
-            <option value="course1">Renuka</option>
-            <option value="course2">Abdulrehman</option>
-            <option value="course3">Rehna</option>
-        </select>
-        
-        <!-- <div class= "mt-5">
+
+
+
+
+        <div>
+            <h5>Course Manager</h5>
+            <select name="coursemanager" id="coursemanager">
+                <option value="coursemanager">Course Manager</option>
+                <option value="course1">Renuka</option>
+                <option value="course2">Abdulrehman</option>
+                <option value="course3">Rehna</option>
+            </select>
+
+            <!-- <div class= "mt-5">
             <div class="row">
                 <div class="col-4">
                     <div class="name">
                         <h5>1.</h5>
                         <h5>Nihaal</h5> -->
 
-<!-- <input type="radio" id="html" name="fav_language" value="HTML">
+            <!-- <input type="radio" id="html" name="fav_language" value="HTML">
 <label for="html">Present</label><br>
 <input type="radio" id="css" name="fav_language" value="CSS">
 <label for="css">Absent</label><br>
 <input type="radio" id="javascript" name="fav_language" value="JavaScript">
 <label for="javascript">JavaScript</label> -->
-                   
-                   
-                   <input class="textbox col-7" type="text" id="name" name="name"><br><br>
-     
-                   </div>
-                    <div class="buttons">
 
-                        <button class="mt-5 blue button">Add Course</button>
-                        <!-- <button class="red button">Absent</button>
+
+            <input class="textbox col-7" type="text" id="name" name="name"><br><br>
+
+        </div>
+        <div class="buttons">
+
+            <button class="mt-5 blue button">Add Course</button>
+            <!-- <button class="red button">Absent</button>
                         <button class="yellow button">Late</button> -->
-                        
-                    </div>
 
-                <!-- </div>
+        </div>
+
+        <!-- </div>
                 <div class="col-4">
                     <div class="name">
                         <h5>2.</h5>
