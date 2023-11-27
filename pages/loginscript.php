@@ -18,10 +18,13 @@ if (isset($_POST['Login'])) { // the script will execute once the button is clic
 
     if ($final > 0) {
         while ($row = mysqli_fetch_array($result)) { // will fetch the data from the table
-            $_SESSION['loggedin'] = TRUE;
-            $_SESSION['name'] = $row['user_fname']; 
-            $_SESSION['email'] = $row['user_email'];
-            header("Location:index.php"); // redirect
+            $_SESSION['logged_in'] = TRUE;
+            $_SESSION['first_name'] = $row['user_fname']; 
+            $_SESSION['last_name'] = $row['user_lname']; 
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['role_id'] = $row['user_role_id']; 
+            $_SESSION['course_id'] = $row['user_course_id'];
+            header("Location:index.php"); 
         }
     } else {
         echo "<script>alert('Please enter your correct details')</script>";
