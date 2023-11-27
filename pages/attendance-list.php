@@ -25,9 +25,9 @@
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 10px;
-            
-          
-            
+
+
+
         }
 
         .buttons {
@@ -35,7 +35,7 @@
             display: flex;
             gap: 20px;
             justify-content: center;
-            
+
 
 
         }
@@ -44,15 +44,15 @@
             border: none;
             padding: 20px;
             border-radius: 10px;
-            
-            
+
+
 
         }
 
         .green {
             background-color: #13E76C;
-            
-            
+
+
 
 
         }
@@ -61,31 +61,40 @@
             background-color: #FF0000;
 
         }
+
         .yellow {
             background-color: yellow;
-           
+
         }
+
         .container {
             padding-left: 300px;
         }
-       
+
+        .radio {
+            padding: 10px;
+            border-radius: 15px;
+            color: white;
+
+
+        }
     </style>
 </head>
 
 <body>
-    
-    
+
+
 
     <?php require_once('..\inc\navbar.php'); ?>
     <?php require_once('..\inc\teacher_sidebar.php'); ?>
 
-    <section class= "container">
+    <section class="container">
 
-        <h1 class= "mb-5">SWE 6202 Attendance</h1>
+        <h1 class="mb-5">SWE 6202 Attendance</h1>
 
-        <h5>Name: Introduction to Scrum  </h5>
-       
-        <h5>Name: Date: 23-12-2023  Time: 09:30 AM  Location: Computer Lab 2  Tutor: Renuka Nyayadish    </h5>
+        <h5>Name: Introduction to Scrum </h5>
+
+        <h5>Name: Date: 23-12-2023 Time: 09:30 AM Location: Computer Lab 2 Tutor: Renuka Nyayadish </h5>
 
 
 
@@ -98,28 +107,35 @@
             <option value="course2">Course2</option>
             <option value="course3">Course3</option>
         </select> -->
-        <div class= "mt-5">
+        <div class="mt-5">
             <div class="row">
                 <div class="col-4">
                     <div class="name">
                         <h5>1.</h5>
                         <h5>Nihaal</h5>
 
-<!-- <input type="radio" id="html" name="fav_language" value="HTML">
-<label for="html">Present</label><br>
-<input type="radio" id="css" name="fav_language" value="CSS">
-<label for="css">Absent</label><br>
-<input type="radio" id="javascript" name="fav_language" value="JavaScript">
-<label for="javascript">JavaScript</label> -->
-
-                   </div>
+                    </div>
 
                     <div class="buttons">
 
-                        <button class="green button">present</button>
+                        <!-- <button class="green button">present</button>
                         <button class="red button">Absent</button>
-                        <button class="yellow button">Late</button>
-                        
+                        <button class="yellow button">Late</button> -->
+
+                        <div class="radio green">
+                            <input class="point" type="radio" id="present" name="attendance1" value="present">
+                            <label for="present">Present</label><br>
+                        </div>
+                        <div class="radio yellow">
+                            <input type="radio" id="late" name="attendance1" value="late">
+                            <label for="late">Late</label>
+                        </div>
+                        <div class="radio red">
+                            <input type="radio" id="absent" name="attendance1" value="absent">
+                            <label for="absent">Absent</label><br>
+                        </div>
+
+
                     </div>
 
                 </div>
@@ -132,9 +148,23 @@
 
                     <div class="buttons">
 
-                        <button class="green button">present</button>
+                        <div class="radio green">
+                            <input class="point" type="radio" id="present" name="attendance2" value="present">
+                            <label for="present">Present</label><br>
+                        </div>
+                        <div class="radio yellow">
+                            <input type="radio" id="late" name="attendance2" value="late">
+                            <label for="late">Late</label>
+                        </div>
+                        <div class="radio red">
+                            <input type="radio" id="absent" name="attendance2" value="absent">
+                            <label for="absent">Absent</label><br>
+                        </div>
+
+
+                        <!-- <button class="green button">present</button>
                         <button class="red button">Absent</button>
-                        <button class="yellow button">Late</button>
+                        <button class="yellow button">Late</button> -->
                     </div>
 
                 </div>
@@ -147,9 +177,23 @@
 
                     <div class="buttons">
 
-                        <button class="green button">present</button>
+                        <div class="radio green">
+                            <input class="point" type="radio" id="present" name="attendance3" value="present">
+                            <label for="present">Present</label><br>
+                        </div>
+                        <div class="radio yellow">
+                            <input type="radio" id="late" name="attendance3" value="late">
+                            <label for="late">Late</label>
+                        </div>
+                        <div class="radio red">
+                            <input type="radio" id="absent" name="attendance3" value="absent">
+                            <label for="absent">Absent</label><br>
+                        </div>
+
+
+                        <!-- <button class="green button">present</button>
                         <button class="red button">Absent</button>
-                        <button class="yellow button">Late</button>
+                        <button class="yellow button">Late</button> -->
                     </div>
 
                 </div>
@@ -164,15 +208,35 @@
 
                     <div class="buttons">
 
-                        <button class="green button">present</button>
+                        <div class="radio green">
+                            <input class="point" type="radio" id="present" name="attendance4" value="present">
+                            <label for="present">Present</label><br>
+                        </div>
+                        <div class="radio yellow">
+                            <input type="radio" id="late" name="attendance4" value="late">
+                            <label for="late">Late</label>
+                        </div>
+                        <div class="radio red">
+                            <input type="radio" id="absent" name="attendance4" value="absent">
+                            <label for="absent">Absent</label><br>
+                        </div>
+
+
+                        <!-- <button class="green button">present</button>
                         <button class="red button">Absent</button>
-                        <button class="yellow button">Late</button>
+                        <button class="yellow button">Late</button> -->
                     </div>
 
                 </div>
+                
+                
             </div>
+            
+
         </div>
 
+        <button class="mt-5 btn btn-primary">Save Attendance</button>
+      
 
     </section>
 
