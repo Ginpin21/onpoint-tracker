@@ -7,7 +7,7 @@ $execute = mysqli_query($conn, $sql);
 $result = mysqli_num_rows($execute);
 if ($result > 0) {
     while (mysqli_fetch_array($execute)) {
-        
+
         $id = $row['user_id'];
         $fname = $row['user_fname'];
         $lname = $row['user_lname'];
@@ -16,18 +16,19 @@ if ($result > 0) {
         $course_id = $row['user_course_id'];
 
         echo "<tr>
-      
-      <td>$id</td>
-      <td>$fname</td>
-      <td>$lname</td>
-      <td>$email</td>
-      <td>$role_id</td>
-      <td>$course_id</td>
+       
+      <form method='post'>
+       <td><input type='hidden' name='id'  class='form-control' value='$id' readonly>$id</td> 
+       <td>$id</td>
+       <td>$fname</td>
+       <td>$lname</td>
+       <td>$email</td>
+       <td>$role_id</td>
+       <td>$course_id</td>
+      <td><input type='submit' name='delete'  class='btn btn-danger' value='Remove'>  </td> 
+     </form>
     </tr>";
-
     }
-}
-
-else{
+} else {
     echo "<script> The table is empty </script>";
 }
