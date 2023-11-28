@@ -110,6 +110,21 @@
                 <option value="course1">Renuka</option>
                 <option value="course2">Abdulrehman</option>
                 <option value="course3">Rehna</option>
+                <?php
+                require("./connection.php");
+                $qry = "Select fname, lname from user where user_role_id=100";
+                $execute = mysqli_query($conn, $qry);
+                $final = mysqli_num_rows($execute);
+                if ($final > 0) {
+                    while ($row = mysqli_fetch_array($execute)) {
+                        $fname = $row['user_fname'];
+                        $lname = $row['user_lname'];
+                        echo "<option value='$name'>$fname $lname</option>";
+                    }
+                } else {
+                    echo "<script> The table is empty </script>";
+                }
+                ?>
             </select>
 
             <!-- <div class= "mt-5">
