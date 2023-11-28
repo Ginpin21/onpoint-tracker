@@ -6,7 +6,7 @@ $sql = "SELECT * FROM user where user_role_id = 100";
 $execute = mysqli_query($conn, $sql);
 $result = mysqli_num_rows($execute);
 if ($result > 0) {
-    while (mysqli_fetch_array($execute)) {
+    while ($row=mysqli_fetch_array($execute)) {
 
         $id = $row['user_id'];
         $fname = $row['user_fname'];
