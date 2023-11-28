@@ -112,7 +112,7 @@
                 <option value="course3">Rehna</option>
                 <?php
                 require("./connection.php");
-                $qry = "Select fname, lname from user where user_role_id=100";
+                $qry = "Select fname, lname from user where user_role_id=3";
                 $execute = mysqli_query($conn, $qry);
                 $final = mysqli_num_rows($execute);
                 if ($final > 0) {
