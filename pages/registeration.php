@@ -59,14 +59,14 @@
                 </div>
 
                 <div class="input-container">
-                <label for="">User Email:</label>
+                    <label for="">User Email:</label>
                     <input type="email" name="email" id="email" placeholder="eg: abc@gmail.com" class="email-input">
                 </div>
 
 
                 <div class="flex-container-2">
                     <div class="input-container">
-                    <label for="">User Password:</label>
+                        <label for="">User Password:</label>
                         <input type="password" name="password" id="password" placeholder="eg: ********">
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="input-container">
-                    <label for="">Confirm Password:</label>
+                        <label for="">Confirm Password:</label>
                         <input type="password" name="" id="confmpass" placeholder="eg: ********">
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye2" onclick="toggle2()"></i>
@@ -83,16 +83,41 @@
                 </div>
 
                 <label for="">User Role: </label>
-                <select name="role_id" id="">
-                    <option value="Teacher">Teacher</option>
-                    <option value="1">Student</option>
-                    <option value="">Administrator</option>
+                <select name="role" id="">
+                    <?php
+                    require("../inc/connection.php");
+                    $qry = "Select * from role";
+                    $execute = mysqli_query($conn, $qry);
+                    $final = mysqli_num_rows($execute);
+                    if ($final > 0) {
+                        while ($row = mysqli_fetch_array($execute)) {
+                            $id = $row['role_id'];
+                            $name = $row['role_name'];
+                            echo "<option value='$id'>$name</option>";
+                        }
+                    } else {
+                        echo "<script> The table is empty </script>";
+                    }
+                    ?>
                 </select>
 
                 <label for="">User Course: </label>
-                <select name="" id="">
-                    <option value="Teacher">Teacher</option>
-                    <option value="Student">Student</option>
+                <select name="course" id="">
+                    <?php
+                    require("../inc/connection.php");
+                    $qry = "Select course_id, course_name from course";
+                    $execute = mysqli_query($conn, $qry);
+                    $final = mysqli_num_rows($execute);
+                    if ($final > 0) {
+                        while ($row = mysqli_fetch_array($execute)) {
+                            $id = $row['course_id'];
+                            $name = $row['course_name'];
+                            echo "<option value='$id'>$name</option>";
+                        }
+                    } else {
+                        echo "<script> The table is empty </script>";
+                    }
+                    ?>
                 </select>
                 <button type="submit" class="register-btn" name="Register">Register User</button>
             </form>
