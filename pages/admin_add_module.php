@@ -56,7 +56,7 @@
 
         }
 
-        h1{
+        h1 {
             text-align: center;
         }
 
@@ -101,10 +101,9 @@
             width: 100%;
         }
 
-        .btn-primary{
+        .btn-primary {
             background-color: #003DB2;
         }
-       
     </style>
 </head>
 
@@ -118,7 +117,7 @@
     <section class="container">
 
         <h1 class="mb-5">Add Module</h1>
-        <form action="" method="post">
+        <form action="addmodule_script.php" method="post">
             <div class="row">
                 <div>
                     <label for=""> Module name</label><br>
@@ -128,25 +127,56 @@
             <div class="row mt-3">
                 <div class="col">
                     <label for=""> Module Course </label> <br>
-                    <select class="box">
-                        <option value="Software Engineering"> Software Engineering </option>
+                    <select class="box" name="module_course">
+                        <!-- <option value="Software Engineering"> Software Engineering </option>
                         <option value="Business Administration"> Business Administration </option>
-                        <option value="Accounting"> Accounting </option>
+                        <option value="Accounting"> Accounting </option> -->
+                        <?php
+                        require("../inc/connection.php");
+                        $qry = "Select course_id, course_name from course";
+                        $execute = mysqli_query($conn, $qry);
+                        $final = mysqli_num_rows($execute);
+                        if ($final > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $id = $row['course_id'];
+                                $name = $row['course_name'];
+                                echo "<option value='$id'>$name</option>";
+                            }
+                        } else {
+                            echo "<script> The table is empty </script>";
+                        }
+                        ?>
 
                     </select>
                 </div>
                 <div class="col">
                     <label> Module Tutor </label> <br>
-                    <select class="box box2">
-                        <option value="Abdur Rahman"> Abdur Rahman </option>
+                    <select class="box box2" name="module_tutor">
+                        <!-- <option value="Abdur Rahman"> Abdur Rahman </option>
                         <option value="Anina Nayyar"> Anina Nayyar </option>
-                        <option value="Renuka Nyayadish"> Renuka Nyayadish </option>
+                        <option value="Renuka Nyayadish"> Renuka Nyayadish </option> -->
+                        <?php
+                        require("../inc/connection.php");
+                        $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3";
+                        $execute = mysqli_query($conn, $qry);
+                        $final = mysqli_num_rows($execute);
+                        if ($final > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $id = $row['user_id'];
+                                $fname = $row['user_fname'];
+                                $lname = $row['user_lname'];
+                                echo "<option value='$id'>$fname $lname</option>";
+                            }
+                        } else {
+                            echo "<script> The table is empty </script>";
+                        }
+                        ?>
 
                     </select>
                 </div>
             </div>
             <div class="row mt-5">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" name="addmodule">
                     Add Module
                 </button>
             </div>
