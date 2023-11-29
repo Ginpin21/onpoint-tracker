@@ -128,9 +128,6 @@
                 <div class="col">
                     <label for=""> Module Course </label> <br>
                     <select class="box" name="module_course">
-                        <!-- <option value="Software Engineering"> Software Engineering </option>
-                        <option value="Business Administration"> Business Administration </option>
-                        <option value="Accounting"> Accounting </option> -->
                         <?php
                         require("../inc/connection.php");
                         $qry = "Select course_id, course_name from course";
@@ -152,9 +149,6 @@
                 <div class="col">
                     <label> Module Tutor </label> <br>
                     <select class="box box2" name="module_tutor">
-                        <!-- <option value="Abdur Rahman"> Abdur Rahman </option>
-                        <option value="Anina Nayyar"> Anina Nayyar </option>
-                        <option value="Renuka Nyayadish"> Renuka Nyayadish </option> -->
                         <?php
                         require("../inc/connection.php");
                         $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3";
