@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2023 at 08:42 PM
+-- Generation Time: Nov 28, 2023 at 09:14 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -70,6 +70,7 @@ CREATE TABLE `course` (
 CREATE TABLE `module` (
   `module_id` int(11) NOT NULL,
   `module_name` varchar(50) DEFAULT NULL,
+  `module_course_id` int(11) NOT NULL,
   `module_tutor_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -152,7 +153,8 @@ ALTER TABLE `course`
 --
 ALTER TABLE `module`
   ADD PRIMARY KEY (`module_id`),
-  ADD KEY `module_tutor_id` (`module_tutor_id`);
+  ADD KEY `module_tutor_id` (`module_tutor_id`),
+  ADD KEY `module_course_id` (`module_course_id`);
 
 --
 -- Indexes for table `notification`
@@ -219,7 +221,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -248,7 +250,8 @@ ALTER TABLE `course`
 -- Constraints for table `module`
 --
 ALTER TABLE `module`
-  ADD CONSTRAINT `module_ibfk_1` FOREIGN KEY (`module_tutor_id`) REFERENCES `user` (`user_id`);
+  ADD CONSTRAINT `module_ibfk_1` FOREIGN KEY (`module_tutor_id`) REFERENCES `user` (`user_id`),
+  ADD CONSTRAINT `module_ibfk_2` FOREIGN KEY (`module_course_id`) REFERENCES `course` (`course_id`);
 
 --
 -- Constraints for table `notification`

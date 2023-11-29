@@ -38,6 +38,10 @@
             padding-left: 10px;
         }
 
+        .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #003DB2 !important;
+}
+
 
 
 
