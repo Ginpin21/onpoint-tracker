@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Screen</title>
+    <title>Add Module</title>
     <link rel="stylesheet" href="../inc/home.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <?php require_once('..\inc\head.php'); ?>
     <style>
         .navbar {
@@ -93,6 +92,9 @@
             height: 40px;
             width: 350px;
         }
+        .box2{
+            width: 100%;
+        }
 
         .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #003DB2 !important;
@@ -109,44 +111,52 @@
 
     <section class="container">
 
-        <h1 class="mb-5">Add Course</h1>
-        <div class ="row">
-            <div class = "col">
-                <label for=""> Course Name</label> <br>
+        <h1 class="mb-5">Add Module</h1>
+        <div class="row">
+            <div>
 
-                <input class="box" type="text" placeholder="eg: Course Name">
+                <label for=""> Module name</label><br>
+                <input class="box box2" placeholder="eg: SWE6202 - Agile Programming">
             </div>
-            <div class = "col">
-                <label for=""> Course Manager</label> <br>
-
-                <select class = "box">
-                    <option value="Renuka Nyaydish"> Renuka Nyayadish </option>
-                    <option value="Abdur Rahman"> Abdur Rahman </option>
-                    <option value="Anina Nayyar"> Anina Nayyar </option>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <label for=""> Module Course </label> <br>
+                <select class="box">
+                    <option value="Software Engineering"> Software Engineering </option>
+                    <option value="Business Administration"> Business Administration </option>
+                    <option value="Accounting"> Accounting </option>
 
                 </select>
             </div>
+                <div class="col">
+                    <label> Module Tutor </label> <br>
+                    <select class="box box2">
+                        <option value="Abdur Rahman"> Abdur Rahman </option>
+                        <option value="Anina Nayyar"> Anina Nayyar </option>
+                        <option value="Renuka Nyayadish"> Renuka Nyayadish </option>
+
+                    </select>
+                </div>
+            </div>
             <div class="row mt-5">
-                <button class="btn btn-primary"> Add Course</button>
+                <button class="btn btn-primary">
+                    Add Module
+                </button>
             </div>
         </div>
-
-
     </section>
 
 
     <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-4"
-            style="background-color: white; color:black; font-size: 20px; font-weight:600; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); ">
+        <div class="text-center p-4" style="background-color: white; color:black; font-size: 20px; font-weight:600; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); ">
             © 2023 Copyright:
             <a href="home.html" style="font-size: 20px; font: weight 600px; color:#003DB2; text-decoration:none">Onpoint
                 Tracker.com</a>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 
