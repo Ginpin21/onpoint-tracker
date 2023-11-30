@@ -9,7 +9,7 @@ require('../inc/connection.php'); // it will include the con.php file
 if (isset($_POST['Login'])) { // the script will execute once the button is clicked
 
     $email = $_POST['email']; // will take the value of username into username attribute
-    $pass = $_POST['pass']; // will take the value of password into password attribute
+    $pass = md5($_POST['pass']); // will take the value of password into password attribute
 
     $sql = "SELECT * FROM user WHERE user_email = '$email' AND user_password = '$pass' ";
 

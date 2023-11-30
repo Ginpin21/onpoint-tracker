@@ -6,7 +6,7 @@ if (isset($_POST['Register'])) { // the script will execute once the button is c
     $fname = $_POST['firstName'];
     $lname = $_POST['lastName'];
     $email = $_POST['email'];
-    $pass = $_POST['password'];
+    $pass = md5($_POST['password']);
     $role = $_POST['role'];
     $course = $_POST['course'];
 
