@@ -9,7 +9,7 @@ if (isset($_POST['Register'])) { // the script will execute once the button is c
     $pass = md5($_POST['password']);
     $role = $_POST['role'];
     $course = $_POST['course'];
-
+    
     $sql = "INSERT into user (user_fname, user_lname, user_email, user_password, user_role_id, user_course_id) VALUES ('$fname', '$lname', '$email', '$pass', '$role', '$course')";
 
     $result = mysqli_query($conn, $sql); // will execute the query
