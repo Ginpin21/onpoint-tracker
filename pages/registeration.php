@@ -39,7 +39,7 @@
         <?php require_once("../inc/navbar.php"); ?> <br> <br> <br>
     </div>
 
-    <nav>
+    <!-- <nav>
         <ul class="list-1">
             <li class="li-tag">
                 <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Home</button></a>
@@ -60,7 +60,11 @@
                 <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Mark Attendance</button></a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
+
+    <?php
+    require_once('../inc/admin_sidebar.php');
+    ?>
 
     <div class="container-1">
 
