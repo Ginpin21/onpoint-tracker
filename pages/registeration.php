@@ -89,7 +89,7 @@
                 <div class="flex-container-2">
                     <div class="input-container">
                         <label for="">User Password:</label>
-                        <input type="password" name="password" id="password" placeholder="eg: ********">
+                        <input type="password" name="password" id="password" placeholder="eg: ********" md5>
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye" onclick="toggle()"></i>
                         </span>
@@ -97,7 +97,7 @@
 
                     <div class="input-container">
                         <label for="">Confirm Password:</label>
-                        <input type="password" name="" id="confmpass" placeholder="eg: ********">
+                        <input type="password" name="" id="confmpass" placeholder="eg: ********" md5>
                         <span class="password-icon">
                             <i class='bx bx-low-vision' id="eye2" onclick="toggle2()"></i>
                         </span>
