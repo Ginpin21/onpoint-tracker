@@ -8,7 +8,29 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../inc/registeration.css">
-    <script src="../inc/script.js"></script>
+    <script src="../inc/password_script.js"></script>
+    <script>
+        function hideCourse() {
+            console.log("function called");
+            var x = document.getElementById('usercourse_label');
+            var y = document.getElementById('usercourse');
+            var z = document.getElementById('userrole');
+
+            // if (z.innerText === "Teacher" || z.innerText === "Administrator") {
+            if (z.options[z.selectedIndex].text === "Teacher") {
+                x.style.display = 'none';
+                y.style.display = 'none';
+            } else if (z.options[z.selectedIndex].text === "Administrator") {
+                x.style.display = 'none';
+                y.style.display = 'none';
+            } else if (z.options[z.selectedIndex].text === "Student") {
+                x.style.display = 'block';
+                y.style.display = 'block';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', hideCourse);
+    </script>
+
 </head>
 
 
@@ -83,7 +105,7 @@
                 </div>
 
                 <label for="">User Role: </label>
-                <select name="role" id="">
+                <select name="role" id="userrole" onchange="hideCourse">
                     <?php
                     require("../inc/connection.php");
                     $qry = "Select * from role";
@@ -101,8 +123,8 @@
                     ?>
                 </select>
 
-                <label for="">User Course: </label>
-                <select name="course" id="">
+                <label for="" id="usercourse_label">User Course:</label>
+                <select name="course" id="usercourse">
                     <?php
                     require("../inc/connection.php");
                     $qry = "Select course_id, course_name from course";
@@ -123,9 +145,7 @@
             </form>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
 </body>
 
 </html>
