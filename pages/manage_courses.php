@@ -13,9 +13,11 @@
             color: black;
             padding: 10px 10px 10px 10px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
-            max-width: 3000px;
+            max-width: 1200px;
             text-align: center;
-            height: 60vh;
+            height: 50vh;
+            margin-left: 520px;
+            margin-top: 100px;
         }
 
         .order-form-label {
@@ -66,15 +68,15 @@
     require_once("../inc/navbar.php");
     ?>
 
-    <!-- <?php
-            require_once("../inc/admin_sidebar.php");
-            ?> -->
+    <?php
+    require_once("../inc/admin_sidebar.php");
+    ?>
 
     <div class="order-form m-4">
         <div class="container pt-4">
             <div class="row">
                 <div class="col-12 px-4">
-                    <h1 style="text-align: center;">USER DETAILS</h1>
+                    <h1 style="text-align: center;">COURSE DETAILS</h1>
                 </div>
                 <div>
                     <div>
@@ -83,39 +85,28 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">FNAME</th>
-                                        <th scope="col">LNAME</th>
-                                        <th scope="col">EMAIL</th>
-                                        <th scope="col">PASSWORD</th>
-                                        <th scope="col">ROLE ID</th>
-                                        <th scope="col">COURSE ID</th>
+                                        <th scope="col">COURSE NAME</th>
+                                        <th scope="col">COURSE MANAGER ID</th>
+                                        <th scope="col">COURSE MANAGER NAME</th>
                                         <th scope="col">ACTIONS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                     require("../inc/connection.php");
-                                    $qry = "Select * from user";
+                                    $qry = "Select * from course";
                                     $result = mysqli_query($conn, $qry);
                                     $final = mysqli_num_rows($result);
                                     if ($final > 0) {
                                         while ($row = mysqli_fetch_array($result)) {
-                                            $id = $row['user_id'];
-                                            $fname = $row['user_fname'];
-                                            $lname = $row['user_lname'];
-                                            $email = $row['user_email'];
-                                            $pass = $row['user_password'];
-                                            $role_id = $row['user_role_id'];
-                                            $course_id = $row['user_course_id'];
+                                            $id = $row['course_id'];
+                                            $name = $row['course_name'];
+                                            $manager_id = $row['course_manager_id'];
                                             echo "<tr>
-                                <form method='post' action='update_user.php'>
+                                <form method='post' action='update_course.php'>
                                 <td><input type='text' name='id' value='$id' size='1' style='text-align: center;' readonly>  </td>
-                                <td><input type='text' name='fname' value='$fname' style='text-align: center;'>  </td>
-                                <td><input type='text' name='lname' value='$lname' style='text-align: center;'>  </td>
-                                <td><input type='text' name='email' value='$email' size='35' style='text-align: center;'>  </td>
-                                <td><input type='text' name='pass' value='$pass' size='35' style='text-align: center;'>  </td>
-                                <td><input type='text' name='role_id' value='$role_id' size='6' style='text-align: center;'>  </td>
-                                <td><input type='text' name='course_id' value='$course_id' size='6' style='text-align: center;'>  </td>
+                                <td><input type='text' name='fname' value='$name' style='text-align: center;'>  </td>
+                                <td><input type='text' name='lname' value='$manager_id' style='text-align: center;'>  </td>
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
                                 </form>
                                 </tr>";

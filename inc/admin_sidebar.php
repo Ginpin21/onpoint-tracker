@@ -33,7 +33,7 @@
         <a href="../pages/manage_users.php">Manage Users</a>
         <a href="../pages/admin_add_course.php">Add New Courses</a>
         <a href="../pages/admin_add_module.php">Add New Modules</a>
-        <a href="">Manage Courses</a>
+        <a href="../pages/manage_courses.php">Manage Courses</a>
         <a href="">Mark Attendance</a>
     </div>
 

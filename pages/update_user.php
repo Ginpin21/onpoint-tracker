@@ -11,8 +11,21 @@ if (isset($_POST['update'])) {
     $qry = "UPDATE user SET user_fname='$fname', user_lname='$lname', user_email='$email', user_password='$pass', user_role_id='$role_id', user_course_id='$course_id' where user_id='$id'";
     $result=mysqli_query($conn,$qry);
     if ($result) {
-        echo "<script>alert('New user Registered Successfuly')</script>";
+        echo "<script>alert('User Updated Successfully')</script>";
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
     }
 }
+
+
+if (isset($_POST['delete'])) {
+    $id = $_POST['id'];
+    $qry = "DELETE from user where user_id='$id'";
+    $result=mysqli_query($conn,$qry);
+    if ($result) {
+        echo "<script>alert('User Delelted Successfuly')</script>";
+    } else {
+        echo "<script>alert('Sorry an error occured')</script>";
+    }
+}
+
