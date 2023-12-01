@@ -30,7 +30,7 @@
     <div class="sidebar">
         <a href="../pages/admin_dashboard.php">Home</a>
         <a href="../pages/registeration.php">Add New User</a>
-        <a href="">Manage Users</a>
+        <a href="../pages/manage_users.php">Manage Users</a>
         <a href="../pages/admin_add_course.php">Add New Courses</a>
         <a href="../pages/admin_add_module.php">Add New Modules</a>
         <a href="">Manage Courses</a>
