@@ -48,6 +48,16 @@
         th {
             padding: 12px;
         }
+
+        .btn-primary {
+            background-color: #003DB2;
+        }
+
+        .btn-primary:hover {
+            background-color: #fff;
+            color: black;
+            border: 2px solid black;
+        }
     </style>
 </head>
 
@@ -57,8 +67,8 @@
     ?>
 
     <!-- <?php
-    require_once("../inc/admin_sidebar.php");
-    ?> -->
+            require_once("../inc/admin_sidebar.php");
+            ?> -->
 
     <div class="order-form m-4">
         <div class="container pt-4">
@@ -106,7 +116,7 @@
                                 <td><input type='text' name='pass' value='$pass' size='35' style='text-align: center;'>  </td>
                                 <td><input type='text' name='role_id' value='$role_id' size='6' style='text-align: center;'>  </td>
                                 <td><input type='text' name='course_id' value='$course_id' size='6' style='text-align: center;'>  </td>
-                                <td><input type='submit' name='update'  class='btn btn-success' value='Update'>  </td> 
+                                <td><input type='submit' name='update'  class='btn btn-primary' value='Update'>  </td> 
                                 </form>
                                 </tr>";
                                         }
