@@ -108,7 +108,7 @@
                                 <td><input type='text' name='id' value='$id' size='1' style='text-align: center;' readonly>  </td>
                                 <td><input type='text' name='fname' value='$name' style='text-align: center;'>  </td>
                                 <td><input type='text' name='manager_id' value='$manager_id' style='text-align: center;'>  </td>
-                                <td><input type='text' name='manager_name' value='$manager_name' style='text-align: center;' readonly>  </td>
+                                <td><input type='text' name='manager_name' value='$manager_name' style='text-align: center;'>  </td>
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
                                 </form>
                                 </tr>";

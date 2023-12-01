@@ -4,9 +4,8 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $name = $_POST['fname'];
     $manager_id = $_POST['manager_id'];
-    // $manager_name = $_POST['manager_name'];
     $qry = "UPDATE course SET course_name='$name', course_manager_id='$manager_id' where course_id='$id'";
-    $result=mysqli_query($conn,$qry);
+    $result = mysqli_query($conn, $qry);
     if ($result) {
         echo "<script>alert('Course Updated Successfully')</script>";
     } else {
@@ -18,11 +17,10 @@ if (isset($_POST['update'])) {
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
     $qry = "DELETE from course where course_id='$id'";
-    $result=mysqli_query($conn,$qry);
+    $result = mysqli_query($conn, $qry);
     if ($result) {
         echo "<script>alert('Course Deleted Successfully')</script>";
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
     }
 }
-
