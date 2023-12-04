@@ -5,7 +5,7 @@ if (isset($_POST['update'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    $pass = md5($_POST['pass']);
     $role_id = $_POST['role_id'];
     $course_id = $_POST['course_id'];
     $qry = "UPDATE user SET user_fname='$fname', user_lname='$lname', user_email='$email', user_password='$pass', user_role_id='$role_id', user_course_id='$course_id' where user_id='$id'";
