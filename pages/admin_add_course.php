@@ -108,7 +108,7 @@
 
 
     <?php require_once('..\inc\navbar.php'); ?>
-    <?php require_once('..\inc\teacher_sidebar.php'); ?>
+    <?php require_once('../inc/admin_sidebar.php'); ?>
 
     <section class="container">
         <h1 class="mb-5">Add Course</h1>
