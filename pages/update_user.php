@@ -9,7 +9,7 @@ if (isset($_POST['update'])) {
     $role_id = $_POST['role_id'];
     $course_id = $_POST['course_id'];
     $qry = "UPDATE user SET user_fname='$fname', user_lname='$lname', user_email='$email', user_password='$pass', user_role_id='$role_id', user_course_id='$course_id' where user_id='$id'";
-    $result=mysqli_query($conn,$qry);
+    $result = mysqli_query($conn, $qry);
     if ($result) {
         echo "<script>alert('User Updated Successfully')</script>";
         header("Location: admin_dashboard.php");
@@ -22,7 +22,7 @@ if (isset($_POST['update'])) {
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
     $qry = "DELETE from user where user_id='$id'";
-    $result=mysqli_query($conn,$qry);
+    $result = mysqli_query($conn, $qry);
     if ($result) {
         echo "<script>alert('User Delelted Successfuly')</script>";
         header("Location: admin_dashboard.php");
@@ -30,4 +30,3 @@ if (isset($_POST['delete'])) {
         echo "<script>alert('Sorry an error occured')</script>";
     }
 }
-

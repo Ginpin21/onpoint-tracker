@@ -113,7 +113,7 @@
                                 <td><input type='text' name='fname' value='$fname' style='text-align: center;'>  </td>
                                 <td><input type='text' name='lname' value='$lname' style='text-align: center;'>  </td>
                                 <td><input type='text' name='email' value='$email' size='35' style='text-align: center;'>  </td>
-                                <td><input type='text' name='pass' value='$pass' size='35' style='text-align: center;'>  </td>
+                                <td><input type='text' name='pass' value='$password' size='35' style='text-align: center;'>  </td>
                                 <td><input type='text' name='role_id' value='$role_id' size='6' style='text-align: center;'>  </td>
                                 <td><input type='text' name='course_id' value='$course_id' size='6' style='text-align: center;'>  </td>
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
