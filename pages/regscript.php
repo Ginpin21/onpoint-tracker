@@ -16,7 +16,7 @@ if (isset($_POST['Register'])) { // the script will execute once the button is c
 
     if ($result) {
         echo "<script>alert('New user Registered Successfuly')</script>";
-        echo "<script>window.open('login.php','_self')</script>";
+        header("Location: admin_dashboard.php");
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
     }

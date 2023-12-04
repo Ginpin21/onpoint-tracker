@@ -12,6 +12,7 @@ if (isset($_POST['update'])) {
     $result=mysqli_query($conn,$qry);
     if ($result) {
         echo "<script>alert('User Updated Successfully')</script>";
+        header("Location: admin_dashboard.php");
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
     }
@@ -24,6 +25,7 @@ if (isset($_POST['delete'])) {
     $result=mysqli_query($conn,$qry);
     if ($result) {
         echo "<script>alert('User Delelted Successfuly')</script>";
+        header("Location: admin_dashboard.php");
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
     }

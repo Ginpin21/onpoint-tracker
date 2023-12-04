@@ -10,6 +10,7 @@ if (isset($_POST['addmodule'])) {
 
     if ($result) {
         echo "<script>alert('New user Registered Successfuly')</script>";
+        header("Location: admin_dashboard.php");
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
     }
