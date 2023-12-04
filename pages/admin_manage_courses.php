@@ -11,7 +11,7 @@
     <style>
         .container {
             color: black;
-            padding: 10px 10px 10px 10px;
+            padding: 50px 50px 50px 50px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
             max-width: 1200px;
             text-align: center;
@@ -105,7 +105,7 @@
                                             $manager_name = $row['user_fname'];
                                             echo "<tr>
                                 <form method='post' action='update_course.php'>
-                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center;' readonly>  </td>
+                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly></td>
                                 <td><input type='text' name='fname' value='$name' style='text-align: center;'>  </td>
                                 <td><input type='text' name='manager_id' value='$manager_id' style='text-align: center;'>  </td>
                                 <td><input type='text' name='manager_name' value='$manager_name' style='text-align: center;'>  </td>

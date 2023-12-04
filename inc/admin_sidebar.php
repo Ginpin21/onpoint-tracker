@@ -29,12 +29,12 @@
     </style>
     <div class="sidebar">
         <a href="../pages/admin_dashboard.php">Home</a>
-        <a href="../pages/registeration.php">Add New User</a>
-        <a href="../pages/manage_users.php">Manage Users</a>
+        <a href="../pages/admin_registeration.php">Add New User</a>
+        <a href="../pages/admin_manage_users.php">Manage Users</a>
         <a href="../pages/admin_add_course.php">Add New Courses</a>
         <a href="../pages/admin_add_module.php">Add New Modules</a>
-        <a href="../pages/manage_courses.php">Manage Courses</a>
-        <a href="">Mark Attendance</a>
+        <a href="../pages/admin_manage_courses.php">Manage Courses</a>
+        <a href="../pages//admin_mark_attendance.php">Mark Attendance</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

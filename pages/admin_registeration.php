@@ -38,30 +38,6 @@
     <div class="container-fluid">
         <?php require_once("../inc/navbar.php"); ?> <br> <br> <br>
     </div>
-
-    <!-- <nav>
-        <ul class="list-1">
-            <li class="li-tag">
-                <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Home</button></a>
-            </li>
-            <li class="li-tag">
-                <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Add New User</button></a>
-            </li>
-            <li class="li-tag">
-                <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Manage Users</button></a>
-            </li>
-            <li class="li-tag">
-                <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Add New Course</button></a>
-            </li>
-            <li class="li-tag">
-                <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Manage Courses</button></a>
-            </li>
-            <li class="li-tag">
-                <a href="" class="a-tag"><button type="button" class="btn btn-light a-tag">Mark Attendance</button></a>
-            </li>
-        </ul>
-    </nav> -->
-
     <?php
     require_once('../inc/admin_sidebar.php');
     ?>

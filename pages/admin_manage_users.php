@@ -11,11 +11,11 @@
     <style>
         .container {
             color: black;
-            padding: 10px 10px 10px 10px;
+            padding: 50px 50px 50px 50px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
             max-width: 3000px;
             text-align: center;
-            height: 60vh;
+            height: 80vh;
         }
 
         .order-form-label {
@@ -30,7 +30,7 @@
         }
 
         body {
-            background-color: white;
+            color: white;
         }
 
         table {
@@ -109,7 +109,7 @@
                                             $course_id = $row['user_course_id'];
                                             echo "<tr>
                                 <form method='post' action='update_user.php'>
-                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center;' readonly>  </td>
+                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly>  </td>
                                 <td><input type='text' name='fname' value='$fname' style='text-align: center;'>  </td>
                                 <td><input type='text' name='lname' value='$lname' style='text-align: center;'>  </td>
                                 <td><input type='text' name='email' value='$email' size='35' style='text-align: center;'>  </td>

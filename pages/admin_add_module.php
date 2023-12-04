@@ -77,8 +77,12 @@
            
         } */
         .container {
-            padding-left: 400px;
-
+            /* padding-left: 400px; */
+            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);   
+            width: 70%;    
+            margin: 100px 100px 100px 500px;
+            height: 50vh;
+            padding: 50px 50px 50px 50px;
         }
 
         .textbox {
@@ -103,6 +107,9 @@
 
         .btn-primary {
             background-color: #003DB2;
+            width: 50%;
+            margin-left: 280px;
+            border-radius: 10px;
         }
     </style>
 </head>
