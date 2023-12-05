@@ -17,7 +17,7 @@
             background-color: #ffffff;
             color: #003DB2;
             border-radius: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .sidebar a:hover {
