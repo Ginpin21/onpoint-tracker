@@ -27,7 +27,7 @@
     </style>
     <div class="sidebar">
         <a href="teacher_dashboard.php">Home</a>
-        <a href="attendance_menu.php">Mark Attendance</a>
+        <a href="teacher_modules_menu.php">Mark Attendance</a>
         <a href="teacher_dashboard.php">View Courses</a>
         <a href="teacher_dashboard.php">View Timetable</a>
         <a href="teacher_dashboard.php">Generate Attendance Report</a>
