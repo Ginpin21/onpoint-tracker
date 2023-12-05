@@ -1,6 +1,7 @@
 <style>
     .navbar {
         padding: 10px;
+        position: sticky;
     }
 
     .navbar-nav .active a {

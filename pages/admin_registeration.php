@@ -35,9 +35,9 @@
 
 
 <body>
-    <div class="container-fluid">
-        <?php require_once("../inc/navbar.php"); ?> <br> <br> <br>
-    </div>
+    <?php
+    require_once("../inc/navbar.php");
+    ?>
     <?php
     require_once('../inc/admin_sidebar.php');
     ?>
