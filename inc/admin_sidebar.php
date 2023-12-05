@@ -31,7 +31,7 @@
     <a href="../pages/admin_add_course.php">Add New Courses</a>
     <a href="../pages/admin_add_module.php">Add New Modules</a>
     <a href="../pages/admin_manage_courses.php">Manage Courses</a>
-    <a href="../pages//admin_mark_attendance.php">Mark Attendance</a>
+    <a href="../pages//admin_mark_attendance.php">Correct Attendance</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
