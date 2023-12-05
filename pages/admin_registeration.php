@@ -32,17 +32,14 @@
 </head>
 
 
-<<<<<<< HEAD
 <body>
     <?php
     require_once("../inc/navbar.php");
     ?>
-=======
 <body onload="hideCourse()">
     <div class="container-fluid">
         <?php require_once("../inc/navbar.php"); ?> <br> <br> <br>
     </div>
->>>>>>> fa485cea235cc65437bdd5019f128ae9a6b070ee
     <?php
     require_once('../inc/admin_sidebar.php');
     ?>
