@@ -5,17 +5,17 @@ if (isset($_POST['update'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
-    $pass = md5($_POST['pass']);
+    $password = md5($_POST['password']);
     $role_id = $_POST['role_id'];
     $course_id = $_POST['course_id'];
-    $qry = "UPDATE user SET user_fname='$fname', user_lname='$lname', user_email='$email', user_password='$pass', user_role_id='$role_id', user_course_id='$course_id' where user_id='$id'";
+    $qry = "UPDATE user SET user_fname='$fname', user_lname='$lname', user_email='$email', user_password='$password', user_role_id='$role_id', user_course_id='$course_id' where user_id='$id'";
     $result = mysqli_query($conn, $qry);
     if ($result) {
         echo "<script>alert('User Updated Successfully')</script>";
         header("Location: admin_dashboard.php");
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
-    }
+    }   
 }
 
 

@@ -15,7 +15,7 @@
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
             max-width: 3000px;
             text-align: center;
-            height: 80vh;
+            height: auto;
         }
 
         .order-form-label {
@@ -104,16 +104,15 @@
                                             $fname = $row['user_fname'];
                                             $lname = $row['user_lname'];
                                             $email = $row['user_email'];
-                                            $pass = $row['user_password'];
                                             $role_id = $row['user_role_id'];
                                             $course_id = $row['user_course_id'];
                                             echo "<tr>
                                 <form method='post' action='update_user.php'>
-                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly>  </td>
-                                <td><input type='text' name='fname' value='$fname' style='text-align: center;'>  </td>
-                                <td><input type='text' name='lname' value='$lname' style='text-align: center;'>  </td>
-                                <td><input type='text' name='email' value='$email' size='35' style='text-align: center;'>  </td>
-                                <td><input type='text' name='pass' value='$password' size='35' style='text-align: center;'>  </td>
+                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly</td>
+                                <td><input type='text' name='fname' value='$fname' size='15' style='text-align: center;'>  </td>
+                                <td><input type='text' name='lname' value='$lname' size='15' style='text-align: center;'>  </td>
+                                <td><input type='text' name='email' value='$email' size='25' style='text-align: center;'>  </td>
+                                <td><input type='text' name='password' size='15' style='text-align: center;'>  </td>
                                 <td><input type='text' name='role_id' value='$role_id' size='6' style='text-align: center;'>  </td>
                                 <td><input type='text' name='course_id' value='$course_id' size='6' style='text-align: center;'>  </td>
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 

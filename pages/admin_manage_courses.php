@@ -15,7 +15,18 @@
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
             max-width: 1200px;
             text-align: center;
-            height: 50vh;
+            height: auto;
+            margin-left: 520px;
+            margin-top: 100px;
+        }
+
+        .container-2 {
+            color: black;
+            padding: 50px 50px 50px 50px;
+            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
+            max-width: 1200px;
+            text-align: center;
+            height: auto;
             margin-left: 520px;
             margin-top: 100px;
         }
@@ -105,13 +116,61 @@
                                             $manager_name = $row['user_fname'];
                                             echo "<tr>
                                 <form method='post' action='update_course.php'>
-                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly></td>
+                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly</td>
                                 <td><input type='text' name='fname' value='$name' style='text-align: center;'>  </td>
                                 <td><input type='text' name='manager_id' value='$manager_id' style='text-align: center;'>  </td>
-                                <td><input type='text' name='manager_name' value='$manager_name' style='text-align: center;'>  </td>
+                                <td>$manager_name</td>
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
                                 </form>
                                 </tr>";
+                                        }
+                                    } else {
+                                        echo "<script> The table is empty </script>";
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="order-form m-4">
+        <div class="container-2 pt-4">
+            <div class="row">
+                <div class="col-12 px-4">
+                    <h1 style="text-align: center;">TUTOR LIST</h1>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">TUTOR ID</th>
+                                        <th scope="col">TUTOR NAME</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    require("../inc/connection.php");
+                                    $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3";
+                                    $result = mysqli_query($conn, $qry);
+                                    $final = mysqli_num_rows($result);
+                                    if ($final > 0) {
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            $id = $row['user_id'];
+                                            $fname = $row['user_fname'];
+                                            $lname = $row['user_lname'];
+                                            echo "<tr>
+                                            <td>$id</td>
+                                            <td>$fname $lname</td>
+                                            </tr>";
                                         }
                                     } else {
                                         echo "<script> The table is empty </script>";
