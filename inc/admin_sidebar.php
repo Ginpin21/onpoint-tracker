@@ -13,13 +13,11 @@
             box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             padding: 8px 16px;
             text-align:center;
+            text-decoration: none;
             background-color: #ffffff;
             color: #003DB2;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            border-style:solid;
-            border-width:4px;
-            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
         }
 
         .sidebar a:hover {
