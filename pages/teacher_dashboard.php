@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Teacher Dashboard</title>
     <?php
     require_once('..\inc\head.php');
     ?>
