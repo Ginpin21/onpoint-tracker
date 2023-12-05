@@ -6,40 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registeration Screen</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../inc/registeration.css">
     <script src="../inc/password_script.js"></script>
     <script>
-    function hideCourse() {
-        var x = document.getElementById('usercourse_label');
-        var y = document.getElementById('usercourse');
-        var z = document.getElementById('userrole');
+        function hideCourse() {
+            var x = document.getElementById('usercourse_label');
+            var y = document.getElementById('usercourse');
+            var z = document.getElementById('userrole');
 
-        if (z.options[z.selectedIndex].text === "Teacher") {
-            x.style.display = 'none';
-            y.style.display = 'none';
-        } else if (z.options[z.selectedIndex].text === "Administrator") {
-            x.style.display = 'none';
-            y.style.display = 'none';
-        } else if (z.options[z.selectedIndex].text === "Student") {
-            x.style.display = 'block';
-            y.style.display = 'block';
+            if (z.options[z.selectedIndex].text === "Teacher") {
+                x.style.display = 'none';
+                y.style.display = 'none';
+            } else if (z.options[z.selectedIndex].text === "Administrator") {
+                x.style.display = 'none';
+                y.style.display = 'none';
+            } else if (z.options[z.selectedIndex].text === "Student") {
+                x.style.display = 'block';
+                y.style.display = 'block';
+            }
         }
-    }
     </script>
 
 </head>
 
 
-<body>
+
+<body onload="hideCourse()">
     <?php
     require_once("../inc/navbar.php");
     ?>
-<body onload="hideCourse()">
-    <div class="container-fluid">
-        <?php require_once("../inc/navbar.php"); ?> <br> <br> <br>
-    </div>
     <?php
     require_once('../inc/admin_sidebar.php');
     ?>
@@ -127,8 +123,7 @@
             </form>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 </body>
 
