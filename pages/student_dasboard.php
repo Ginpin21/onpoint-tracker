@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <?php
-    require_once('..\inc\head.php');
+    require_once('../inc/head.php')
     ?>
     <style>
-        .dashboard-section {
-            padding:10px;
-            width:75%;
-            float:right;
+        .student_dashboard{
+            width:85%;
+            padding: 20px;
         }
-    </style>
+        </style>
 </head>
 <body class="">
     <?php 
