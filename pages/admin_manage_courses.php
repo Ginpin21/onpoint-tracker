@@ -113,13 +113,14 @@
                                             $id = $row['course_id'];
                                             $name = $row['course_name'];
                                             $manager_id = $row['course_manager_id'];
-                                            $manager_name = $row['user_fname'];
+                                            $manager_fname = $row['user_fname'];
+                                            $manager_lname = $row['user_lname'];
                                             echo "<tr>
                                 <form method='post' action='update_course.php'>
                                 <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly</td>
                                 <td><input type='text' name='fname' value='$name' style='text-align: center;'>  </td>
                                 <td><input type='text' name='manager_id' value='$manager_id' style='text-align: center;'>  </td>
-                                <td>$manager_name</td>
+                                <td>$manager_fname $manager_lname</td>
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
                                 </form>
                                 </tr>";
