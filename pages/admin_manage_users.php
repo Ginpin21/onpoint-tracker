@@ -13,9 +13,10 @@
             color: black;
             padding: 50px 50px 50px 50px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
-            max-width: 3000px;
+            max-width: fit-content;
             text-align: center;
             height: auto;
+            margin: 0 auto;
         }
 
         .order-form-label {
@@ -65,11 +66,9 @@
     <?php
     require_once("../inc/navbar.php");
     ?>
-
-    <!-- <?php
-            require_once("../inc/admin_sidebar.php");
-            ?> -->
-
+        <!-- <?php
+        require_once("../inc/admin_sidebar.php");
+        ?> -->
     <div class="order-form m-4">
         <div class="container pt-4">
             <div class="row">
