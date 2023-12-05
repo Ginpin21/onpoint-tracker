@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php
     require_once('../inc/head.php')
-    ?> 
+    ?>
 </head>
+
 <body class="">
-    <?php 
-        require_once('..\inc\navbar.php');
-     ?>
-     <main class="">
-     <div style="width: 125%; 
+    <?php
+    require_once('..\inc\navbar.php');
+    ?>
+    <?php
+    require_once('..\inc\Student_sidebar.php');
+    ?>
+    <main class="">
+        <div style="width: 75%; 
+                padding-left:25%;
                 height: 100%; 
                 text-align: center; 
                 color: black; 
@@ -18,9 +24,8 @@
                 font-family: 'Poppins', sans-serif; 
                 font-weight: bold; 
                 ">Student Dashboard</div>
-     <?php 
-        require_once('..\inc\Student_sidebar.php');
-        ?>
-     </main>    
+
+    </main>
 </body>
+
 </html>
