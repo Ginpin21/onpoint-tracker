@@ -17,6 +17,7 @@ if (isset($_POST['Login'])) {
             $_SESSION['email'] = $row['user_email'];
             $_SESSION['course_id'] = $row['user_course_id'];
 <<<<<<< HEAD
+<<<<<<< HEAD
             $_SESSION['role_name'] = $row['role_name'];
             echo  $_SESSION['role_name'];
             if ($_SESSION['role_name'] == 'Administrator') {
@@ -25,6 +26,11 @@ if (isset($_POST['Login'])) {
 
             if ($_SESSION['name'] == 'Administrator') {
 >>>>>>> 4672c1a71ccfc39014d07cdf2fdcc21e5829f642
+=======
+            $_SESSION['role_name']=$row['role_name'];
+
+            if ($_SESSION['role_name'] == 'Administrator') {
+>>>>>>> 74be5e59298d919ef4f2d52111fe40c370c2cfbb
                 header("Location: admin_dashboard.php");
             } elseif ($_SESSION['role_name'] == 'Student') {
                 header("Location: student_dashboard.php");
