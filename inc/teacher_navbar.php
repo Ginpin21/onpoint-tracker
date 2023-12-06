@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <style>
     .navbar {
         padding: 10px;
@@ -34,7 +37,6 @@
         <i class="bi bi-person-circle" style="font-size: 2em;"></i>
         <span class='navbar-text' style='color: #003DB2; font-weight: bold;'>
             <?php
-            session_start();
             echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
             echo "<br>";
             echo $_SESSION['email'];
