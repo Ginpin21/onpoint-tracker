@@ -64,11 +64,8 @@
 
 <body>
     <?php
-    require_once("../inc/navbar.php");
+    require_once("../inc/admin_navbar.php");
     ?>
-        <!-- <?php
-        require_once("../inc/admin_sidebar.php");
-        ?> -->
     <div class="order-form m-4">
         <div class="container pt-4">
             <div class="row">

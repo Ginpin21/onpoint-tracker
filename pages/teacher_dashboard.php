@@ -15,7 +15,7 @@
 </head>
 <body class="">
     <?php 
-    require_once('..\inc\navbar.php');
+    require_once('../inc/teacher_navbar.php');
      ?>
      <main class="">
      <?php 

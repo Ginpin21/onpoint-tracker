@@ -10,7 +10,7 @@
 
 <body class="">
     <?php
-    require_once('..\inc\navbar.php');
+    require_once('../inc/student_navbar.php');
     ?>
     <?php
     require_once('..\inc\Student_sidebar.php');
