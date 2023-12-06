@@ -16,6 +16,7 @@ if (isset($_POST['Login'])) { // the script will execute once the button is clic
         while ($row = mysqli_fetch_array($result)) { // will fetch the data from the table
             session_start(); // it will start the session
             $_SESSION['logged_in'] = true;
+            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['first_name'] = $row['user_fname'];
             $_SESSION['last_name'] = $row['user_lname'];
             $_SESSION['email'] = $row['user_email'];
