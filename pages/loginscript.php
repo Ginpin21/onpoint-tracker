@@ -15,7 +15,7 @@ if (isset($_POST['Login'])) {
             $_SESSION['email'] = $row['user_email'];
             $_SESSION['course_id'] = $row['user_course_id'];
             $_SESSION['name']=$row['role_name'];
-            echo  $_SESSION['name'];
+
             if ($_SESSION['name'] == 'Administrator') {
                 header("Location: admin_dashboard.php");
             } elseif ($_SESSION['name'] == 'Student') {
