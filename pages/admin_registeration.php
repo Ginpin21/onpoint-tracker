@@ -34,7 +34,7 @@
 
 <body onload="hideCourse()">
     <?php
-    require_once("../inc/navbar.php");
+    require_once("../inc/admin_navbar.php");
     ?>
     <?php
     require_once('../inc/admin_sidebar.php');

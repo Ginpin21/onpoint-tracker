@@ -78,8 +78,8 @@
         } */
         .container {
             /* padding-left: 400px; */
-            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);   
-            width: 70%;    
+            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
+            width: 70%;
             margin: 100px 100px 100px 500px;
             height: 50vh;
             padding: 50px 50px 50px 50px;
@@ -118,7 +118,9 @@
 
 
 
-    <?php require_once('..\inc\navbar.php'); ?>
+    <?php
+    require_once("../inc/admin_navbar.php");
+    ?>
     <?php require_once('../inc/admin_sidebar.php'); ?>
 
     <section class="container">

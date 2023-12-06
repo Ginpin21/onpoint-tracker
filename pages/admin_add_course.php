@@ -71,8 +71,8 @@
            
         } */
         .container {
-            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);   
-            width: 70%;    
+            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
+            width: 70%;
             margin: 100px 100px 100px 500px;
             height: 40vh;
             padding: 50px 50px 50px 50px;
@@ -107,7 +107,9 @@
 
 
 
-    <?php require_once('..\inc\navbar.php'); ?>
+    <?php
+    require_once("../inc/admin_navbar.php");
+    ?>
     <?php require_once('../inc/admin_sidebar.php'); ?>
 
     <section class="container">
@@ -116,7 +118,7 @@
             <div class="row">
 
                 <div class="col">
-                    <label for=""> Course Name</label> 
+                    <label for=""> Course Name</label>
                     <input class="box" type="text" placeholder="eg: Course Name" name="coursename">
                 </div>
 
@@ -141,7 +143,7 @@
                         ?>
                     </select>
                 </div>
-                
+
                 <div class="row mt-5">
                     <button class="btn btn-primary" name="addcourse"> Add Course</button>
                 </div>
