@@ -11,21 +11,25 @@ if (isset($_POST['Login'])) {
         while ($row = mysqli_fetch_array($result)) { // will fetch the data from the table
             session_start(); // it will start the session
             $_SESSION['logged_in'] = true;
+            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['first_name'] = $row['user_fname'];
             $_SESSION['last_name'] = $row['user_lname'];
             $_SESSION['email'] = $row['user_email'];
             $_SESSION['course_id'] = $row['user_course_id'];
-            $_SESSION['name'] = $row['role_name'];
-            echo  $_SESSION['name'];
-            if ($_SESSION['name'] == 'Administrator') {
+            $_SESSION['role_name'] = $row['role_name'];
+            echo  $_SESSION['role_name'];
+            if ($_SESSION['role_name'] == 'Administrator') {
                 header("Location: admin_dashboard.php");
-            } elseif ($_SESSION['name'] == 'Student') {
+            } elseif ($_SESSION['role_name'] == 'Student') {
                 header("Location: student_dashboard.php");
-            } else {
+            } elseif ($_SESSION['role_name'] == 'Teacher') {
                 header("Location: teacher_dashboard.php");
+            } else {
+                header("Location: index.php");
             }
         }
     } else {
         echo "<script>alert('Please enter your correct details')</script>";
+        header("Location:login.php");
     }
 }
