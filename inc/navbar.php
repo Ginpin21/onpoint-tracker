@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 ?>
 
@@ -64,7 +64,7 @@ if ($currentPage == 'index.php') { ?>
 
 <?php
 if ($_SESSION['logged_in'] == TRUE) {
-    $_SESSION['name'];
+    $_SESSION['role_name'];
 ?>
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
         <a class='navbar-brand' href='index.php'>Onpoint Tracker</a>
@@ -79,7 +79,7 @@ if ($_SESSION['logged_in'] == TRUE) {
                 </ul>
             </div>
     <?php
-    if ($_SESSION['name'] == 'Administrator') { ?>
+    if ($_SESSION['role_name'] == 'Administrator') { ?>
         <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
             <ul class='navbar-nav ml-auto'>
                 <li class='nav-item " . ($currentPage==' admin_dashboard.php' ? 'active' : '' ) . "'>
@@ -101,7 +101,7 @@ if ($_SESSION['logged_in'] == TRUE) {
         </div>
     </nav>
 <?php
-    } else if ($_SESSION['name'] == 'Student') { ?>
+    } else if ($_SESSION['role_name'] == 'Student') { ?>
     <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
         <ul class='navbar-nav ml-auto'>
             <li class='nav-item " . ($currentPage==' student_dashboard.php' ? 'active' : '' ) . "'>
@@ -162,4 +162,4 @@ if ($_SESSION['logged_in'] == TRUE) {
 <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
