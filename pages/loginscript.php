@@ -22,8 +22,13 @@ if (isset($_POST['Login'])) { // the script will execute once the button is clic
             $_SESSION['role_id'] = $row['user_role_id'];
             $_SESSION['course_id'] = $row['user_course_id'];
             $_SESSION['role_name'] = $row['role_name'];
-            // echo var_dump($_SESSION, true);
-            header("Location:index.php");
+            if ($_SESSION['role_id'] == 1) {
+                header("Location: admin_dashboard.php");
+            } elseif ($_SESSION['role_id'] == 2) {
+                header("Location: student_dashboard.php");
+            } else {
+                header("Location: teacher_dashboard.php");
+            }
         }
     } else {
         echo "<script>alert('Please enter your correct details')</script>";

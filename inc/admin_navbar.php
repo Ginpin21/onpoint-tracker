@@ -20,9 +20,6 @@
     </button>
     <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
         <ul class='navbar-nav ml-auto'>
-            <li class='nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>'>
-                <a class='nav-link' href='index.php'><b>Home</b></a>
-            </li>
             <li class='nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'teacher_dashboard.php' ? 'active' : ''; ?>'>
                 <a class='nav-link' href='admin_dashboard.php'><b>Admin Dashboard</b></a>
             </li>
