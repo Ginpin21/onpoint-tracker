@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title>Student Dashboard</title>
+    <title>Student Dashboard</title>
     <?php
     require_once('../inc/head.php')
     ?>
