@@ -83,39 +83,44 @@
     require_once("../inc/admin_sidebar.php");
     ?>
 
-    <div class="order-form m-4">
-        <div class="container pt-4">
-            <div class="row">
-                <div class="col-12 px-4">
-                    <h1 style="text-align: center;">COURSE DETAILS</h1>
-                </div>
-                <div>
-                    <div>
+    <?php
+    session_start();
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        if ($_SESSION["role_name"] == "Administrator") {
+    ?>
+            <div class="order-form m-4">
+                <div class="container pt-4">
+                    <div class="row">
+                        <div class="col-12 px-4">
+                            <h1 style="text-align: center;">COURSE DETAILS</h1>
+                        </div>
                         <div>
-                            <table class="table table-striped table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">COURSE NAME</th>
-                                        <th scope="col">COURSE MANAGER ID</th>
-                                        <th scope="col">COURSE MANAGER NAME</th>
-                                        <th scope="col">ACTIONS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    require("../inc/connection.php");
-                                    $qry = "Select * from course_manager_name";
-                                    $result = mysqli_query($conn, $qry);
-                                    $final = mysqli_num_rows($result);
-                                    if ($final > 0) {
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $id = $row['course_id'];
-                                            $name = $row['course_name'];
-                                            $manager_id = $row['course_manager_id'];
-                                            $manager_fname = $row['user_fname'];
-                                            $manager_lname = $row['user_lname'];
-                                            echo "<tr>
+                            <div>
+                                <div>
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">COURSE NAME</th>
+                                                <th scope="col">COURSE MANAGER ID</th>
+                                                <th scope="col">COURSE MANAGER NAME</th>
+                                                <th scope="col">ACTIONS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            require("../inc/connection.php");
+                                            $qry = "Select * from course_manager_name";
+                                            $result = mysqli_query($conn, $qry);
+                                            $final = mysqli_num_rows($result);
+                                            if ($final > 0) {
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    $id = $row['course_id'];
+                                                    $name = $row['course_name'];
+                                                    $manager_id = $row['course_manager_id'];
+                                                    $manager_fname = $row['user_fname'];
+                                                    $manager_lname = $row['user_lname'];
+                                                    echo "<tr>
                                 <form method='post' action='update_course.php'>
                                 <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly</td>
                                 <td><input type='text' name='fname' value='$name' style='text-align: center;'>  </td>
@@ -124,67 +129,75 @@
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
                                 </form>
                                 </tr>";
-                                        }
-                                    } else {
-                                        echo "<script> The table is empty </script>";
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
+                                                }
+                                            } else {
+                                                echo "<script> The table is empty </script>";
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
 
 
 
-    <div class="order-form m-4">
-        <div class="container-2 pt-4">
-            <div class="row">
-                <div class="col-12 px-4">
-                    <h1 style="text-align: center;">TUTOR LIST</h1>
-                </div>
-                <div>
-                    <div>
+            <div class="order-form m-4">
+                <div class="container-2 pt-4">
+                    <div class="row">
+                        <div class="col-12 px-4">
+                            <h1 style="text-align: center;">TUTOR LIST</h1>
+                        </div>
                         <div>
-                            <table class="table table-striped table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">TUTOR ID</th>
-                                        <th scope="col">TUTOR NAME</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    require("../inc/connection.php");
-                                    $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3";
-                                    $result = mysqli_query($conn, $qry);
-                                    $final = mysqli_num_rows($result);
-                                    if ($final > 0) {
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $id = $row['user_id'];
-                                            $fname = $row['user_fname'];
-                                            $lname = $row['user_lname'];
-                                            echo "<tr>
+                            <div>
+                                <div>
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">TUTOR ID</th>
+                                                <th scope="col">TUTOR NAME</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            require("../inc/connection.php");
+                                            $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3";
+                                            $result = mysqli_query($conn, $qry);
+                                            $final = mysqli_num_rows($result);
+                                            if ($final > 0) {
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    $id = $row['user_id'];
+                                                    $fname = $row['user_fname'];
+                                                    $lname = $row['user_lname'];
+                                                    echo "<tr>
                                             <td>$id</td>
                                             <td>$fname $lname</td>
                                             </tr>";
-                                        }
-                                    } else {
-                                        echo "<script> The table is empty </script>";
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
+                                                }
+                                            } else {
+                                                echo "<script> The table is empty </script>";
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+    <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    }
+    ?>
 </body>
 
 </html>

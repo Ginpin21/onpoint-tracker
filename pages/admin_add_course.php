@@ -112,45 +112,59 @@
     ?>
     <?php require_once('../inc/admin_sidebar.php'); ?>
 
-    <section class="container">
-        <h1 class="mb-5">Add Course</h1>
-        <form action="addcourse_script.php" method="post">
-            <div class="row">
+    <?php
+    session_start();
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        if ($_SESSION["role_name"] == "Administrator") {
+    ?>
 
-                <div class="col">
-                    <label for=""> Course Name</label>
-                    <input class="box" type="text" placeholder="eg: Course Name" name="coursename">
-                </div>
+            <section class="container">
+                <h1 class="mb-5">Add Course</h1>
+                <form action="addcourse_script.php" method="post">
+                    <div class="row">
 
-                <div class="col">
-                    <label for=""> Course Manager</label>
-                    <select class="box" name="course_tutor">
-                        <?php
-                        require("../inc/connection.php");
-                        $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3;";
-                        $execute = mysqli_query($conn, $qry);
-                        $final = mysqli_num_rows($execute);
-                        if ($final > 0) {
-                            while ($row = mysqli_fetch_array($execute)) {
-                                $id = $row['user_id'];
-                                $fname = $row['user_fname'];
-                                $lname = $row['user_lname'];
-                                echo "<option value='$id'>$fname $lname</option>";
-                            }
-                        } else {
-                            echo "<script> The table is empty </script>";
-                        }
-                        ?>
-                    </select>
-                </div>
+                        <div class="col">
+                            <label for=""> Course Name</label>
+                            <input class="box" type="text" placeholder="eg: Course Name" name="coursename">
+                        </div>
 
-                <div class="row mt-5">
-                    <button class="btn btn-primary" name="addcourse"> Add Course</button>
-                </div>
+                        <div class="col">
+                            <label for=""> Course Manager</label>
+                            <select class="box" name="course_tutor">
+                                <?php
+                                require("../inc/connection.php");
+                                $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3;";
+                                $execute = mysqli_query($conn, $qry);
+                                $final = mysqli_num_rows($execute);
+                                if ($final > 0) {
+                                    while ($row = mysqli_fetch_array($execute)) {
+                                        $id = $row['user_id'];
+                                        $fname = $row['user_fname'];
+                                        $lname = $row['user_lname'];
+                                        echo "<option value='$id'>$fname $lname</option>";
+                                    }
+                                } else {
+                                    echo "<script> The table is empty </script>";
+                                }
+                                ?>
+                            </select>
+                        </div>
 
-            </div>
-        </form>
-    </section>
+                        <div class="row mt-5">
+                            <button class="btn btn-primary" name="addcourse"> Add Course</button>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+    <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    }
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
