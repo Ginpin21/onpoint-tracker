@@ -25,7 +25,7 @@
         if ($_SESSION["role_name"] == "Administrator") {
     ?>
             <?php
-            require_once('../inc/nav.php');
+            require_once('../inc/navbar.php');
             ?>
             <?php
             require_once('../inc/admin_sidebar.php');

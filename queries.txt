@@ -1,5 +1,5 @@
 Create view class_attendance_view as SELECT
-	class.class_id,
+   class.class_id,
    class.class_date,
    class.class_time,
    class.class_name,

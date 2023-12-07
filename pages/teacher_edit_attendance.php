@@ -181,7 +181,8 @@
                 </div>
 
             </div>
-            <button class="mt-5 btn btn-primary" name="submit" type="submit" value="submit">Edit Attendance</button>
+            <button class="mt-5 btn btn-primary" name="submit" type="submit" value="submit">Save Edit</button>
+            <a class="mt-5 btn btn-danger" href="teacher_dashboard.php">Cancel Edit</a>
         </form>
 
     </section>

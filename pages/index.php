@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <?php require_once('..\inc\nav.php'); ?>
+    <?php require_once('..\inc\navbar.php'); ?>
     <div class="container">
         <div class="headings">
             <h1>Welcome to Onpoint Tracker</h1>
