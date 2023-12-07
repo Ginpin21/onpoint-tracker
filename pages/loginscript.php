@@ -7,8 +7,8 @@ if (isset($_POST['Login'])) {
     $result = mysqli_query($conn, $sql);
     $final = mysqli_num_rows($result);
     if ($final > 0) {
-        while ($row = mysqli_fetch_array($result)) { // will fetch the data from the table
-            session_start(); // it will start the session
+        while ($row = mysqli_fetch_array($result)) { 
+            session_start(); 
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['first_name'] = $row['user_fname'];

@@ -9,6 +9,13 @@
     <?php
     require_once('../inc/head.php');
     ?>
+    <style>
+        .dashboard-section {
+            padding: 10px;
+            width: 75%;
+            float: right;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,6 +30,10 @@
             <?php
             require_once('../inc/admin_sidebar.php');
             ?>
+
+            <section class="dashboard-section">
+                <h1 class="text-center">Admin Dashboard</h1>
+            </section>
     <?php
         } else {
             header("Location:index.php");
