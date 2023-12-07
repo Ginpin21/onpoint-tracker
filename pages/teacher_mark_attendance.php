@@ -110,10 +110,10 @@
                 <h1 class=""><?php echo "$class[7] Attendance"; ?></h1>
                 <h5><?php echo "$class[1]"; ?></h5>
                 <ul class="d-flex gap-5 p-0" style="list-style-type: none;">
-                    <li>Date:<?php echo date('d-m-Y, l', strtotime($class[2])); ?></li>
-                    <li>Time:<?php echo date('h:i A', strtotime($class[3])); ?></li>
-                    <li>Location:<?php echo "$class[4]"; ?> </li>
-                    <li>Tutor:<?php echo "$class[11] $class[12]"; ?></li>
+                    <li><b>Date:</b> <?php echo date('d-m-Y, l', strtotime($class[2])); ?></li>
+                    <li><b>Time:</b> <?php echo date('h:i A', strtotime($class[3])); ?></li>
+                    <li><b>Location:</b> <?php echo "$class[4]"; ?> </li>
+                    <li><b>Tutor:</b> <?php echo "$class[11] $class[12]"; ?></li>
                 </ul>
         <?php }
         } ?>

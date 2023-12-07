@@ -90,7 +90,7 @@
             <?php echo $module_name; ?> Classes
         </h1>
         <h3>Create Class </h3>
-        <form class="shadow px-5 py-3" method="POST" action="../functions/create_class_script.php">
+        <form class="shadow px-5 py-3 rounded" method="POST" action="../functions/create_class_script.php">
             <input value="<?php echo $module_id; ?>" type="hidden" name="module_id">
             <div class="row">
                 <div class="col-6">
@@ -191,19 +191,20 @@
                                 <?php echo $attendance[7]; ?>
                             </td>
                             <td>
-                                <a class="btn btn-primary" href="#">Edit</a>
+                                <a class="btn btn-primary" href="teacher_edit_attendance.php?class_id=<?php echo $attendance[0] ?>">Edit</a>
                             </td>
                             <td>
                                 <a class="btn btn-outline-primary" href="teacher_view_attendance.php?class_id=<?php echo $attendance[0] ?>">View</a>
                             </td>
-                <?php
+                        </tr>
+
+            <?php
                     }
                 }
             } else {
                 header("Location:index.php");
             }
-                ?>
-                        </tr>
+            ?>
             </tbody>
         </table>
     </section>

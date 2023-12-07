@@ -132,6 +132,7 @@
                 } ?>
             </tbody>
         </table>
+        <a class="btn btn-primary rounded p-2" href="../functions/generate_class_report.php?class_id=<?php echo $class_id ?>">Generate Report</a>
     </section>
 <?php
     } else {
