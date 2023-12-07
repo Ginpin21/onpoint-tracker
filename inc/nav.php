@@ -29,16 +29,19 @@ session_start();
     }
 
     .btn-primary {
-        width: 100%;
         padding: 8px 20px 8px 20px;
         letter-spacing: 1px;
     }
 
     .btn-danger {
-        width: 100%;
         padding: 8px 15px 8px 15px;
         letter-spacing: 1px;
     }
+
+    .bi-person-circle{
+        color: black;
+    }
+
 </style>
 
 <?php
