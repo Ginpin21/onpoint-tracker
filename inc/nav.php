@@ -1,13 +1,16 @@
-<!-- <?php
-        session_start();
-        ?> -->
+<?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+ini_set('display_errors', 1);
+session_start();
+?>
 
 <style>
-    *{
+    * {
         font-size: 18px;
         padding: 0;
         margin: 0;
     }
+
     .navbar {
         padding: 10px;
         position: sticky;
@@ -25,12 +28,13 @@
         margin-right: 10px;
     }
 
-    .btn-primary{
+    .btn-primary {
         width: 100%;
         padding: 8px 20px 8px 20px;
         letter-spacing: 1px;
     }
-    .btn-danger{
+
+    .btn-danger {
         width: 100%;
         padding: 8px 15px 8px 15px;
         letter-spacing: 1px;
