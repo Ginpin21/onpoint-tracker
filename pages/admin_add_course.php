@@ -108,7 +108,7 @@
 
 
     <?php
-    require_once("../inc/navbar.php");
+    require_once("../inc/nav.php");
     ?>
     <?php require_once('../inc/admin_sidebar.php'); ?>
 
