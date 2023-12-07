@@ -42,29 +42,9 @@ session_start();
 </style>
 
 <?php
-function generateuserdetails()
+function generate_nav()
 {
 ?>
-    <div class='d-flex align-items-center gap-3'>
-        <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
-        <span class='navbar-text' style='color: #003DB2; font-weight: bold;'>
-            <?php
-            echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
-            echo "<br>";
-            echo $_SESSION['role_name'] . "</span>";
-            ?>
-        </span>
-        <form class='form-inline'>
-            <a href=" ../pages/logout.php" class="btn btn-danger">Logout</a>
-        </form>
-    </div>
-<?php
-}
-?>
-
-<?php
-$currentPage = basename($_SERVER['PHP_SELF']);
-if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
         <a class='navbar-brand' href='index.php'>Onpoint Tracker</a>
         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
@@ -72,7 +52,7 @@ if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
         </button>
         <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
             <ul class='navbar-nav ml-auto'>
-                <li class='nav-item " . ($currentPage == ' index.php' ? 'active' : '' ) . "'>
+                <li class='nav-item " . ($currentPage==' index.php' ? 'active' : '' ) . "'>
                     <a class='nav-link active' href='index.php'>Home</a>
                 </li>
             </ul>
@@ -86,7 +66,12 @@ if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
         </div>
     </nav>
 <?php
-} else if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
+}
+?>
+
+<?php
+function generate_common_nav()
+{
 ?>
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
         <a class='navbar-brand' href='index.php'>Onpoint Tracker</a>
@@ -99,6 +84,42 @@ if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
                     <a class='nav-link active' href='index.php'>Home</a>
                 </li>
             </ul>
+<?php
+}
+?>
+
+<?php
+function generate_user_details()
+{
+?>
+    <div class='d-flex align-items-center gap-3'>
+        <i class=" bi bi-person-circle" style="font-size: 2rem;"></i>
+                    <span class='navbar-text' style='color: #003DB2; font-weight: bold;'>
+                        <?php
+                        echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
+                        echo "<br>";
+                        echo $_SESSION['role_name'] . "</span>";
+                        ?>
+                    </span>
+                    <form class='form-inline'>
+                        <a href=" ../pages/logout.php" class="btn btn-danger">Logout</a>
+                    </form>
+        </div>
+    <?php
+}
+    ?>
+
+    <?php
+    $currentPage = basename($_SERVER['PHP_SELF']);
+    if (($currentPage == 'index.php' || $currentPage == 'login.php') && !isset($_SESSION['logged_in'])) { ?>
+        <?php generate_nav(); ?>
+    <?php
+    } ?>
+
+    <?php
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
+    ?>
+        <?php generate_common_nav(); ?>
         <?php
         if ($_SESSION['role_name'] == 'Administrator') { ?>
             <ul class='navbar-nav ml-auto'>
@@ -107,9 +128,9 @@ if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
                 </li>
             </ul>
             <div class=" vertical-line">
-        </div>
-        </div>
-        <?php generateuserdetails(); ?>
+                    </div>
+                    </div>
+                    <?php generate_user_details(); ?>
     </nav>
 <?php
         } else if ($_SESSION['role_name'] == 'Student') { ?>
@@ -121,10 +142,10 @@ if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
             <div class=" vertical-line">
             </div>
             </div>
-            <?php generateuserdetails(); ?>
+            <?php generate_user_details(); ?>
             </nav>
         <?php
-        } else { ?>
+        } else if ($_SESSION['role_name'] == 'Teacher') { ?>
             <ul class='navbar-nav ml-auto'>
                 <li class='nav-item " . ($currentPage==' teacher_dashboard.php' ? 'active' : '' ) . "'>
                     <a class='nav-link active' href='teacher_dashboard.php'><b>Teacher Dashboard</b></a>
@@ -133,11 +154,13 @@ if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
             <div class=" vertical-line">
                     </div>
                     </div>
-                    <?php generateuserdetails(); ?>
+                    <?php generate_user_details(); ?>
                     </nav>
+                <?php
+            }
+                ?>
             <?php
         }
-    }
             ?>
             <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
