@@ -46,10 +46,7 @@ if ($currentPage == 'index.php' || $currentPage == 'login.php') { ?>
     </nav>
 <?php
 }
-?>
-
-<?php
-if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
+else if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
     $_SESSION['role_name'];
 ?>
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
