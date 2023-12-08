@@ -38,10 +38,9 @@ session_start();
         letter-spacing: 1px;
     }
 
-    .bi-person-circle{
+    .bi-person-circle {
         color: black;
     }
-
 </style>
 
 <?php
@@ -104,8 +103,8 @@ function generate_user_details()
                         echo $_SESSION['role_name'] . "</span>";
                         ?>
                     </span>
-                    <form class='form-inline'>
-                        <a href=" ../pages/logout.php" class="btn btn-danger">Logout</a>
+                    <form class='form-inline' action="../pages/logout.php">
+                        <input type="submit" value="Logout" class="btn btn-danger">
                     </form>
         </div>
     <?php
