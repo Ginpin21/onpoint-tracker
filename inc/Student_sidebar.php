@@ -29,7 +29,7 @@
 </style>
 <div class="sidebar">
     <a href="../pages/index.php">Home</a>
-    <a href="../pages/view_attendance.php">View Your Attendance History</a>
+    <a href="../pages/student_module_select.php">View Your Attendance History</a>
     <a href="../pages/view_attendance.php">Update Your Information</a>
     <a href="../pages/view_attendance.php">Request for Student Leave</a>
 </div>

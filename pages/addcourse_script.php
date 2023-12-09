@@ -12,3 +12,4 @@ if (isset($_POST['addcourse'])) {
         echo "<script>alert('Sorry an error occured')</script>";
     }
 }
+
