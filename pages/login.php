@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php require_once("../inc/navbar.php"); ?>
+    <?php require_once("../inc/nav.php"); ?>
     <div class="container">
         <div class="form">
             <h1>Login</h1>

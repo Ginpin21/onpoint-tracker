@@ -8,65 +8,64 @@
     <link rel="stylesheet" href="../inc/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <?php
-    if (isset($_GET["module_id"])) {
-        require_once('..\inc\head.php'); ?>
-        <style>
-            .navbar {
-                padding: 10px
-            }
+    require_once('..\inc\head.php'); ?>
+    <style>
+        .navbar {
+            padding: 10px
+        }
 
-            .navbar-nav .active a {
-                font-weight: bold;
-            }
+        .navbar-nav .active a {
+            font-weight: bold;
+        }
 
-            .name {
-                background-color: #B3BFB8;
-                display: flex;
-                gap: 20px;
-                padding: 10px;
-                border-radius: 10px;
-                margin-bottom: 10px;
-            }
+        .name {
+            background-color: #B3BFB8;
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
 
-            .box {
-                border-radius: 10px;
-                height: 40px;
-                width: 450px;
-                padding: 0 10px;
-            }
+        .box {
+            border-radius: 10px;
+            height: 40px;
+            width: 450px;
+            padding: 0 10px;
+        }
 
-            .btn-outline-primary,
-            .btn-outline-primary:active,
-            .btn-outline-primary:visited {
-                border-color: #003DB2 !important;
-                color: #003DB2 !important;
-            }
+        .btn-outline-primary,
+        .btn-outline-primary:active,
+        .btn-outline-primary:visited {
+            border-color: #003DB2 !important;
+            color: #003DB2 !important;
+        }
 
-            .btn-outline-primary:hover {
-                color: #FFFFFF !important;
-                background-color: #004ED2 !important;
-            }
+        .btn-outline-primary:hover {
+            color: #FFFFFF !important;
+            background-color: #004ED2 !important;
+        }
 
-            .btn-primary,
-            .btn-primary:active,
-            .btn-primary:visited {
-                background-color: #003DB2 !important;
-            }
+        .btn-primary,
+        .btn-primary:active,
+        .btn-primary:visited {
+            background-color: #003DB2 !important;
+        }
 
-            .btn-primary:hover {
-                background-color: #004ED2 !important;
-            }
+        .btn-primary:hover {
+            background-color: #004ED2 !important;
+        }
 
-            .container {
-                padding-left: 20%;
-            }
+        .container {
+            padding-left: 20%;
+        }
 
-            .container-fluid {
-                top: 0;
-                position: fixed;
-                z-index: 1000;
-            }
-        </style>
+        .container-fluid {
+            top: 0;
+            position: fixed;
+            z-index: 1000;
+        }
+    </style>
 </head>
 
 <body>
@@ -77,58 +76,10 @@
     ?>
 
     <section class="container">
-        <?php
-        $module_id = $_GET["module_id"];
-        $module_name = "";
-        if ($result = mysqli_query($conn, "SELECT module_name from module where module_id=$module_id")) {
-            $row = mysqli_fetch_assoc($result);
-            $module_name = $row["module_name"];
-        }
-
-        ?>
         <h1 class="mb-5">
-            <?php echo $module_name; ?> Classes
+            Classes
         </h1>
-        <h3>Create Class </h3>
-        <form class="shadow px-5 py-3 rounded" method="POST" action="../functions/create_class_script.php">
-            <input value="<?php echo $module_id; ?>" type="hidden" name="module_id">
-            <div class="row">
-                <div class="col-6">
-                    <div>
-                        <label for="class_name">Class Name</label><br>
-                        <input class="box" placeholder="eg: Introduction to Scrum" type="text" name="class_name" required>
-                    </div>
-                </div>
-
-                <div class="col-6">
-                    <div>
-                        <label for="class_location">Class Location</label><br>
-                        <input class="box" placeholder="eg: Classroom 5" type="text" name="class_location" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <div>
-                        <label for="class_date">Class Date</label><br>
-                        <input class="box" type="date" name="class_date" value="<?php echo date('Y-m-d'); ?>">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div>
-                        <label for="class_time">Class Time</label><br>
-                        <input class="box" type="time" name="class_time" value="09:30">
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <button class="mt-3 btn btn-primary" type="Submit" name="submit" value="submit">Create Class</button>
-            </div>
-
-        </form>
-        <h3 class="mt-5">All Classes for <?php echo $module_name ?></h3>
+        <h3 class="mt-5">All Classes for <?php echo $_SESSION["first_name"] . " " . $_SESSION["last_name"] ?></h3>
 
         <table class="table">
             <thead>
@@ -155,13 +106,13 @@
                         Absent
                     </th>
                     <th scope="col">
-                    </th>
-                    <th scope="col">
+                        Actions
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <?php
+                $tutor_id = $_SESSION["user_id"];
                 $select_query = "SELECT
                 class.class_id,
                 class.class_date,
@@ -172,16 +123,18 @@
                 SUM(attendance_status='L') as late,
                 SUM(attendance_status='A') as absent,
                 class.class_module_id
-             FROM
-             class
-             JOIN
-                 attendance
-             WHERE attendance.attendance_class_id=class.class_id
-             AND class.class_module_id=$module_id
-             GROUP BY
-                 attendance_class_id
-             ORDER BY
-                 class.class_date DESC;";
+                FROM
+                    class
+                JOIN
+                    attendance,module
+                WHERE
+                    attendance.attendance_class_id=class.class_id
+                    and class.class_module_id=module.module_id
+                    and module.module_tutor_id = $tutor_id
+                GROUP BY
+                    attendance_class_id
+                ORDER BY
+                    class.class_date DESC;";
                 $get_query = mysqli_query($conn, $select_query);
                 if ($get_query) {
                     $result = mysqli_fetch_all($get_query);
@@ -211,19 +164,14 @@
                             </td>
                             <td>
                                 <a class="btn btn-primary" href="teacher_edit_attendance.php?class_id=<?php echo $attendance[0] ?>">Edit</a>
-                            </td>
-                            <td>
                                 <a class="btn btn-outline-primary" href="teacher_view_attendance.php?class_id=<?php echo $attendance[0] ?>">View</a>
                             </td>
                         </tr>
 
-            <?php
+                <?php
                     }
                 }
-            } else {
-                header("Location:index.php");
-            }
-            ?>
+                ?>
             </tbody>
         </table>
     </section>

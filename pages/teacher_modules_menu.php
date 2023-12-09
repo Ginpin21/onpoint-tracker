@@ -73,7 +73,7 @@
 
 <body>
     <div class="container-fluid">
-        <?php require_once('../inc/navbar.php'); ?>
+        <?php require_once('../inc/nav.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {

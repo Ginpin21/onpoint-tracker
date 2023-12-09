@@ -20,19 +20,18 @@
 
 <body>
     <?php
-    session_start();
+    require_once('../inc/nav.php');
+    ?>
+    <?php
+    require_once('../inc/admin_sidebar.php');
+    ?>
+
+    <?php
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Administrator") {
     ?>
-            <?php
-            require_once('../inc/navbar.php');
-            ?>
-            <?php
-            require_once('../inc/admin_sidebar.php');
-            ?>
-
             <section class="dashboard-section">
-                <h1 class="text-center">Admin Dashboard</h1>
+                <h1 class="text-center b4">Admin Dashboard</h1>
             </section>
     <?php
         } else {
