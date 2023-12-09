@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <title>Student Dashboard</title>
     <?php
     require_once('../inc/head.php')
     ?>
@@ -9,7 +10,7 @@
 
 <body class="">
     <?php
-    require_once('..\inc\navbar.php');
+    require_once('../inc/nav.php');
     ?>
     <?php
     require_once('..\inc\Student_sidebar.php');

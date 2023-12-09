@@ -64,48 +64,52 @@
 
 <body>
     <?php
-    require_once("../inc/navbar.php");
+    require_once("../inc/nav.php");
     ?>
-        <!-- <?php
-        require_once("../inc/admin_sidebar.php");
-        ?> -->
-    <div class="order-form m-4">
-        <div class="container pt-4">
-            <div class="row">
-                <div class="col-12 px-4">
-                    <h1 style="text-align: center;">USER DETAILS</h1>
-                </div>
-                <div>
-                    <div>
+
+    <?php
+    session_start();
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        if ($_SESSION["role_name"] == "Administrator") {
+    ?>
+
+            <div class="order-form m-4">
+                <div class="container pt-4">
+                    <div class="row">
+                        <div class="col-12 px-4">
+                            <h1 style="text-align: center;">USER DETAILS</h1>
+                        </div>
                         <div>
-                            <table class="table table-striped table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">FNAME</th>
-                                        <th scope="col">LNAME</th>
-                                        <th scope="col">EMAIL</th>
-                                        <th scope="col">PASSWORD</th>
-                                        <th scope="col">ROLE ID</th>
-                                        <th scope="col">COURSE ID</th>
-                                        <th scope="col">ACTIONS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    require("../inc/connection.php");
-                                    $qry = "Select * from user";
-                                    $result = mysqli_query($conn, $qry);
-                                    $final = mysqli_num_rows($result);
-                                    if ($final > 0) {
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $id = $row['user_id'];
-                                            $fname = $row['user_fname'];
-                                            $lname = $row['user_lname'];
-                                            $email = $row['user_email'];
-                                            $role_id = $row['user_role_id'];
-                                            $course_id = $row['user_course_id'];
-                                            echo "<tr>
+                            <div>
+                                <div>
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">FNAME</th>
+                                                <th scope="col">LNAME</th>
+                                                <th scope="col">EMAIL</th>
+                                                <th scope="col">PASSWORD</th>
+                                                <th scope="col">ROLE ID</th>
+                                                <th scope="col">COURSE ID</th>
+                                                <th scope="col">ACTIONS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            require("../inc/connection.php");
+                                            $qry = "Select * from user";
+                                            $result = mysqli_query($conn, $qry);
+                                            $final = mysqli_num_rows($result);
+                                            if ($final > 0) {
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    $id = $row['user_id'];
+                                                    $fname = $row['user_fname'];
+                                                    $lname = $row['user_lname'];
+                                                    $email = $row['user_email'];
+                                                    $role_id = $row['user_role_id'];
+                                                    $course_id = $row['user_course_id'];
+                                                    echo "<tr>
                                 <form method='post' action='update_user.php'>
                                 <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly</td>
                                 <td><input type='text' name='fname' value='$fname' size='15' style='text-align: center;'>  </td>
@@ -117,19 +121,27 @@
                                 <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
                                 </form>
                                 </tr>";
-                                        }
-                                    } else {
-                                        echo "<script> The table is empty </script>";
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
+                                                }
+                                            } else {
+                                                echo "<script> The table is empty </script>";
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+    <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    }
+    ?>
 </body>
 
 </html>

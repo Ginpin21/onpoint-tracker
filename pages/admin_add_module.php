@@ -78,8 +78,8 @@
         } */
         .container {
             /* padding-left: 400px; */
-            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);   
-            width: 70%;    
+            box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
+            width: 70%;
             margin: 100px 100px 100px 500px;
             height: 50vh;
             padding: 50px 50px 50px 50px;
@@ -118,71 +118,87 @@
 
 
 
-    <?php require_once('..\inc\navbar.php'); ?>
+    <?php
+    require_once("../inc/nav.php");
+    ?>
     <?php require_once('../inc/admin_sidebar.php'); ?>
 
-    <section class="container">
+    <?php
+    session_start();
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        if ($_SESSION["role_name"] == "Administrator") {
+    ?>
 
-        <h1 class="mb-5">Add Module</h1>
-        <form action="addmodule_script.php" method="post">
-            <div class="row">
-                <div>
-                    <label for=""> Module name</label><br>
-                    <input class="box box2" placeholder="eg: SWE6202 - Agile Programming" name="modulename">
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <label for=""> Module Course </label> <br>
-                    <select class="box" name="module_course">
-                        <?php
-                        require("../inc/connection.php");
-                        $qry = "Select course_id, course_name from course";
-                        $execute = mysqli_query($conn, $qry);
-                        $final = mysqli_num_rows($execute);
-                        if ($final > 0) {
-                            while ($row = mysqli_fetch_array($execute)) {
-                                $id = $row['course_id'];
-                                $name = $row['course_name'];
-                                echo "<option value='$id'>$name</option>";
-                            }
-                        } else {
-                            echo "<script> The table is empty </script>";
-                        }
-                        ?>
+            <section class="container">
 
-                    </select>
-                </div>
-                <div class="col">
-                    <label> Module Tutor </label> <br>
-                    <select class="box box2" name="module_tutor">
-                        <?php
-                        require("../inc/connection.php");
-                        $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3";
-                        $execute = mysqli_query($conn, $qry);
-                        $final = mysqli_num_rows($execute);
-                        if ($final > 0) {
-                            while ($row = mysqli_fetch_array($execute)) {
-                                $id = $row['user_id'];
-                                $fname = $row['user_fname'];
-                                $lname = $row['user_lname'];
-                                echo "<option value='$id'>$fname $lname</option>";
-                            }
-                        } else {
-                            echo "<script> The table is empty </script>";
-                        }
-                        ?>
+                <h1 class="mb-5">Add Module</h1>
+                <form action="addmodule_script.php" method="post">
+                    <div class="row">
+                        <div>
+                            <label for=""> Module name</label><br>
+                            <input class="box box2" placeholder="eg: SWE6202 - Agile Programming" name="modulename">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label for=""> Module Course </label> <br>
+                            <select class="box" name="module_course">
+                                <?php
+                                require("../inc/connection.php");
+                                $qry = "Select course_id, course_name from course";
+                                $execute = mysqli_query($conn, $qry);
+                                $final = mysqli_num_rows($execute);
+                                if ($final > 0) {
+                                    while ($row = mysqli_fetch_array($execute)) {
+                                        $id = $row['course_id'];
+                                        $name = $row['course_name'];
+                                        echo "<option value='$id'>$name</option>";
+                                    }
+                                } else {
+                                    echo "<script> The table is empty </script>";
+                                }
+                                ?>
 
-                    </select>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <button class="btn btn-primary" name="addmodule">
-                    Add Module
-                </button>
-            </div>
-        </form>
-    </section>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label> Module Tutor </label> <br>
+                            <select class="box box2" name="module_tutor">
+                                <?php
+                                require("../inc/connection.php");
+                                $qry = "Select user_id, user_fname, user_lname from user where user_role_id=3";
+                                $execute = mysqli_query($conn, $qry);
+                                $final = mysqli_num_rows($execute);
+                                if ($final > 0) {
+                                    while ($row = mysqli_fetch_array($execute)) {
+                                        $id = $row['user_id'];
+                                        $fname = $row['user_fname'];
+                                        $lname = $row['user_lname'];
+                                        echo "<option value='$id'>$fname $lname</option>";
+                                    }
+                                } else {
+                                    echo "<script> The table is empty </script>";
+                                }
+                                ?>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <button class="btn btn-primary" name="addmodule">
+                            Add Module
+                        </button>
+                    </div>
+                </form>
+            </section>
+    <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    }
+    ?>
 
 
 
