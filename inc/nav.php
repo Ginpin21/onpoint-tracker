@@ -5,16 +5,16 @@ session_start();
 ?>
 
 <style>
-    * {
+    /* * {
         font-size: 18px;
         padding: 0;
         margin: 0;
-    }
+    } */
 
     .navbar {
         padding: 10px;
         position: sticky;
-        height: 10vh;
+        height: 8vh;
     }
 
     .navbar-nav .active a {
