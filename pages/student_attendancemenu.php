@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="card col text-center" style="width: 18rem;">
-        <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1616156027751-fc9a850fdc9b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">ERP</h5>
           <p class="card-text">SWE 6222 - ERP.</p>
@@ -96,7 +96,7 @@
       </div>
       <!-- <div class="row"> -->
       <div class="card col text-center" style="width: 18rem;">
-        <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1594729095022-e2f6d2eece9c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Data Structure</h5>
           <p class="card-text">SWE 6102 - Data Structure.</p>
@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="card col text-center" style="width: 18rem;">
-        <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1616156027751-fc9a850fdc9b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Python Programming</h5>
           <p class="card-text">SWE 6102 - Python Programming.</p>
@@ -112,7 +112,7 @@
         </div>
       </div>
       <div class="card col text-center" style="width: 18rem;">
-        <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1594729095022-e2f6d2eece9c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Web Development</h5>
           <p class="card-text">SWE 6102 - Web Development.</p>
@@ -122,7 +122,6 @@
       
       
       <div class="card col text-center" style="width: 18rem;">
-        <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Overall Attendance</h5>
           <p class="card-text">Overall Attendance</p>

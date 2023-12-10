@@ -1,7 +1,7 @@
 <!-- student_attendance.php -->
 
 <?php
-require_once('db_onpoint-tracker.php'); // Replace with the actual filename for your database connection code
+require_once('db_onpoint-tracker.php'); // Replace with the actual filename for your database connection code also i can link it to mark_attendance database
 
 // Assuming you get the selected course ID from the student_menu page
 $selectedCourseId = isset($_GET['course_id']) ? $_GET['course_id'] : 0;
