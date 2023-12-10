@@ -58,8 +58,22 @@
             padding-left: 300px;
         }
 
-        h1{
+        h1 {
             text-align: center;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-body {
+            flex: 1;
+        }
+
+        .btn-primary {
+            margin-top: auto;
         }
     </style>
 </head>
@@ -70,7 +84,7 @@
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Administrator") { ?>
             <section class="container">
-            <h1 class="mb-5">List of Modules</h1>
+                <h1 class="mb-5">List of Modules</h1>
                 <div class="grid mt-5">
                     <?php
                     $tutor_id = $_SESSION["user_id"];
@@ -80,9 +94,9 @@
                     if ($get_query) {
                         $result = mysqli_fetch_all($get_query);
                         foreach ($result as $module) { ?>
-                            <div class="card" style="min-width: 18rem;">
+                            <div class="card" style="min-width: 20rem;">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSidSLsWeNsdEBZS_EPIMR0YuzI5bE6nzXWBA&usqp=CAU" class="card-img-top" alt="...">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title"><?php echo "$module[1] " ?></h5>
                                     <p class="card-subtitle"><b>Tutor: </b><?php echo "$module[2] $module[3]" ?></p>
                                     <p class="card-text"><b>Course: </b><?php echo "$module[4]" ?></p>

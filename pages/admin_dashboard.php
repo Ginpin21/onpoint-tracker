@@ -15,6 +15,29 @@
             width: 75%;
             float: right;
         }
+
+        .box {
+            outline: none;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            margin: 20px;
+            padding: 20px;
+            width: 30%;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .bi {
+            font-size: 40px;
+            color: #007bff;
+        }
+
+        .text-center {
+            margin: 20px 0;
+        }
     </style>
 </head>
 
@@ -31,8 +54,117 @@
         if ($_SESSION["role_name"] == "Administrator") {
     ?>
             <section class="dashboard-section">
-                <h1 class="text-center b4">Admin Dashboard</h1>
+                <h1 class="text-center b4">Administrator Dashboard</h1>
             </section>
+
+
+
+            <div class="container-fluid">
+                <div class="row row-cols">
+                    <div class="col box">
+                        Admins <br>
+                        <?php
+                        require('../inc/connection.php');
+                        $qry = "SELECT COUNT(user_role_id) AS NumberOfAdmin FROM user where user_role_id=1;";
+                        $execute = mysqli_query($conn, $qry);
+                        if ($execute > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $no_of_admin = $row['NumberOfAdmin'];
+                                echo "$no_of_admin";
+                            }
+                        }
+                        ?>
+                        <i class="bi bi-person-video3"></i>
+                    </div>
+                    <div class="col box">
+                        Students <br>
+                        <?php
+                        require('../inc/connection.php');
+                        $qry = "SELECT COUNT(user_role_id) AS NumberOfStudent FROM user where user_role_id=2;";
+                        $execute = mysqli_query($conn, $qry);
+                        if ($execute > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $no_of_student = $row['NumberOfStudent'];
+                                echo "$no_of_student";
+                            }
+                        }
+                        ?>
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+
+                    <div class="col box">
+                        Teachers <br>
+                        <?php
+                        require('../inc/connection.php');
+                        $qry = "SELECT COUNT(user_role_id) AS NumberOfTeacher FROM user where user_role_id=3;";
+                        $execute = mysqli_query($conn, $qry);
+                        if ($execute > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $no_of_teacher = $row['NumberOfTeacher'];
+                                echo "$no_of_teacher";
+                            }
+                        }
+                        ?>
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+
+                    <div class="col box">Terms <br> 3 <i class="bi bi-calendar"></i></div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+                <div class="row row-cols">
+                    <div class="col box">
+                        Courses <br>
+                        <?php
+                        require('../inc/connection.php');
+                        $qry = "SELECT COUNT(course_id) AS NumberOfCourses FROM course;";
+                        $execute = mysqli_query($conn, $qry);
+                        if ($execute > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $no_of_course = $row['NumberOfCourses'];
+                                echo "$no_of_course";
+                            }
+                        }
+                        ?>
+                        <i class="bi bi-hdd-stack"></i>
+                    </div>
+                    <div class="col box">
+                        Modules <br>
+                        <?php
+                        require('../inc/connection.php');
+                        $qry = "SELECT COUNT(module_id) AS NumberOfModules FROM module;";
+                        $execute = mysqli_query($conn, $qry);
+                        if ($execute > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $no_of_modules = $row['NumberOfModules'];
+                                echo "$no_of_modules";
+                            }
+                        }
+                        ?>
+                        <i class="bi bi-hdd-stack"></i>
+                    </div>
+
+                    <div class="col box">
+                        Classes <br>
+                        <?php
+                        require('../inc/connection.php');
+                        $qry = "SELECT COUNT(class_id) AS NumberOfClass FROM class;";
+                        $execute = mysqli_query($conn, $qry);
+                        if ($execute > 0) {
+                            while ($row = mysqli_fetch_array($execute)) {
+                                $no_of_class = $row['NumberOfClass'];
+                                echo "$no_of_class";
+                            }
+                        }
+                        ?>
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <div class="col box">Student Attendance<br> 40 <i class="bi bi-card-checklist"></i> </div>
+                </div>
+            </div>
+
     <?php
         } else {
             header("Location:index.php");
