@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Screen</title>
-  <link rel="stylesheet" href="../pages/student_home.css"> //removed inc before /student 
+  <link rel="stylesheet" href="../pages/student_home.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <?php require_once('..\pages\student_navbar.php'); ?>
   <style>
@@ -72,9 +72,8 @@
 
 
 
-  <?php require_once('..\inc\navbar.php'); ?>
-  <?php require_once('..\pages\student_sidebar.php'); ?> //Ask about pages and inc which is changed to pages
-
+  <?php require_once('..\pages\student_navbar.php'); ?>
+  <?php require_once('..\pages\student_sidebar.php'); ?> 
   <section class="container">
 
     <h1>Attendance</h1>
@@ -90,8 +89,8 @@
       <div class="card col text-center" style="width: 18rem;">
         <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Under graduate Project</h5>
-          <p class="card-text">SWE 6222 - Under graduate Project.</p>
+          <h5 class="card-title">ERP</h5>
+          <p class="card-text">SWE 6222 - ERP.</p>
           <a href="coursetwo.php" class="btn btn-primary">Check Attendance</a>
         </div>
       </div>
@@ -99,19 +98,28 @@
       <div class="card col text-center" style="width: 18rem;">
         <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Machine Learning</h5>
-          <p class="card-text">SWE 6102 - Machine Learning.</p>
+          <h5 class="card-title">Data Structure</h5>
+          <p class="card-text">SWE 6102 - Data Structure.</p>
           <a href="coursethree.php" class="btn btn-primary">Check Attendance</a>
         </div>
       </div>
       <div class="card col text-center" style="width: 18rem;">
         <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Software Engineering</h5>
-          <p class="card-text">SWE 6102 - Machine Learning.</p>
+          <h5 class="card-title">Python Programming</h5>
+          <p class="card-text">SWE 6102 - Python Programming.</p>
           <a href="coursefour.php" class="btn btn-primary">Check Attendance</a>
         </div>
       </div>
+      <div class="card col text-center" style="width: 18rem;">
+        <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text">SWE 6102 - Web Development.</p>
+          <a href="coursefour.php" class="btn btn-primary">Check Attendance</a>
+        </div>
+      </div>
+      
       
       <div class="card col text-center" style="width: 18rem;">
         <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
