@@ -54,8 +54,6 @@
 
         .container {
             padding-left: 300px;
-            position: relative;
-            z-index: -1;
         }
 
         h1 {
