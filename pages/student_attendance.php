@@ -1,72 +1,56 @@
-<!-- student_attendance.php -->
-
 <?php
-require_once('db_onpoint-tracker.php'); // Replace with the actual filename for your database connection code also i can link it to mark_attendance database
+// Include your database connection file
+include('onpoint-tracker');
 
-// Assuming you get the selected course ID from the student_menu page
-$selectedCourseId = isset($_GET['course_id']) ? $_GET['course_id'] : 0;
+// Replace with the actual student ID (you need to get this from the logged-in user)
+$attendanceId = 1;
 
-// Fetch attendance data for the selected course
-$attendanceQuery = "
-    SELECT a.date, c.class_name, a.attendance_status
-    FROM attendance a
-    JOIN class c ON a.attendance_class_id = c.class_id
-    WHERE a.attendance_student_id = :student_id
-      AND c.class_module_id IN (SELECT module_id FROM module WHERE module_course_id = :course_id)";
-$attendanceResult = $conn->prepare($attendanceQuery);
-$attendanceResult->bindParam(':student_id', $studentId); // Replace with the actual student ID
-$attendanceResult->bindParam(':course_id', $selectedCourseId);
+// Replace with the actual course ID for Agile Programming
+$courseId = 1;
+
+// Fetch attendance for the specified course
+$attendanceQuery = "SELECT * FROM attendance WHERE attendance_student_id = :student_id AND attendance_class_id = :course_id";
+$attendanceResult = $pdo->prepare($attendanceQuery);
+$attendanceResult->bindParam(':attendance_id', $attendanceId);
+$attendanceResult->bindParam(':course_id', $courseId);
 $attendanceResult->execute();
-
-// Function to get class name based on class ID
-function getClassName($classId) {
-    global $conn;
-    $classNameQuery = "SELECT class_name FROM class WHERE class_id = :class_id";
-    $classNameResult = $conn->prepare($classNameQuery);
-    $classNameResult->bindParam(':class_id', $classId);
-    $classNameResult->execute();
-    $row = $classNameResult->fetch(PDO::FETCH_ASSOC);
-    return $row ? $row['class_name'] : 'Unknown';
-}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Include your custom CSS file if needed -->
-    <title>Student Attendance</title>
+    <!-- Add your head content here -->
 </head>
+
 <body>
+    <?php require_once('../pages/student_navbar.php'); ?>
+    <?php require_once('../pages/student_sidebar.php'); ?>
 
-<div class="container">
-    <h2>Student Attendance</h2>
+    <section class="container">
+        <h1>Attendance</h1>
 
-    <!-- Display attendance data here -->
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Class Name</th>
-            <th>Attendance Status</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php while ($row = $attendanceResult->fetch(PDO::FETCH_ASSOC)): ?>
-            <tr>
-                <td><?= $row['date']; ?></td>
-                <td><?= $row['class_name']; ?></td>
-                <td><?= $row['attendance_status']; ?></td>
-            </tr>
-        <?php endwhile; ?>
-        </tbody>
-    </table>
-</div>
+        <!-- Display attendance for Agile Programming -->
+        <div class="card col text-center" style="width: 18rem;">
+            <img src="https://www.krasamo.com/wp-content/uploads/agile-01-scaled.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Agile</h5>
+                <p class="card-text">SWE 6202 - Agile Programming.</p>
+                <!-- Display attendance data -->
+                <ul>
+                    <?php while ($row = $attendanceResult->fetch(PDO::FETCH_ASSOC)) : ?>
+                        <li><?= $row['attendance_status'] . ' - ' . $row['attendance_date']; ?></li>
+                    <?php endwhile; ?>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Add your footer content here -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
 </html>
