@@ -32,7 +32,6 @@
 
         .bi {
             font-size: 40px;
-            color: #007bff;
         }
 
         .text-center {
@@ -74,7 +73,7 @@
                             }
                         }
                         ?>
-                        <i class="bi bi-person-video3"></i>
+                        <i class="bi bi-person-video3" style="color: #007bff;"></i>
                     </div>
                     <div class="col box">
                         Students <br>
@@ -89,7 +88,7 @@
                             }
                         }
                         ?>
-                        <i class="bi bi-people-fill"></i>
+                        <i class="bi bi-people-fill" style="color:darkmagenta"></i>
                     </div>
 
                     <div class="col box">
@@ -105,10 +104,10 @@
                             }
                         }
                         ?>
-                        <i class="bi bi-people-fill"></i>
+                        <i class="bi bi-people-fill" style="color: red;"></i>
                     </div>
 
-                    <div class="col box">Terms <br> 3 <i class="bi bi-calendar"></i></div>
+                    <div class="col box">Terms <br> 3 <i class="bi bi-calendar" style="color: grey;"></i></div>
                 </div>
             </div>
 
@@ -128,7 +127,7 @@
                             }
                         }
                         ?>
-                        <i class="bi bi-hdd-stack"></i>
+                        <i class="bi bi-hdd-stack" style="color: deeppink;"></i>
                     </div>
                     <div class="col box">
                         Modules <br>
@@ -143,7 +142,7 @@
                             }
                         }
                         ?>
-                        <i class="bi bi-hdd-stack"></i>
+                        <i class="bi bi-hdd-stack" style="color: darkorange;"></i>
                     </div>
 
                     <div class="col box">
@@ -159,9 +158,9 @@
                             }
                         }
                         ?>
-                        <i class="bi bi-book"></i>
+                        <i class="bi bi-book" style="color: green;"></i>
                     </div>
-                    <div class="col box">Student Attendance<br> 40 <i class="bi bi-card-checklist"></i> </div>
+                    <div class="col box">Student Attendance<br> 40 <i class="bi bi-card-checklist" style="color: yellow;"></i> </div>
                 </div>
             </div>
 
