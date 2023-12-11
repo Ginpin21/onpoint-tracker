@@ -29,6 +29,7 @@
                         <i class="bi bi-eye-slash-fill" id="eye" onclick="toggle()"></i>
                     </span>
                 </div>
+                <div id="error-message" class="error-message"></div>
                 <button type="submit" class="login-btn" name="Login">Login</button>
                 <p>Please contact the admin if you forgot your password</p>
             </form>

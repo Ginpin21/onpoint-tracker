@@ -7,8 +7,8 @@ if (isset($_POST['Login'])) {
     $result = mysqli_query($conn, $sql);
     $final = mysqli_num_rows($result);
     if ($final > 0) {
-        while ($row = mysqli_fetch_array($result)) { 
-            session_start(); 
+        while ($row = mysqli_fetch_array($result)) {
+            session_start();
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['first_name'] = $row['user_fname'];
@@ -17,17 +17,19 @@ if (isset($_POST['Login'])) {
             $_SESSION['course_id'] = $row['user_course_id'];
             $_SESSION['role_name'] = $row['role_name'];
             if ($_SESSION['role_name'] == 'Administrator') {
-                header("Location: admin_dashboard.php");
+                echo "<script>window.location.href = 'admin_dashboard.php';</script>";
             } elseif ($_SESSION['role_name'] == 'Student') {
-                header("Location: student_dashboard.php");
+                echo "<script>window.location.href = 'student_dashboard.php';</script>";
             } elseif ($_SESSION['role_name'] == 'Teacher') {
-                header("Location: teacher_dashboard.php");
+                echo "<script>window.location.href = 'teacher_dashboard.php';</script>";
             } else {
-                header("Location: index.php");
+                echo "<script>window.location.href = 'index.php';</script>";
             }
         }
-    } else {
-        echo "<script>alert('Please enter your correct details')</script>";
-        header("Location:login.php");
+    }
+    if($email!='user_email' || $pass!='user_password'){
+        echo "<script> alert('Invalid Email or password! Try Again'); </script>";
+        echo "<script>window.location.href = 'login.php';</script>";
     }
 }
+

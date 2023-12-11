@@ -68,6 +68,10 @@
     ?>
 
     <?php
+    require_once('../inc/new_sidebar_admin.php');
+    ?>
+
+    <?php
     session_start();
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Administrator") {
@@ -111,7 +115,7 @@
                                                     $course_id = $row['user_course_id'];
                                                     echo "<tr>
                                 <form method='post' action='update_user.php'>
-                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly</td>
+                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly </td>
                                 <td><input type='text' name='fname' value='$fname' size='15' style='text-align: center;'>  </td>
                                 <td><input type='text' name='lname' value='$lname' size='15' style='text-align: center;'>  </td>
                                 <td><input type='text' name='email' value='$email' size='25' style='text-align: center;'>  </td>

@@ -27,7 +27,6 @@
             }
         }
     </script>
-
 </head>
 
 
@@ -37,7 +36,7 @@
     require_once("../inc/nav.php");
     ?>
     <?php
-    require_once('../inc/admin_sidebar.php');
+     require_once('../inc/new_sidebar_admin.php');
     ?>
 
     <?php
