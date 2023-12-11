@@ -97,7 +97,7 @@
         .btn-primary {
             background-color: #003DB2;
             width: 50%;
-            margin-left: 280px;
+            margin: 10px;
             border-radius: 10px;
         }
     </style>
@@ -110,7 +110,7 @@
     <?php
     require_once("../inc/nav.php");
     ?>
-    <?php require_once('../inc/admin_sidebar.php'); ?>
+    <?php require_once('../inc/new_sidebar_admin.php'); ?>
 
     <?php
     session_start();

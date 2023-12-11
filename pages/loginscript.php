@@ -27,5 +27,9 @@ if (isset($_POST['Login'])) {
             }
         }
     }
+    if($email!='user_email' || $pass!='user_password'){
+        echo "<script> alert('Invalid Email or password! Try Again'); </script>";
+        echo "<script>window.location.href = 'login.php';</script>";
+    }
 }
 

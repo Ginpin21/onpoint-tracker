@@ -10,11 +10,11 @@
     require_once('../inc/head.php');
     ?>
     <style>
-        .dashboard-section {
+        /* .dashboard-section {
             padding: 10px;
             width: 75%;
             float: right;
-        }
+        } */
 
         .box {
             outline: none;
@@ -45,7 +45,7 @@
     require_once('../inc/nav.php');
     ?>
     <?php
-    require_once('../inc/admin_sidebar.php');
+    require_once('../inc/new_sidebar_admin.php');
     ?>
 
     <?php

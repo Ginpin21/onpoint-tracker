@@ -22,7 +22,6 @@
 
         .name {
             background-color: #B3BFB8;
-
             display: flex;
             gap: 20px;
             padding: 10px;
@@ -49,13 +48,14 @@
 
         .grid {
             display: grid;
-            /* grid-template-columns: minmax(1fr,2); */
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
         .container {
             padding-left: 300px;
+            position: relative;
+            z-index: -1;
         }
 
         h1 {
@@ -80,7 +80,7 @@
 
 <body>
     <?php require_once('../inc/nav.php'); ?>
-    <?php require_once('../inc/admin_sidebar.php');
+    <?php require_once('../inc/new_sidebar_admin.php');
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Administrator") { ?>
             <section class="container">

@@ -30,10 +30,15 @@ session_start();
     .btn-danger {
         padding: 8px 15px 8px 15px;
         letter-spacing: 1px;
+        margin-right: 5px;
     }
 
     .bi-person-circle {
         color: black;
+    }
+
+    .navbar-brand{
+        margin-left: 50px;
     }
 </style>
 
