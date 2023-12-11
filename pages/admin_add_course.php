@@ -99,6 +99,7 @@
             width: 50%;
             margin: 10px;
             border-radius: 10px;
+            text-align: center;
         }
     </style>
 </head>

@@ -14,7 +14,7 @@
         }
 
         .sidebaractive {
-            transform: translate(0,0) !important;
+            transform: translate(0%) !important;
         }
 
         .sidebar {
@@ -56,17 +56,8 @@
         .nav-header {
             position: absolute;
             left: 10px;
-            top: 10px;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .closebtn {
-            position: absolute;
-            right: 15px;
-            font-size: 30px;
-            top: 0px;
-            color: #fff;
+            top: 16px;
+            font-size: 25px;
             cursor: pointer;
         }
 
@@ -81,7 +72,7 @@
         <i class="fa fa-bars"></i>
     </div>
 
-    <div class="sidebar ">
+    <div class="sidebar">
 
         <ul class="nav-links">
             <li><a href="../pages/admin_dashboard.php">Home</a></li>

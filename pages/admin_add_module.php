@@ -108,7 +108,8 @@
         .btn-primary {
             background-color: #003DB2;
             width: 50%;
-            margin: 10px;
+            margin: 1px;
+            text-align: center;
             border-radius: 10px;
         }
     </style>
