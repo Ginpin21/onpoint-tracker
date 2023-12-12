@@ -83,7 +83,7 @@
         <div class="card-body">
           <h5 class="card-title">Agile</h5>
           <p class="card-text">SWE 6202 - Agile Programming.</p>
-          <a href="courseone.php" class="btn btn-primary">Check Attendance</a>
+          <a href="student_agileattendance.php" class="btn btn-primary">Check Attendance</a>
         </div>
       </div>
       <div class="card col text-center" style="width: 18rem;">
@@ -91,7 +91,7 @@
         <div class="card-body">
           <h5 class="card-title">ERP</h5>
           <p class="card-text">SWE 6222 - ERP.</p>
-          <a href="coursetwo.php" class="btn btn-primary">Check Attendance</a>
+          <a href="student_erp_class.php" class="btn btn-primary">Check Attendance</a>
         </div>
       </div>
       <!-- <div class="row"> -->
