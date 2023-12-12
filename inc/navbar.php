@@ -55,6 +55,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     </div>
     <div class='d-flex align-items-center gap-4 px-4'>
         <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) { ?>
+            <i class=" bi bi-person-circle" style="font-size: 2rem;"></i>
             <div class="d-flex flex-column align-items-start" style="color: #003DB2; font-weight: bold;">
                 <?php
                 $user_fullname = $_SESSION["first_name"] . " " . $_SESSION["last_name"];
@@ -76,3 +77,4 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">

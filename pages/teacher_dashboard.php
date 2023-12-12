@@ -17,7 +17,7 @@
 
 <body class="">
     <?php
-    require_once('../inc/nav.php');
+    require_once('../inc/navbar.php');
     ?>
     <main class="">
         <?php

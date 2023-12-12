@@ -81,7 +81,7 @@
 
 <body>
     <div class="container-fluid">
-        <?php require_once('..\inc\nav.php'); ?>
+        <?php require_once('..\inc\navbar.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php'); ?>
     <section class="container">

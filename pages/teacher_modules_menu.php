@@ -73,7 +73,7 @@
 
 <body>
     <div class="container-fluid">
-        <?php require_once('../inc/nav.php'); ?>
+        <?php require_once('../inc/navbar.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
@@ -96,8 +96,7 @@
                                     <h5 class="card-title"><?php echo "$module[1] " ?></h5>
                                     <p class="card-subtitle"><b>Tutor: </b><?php echo "$module[2] $module[3]" ?></p>
                                     <p class="card-text"><b>Course: </b><?php echo "$module[4]" ?></p>
-                                    <a href="teacher_add_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">Create
-                                        class</a>
+                                    <a href="teacher_add_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">Create Class</a>
                                 </div>
                             </div>
             <?php

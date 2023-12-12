@@ -17,19 +17,18 @@ if (isset($_POST['Login'])) {
             $_SESSION['course_id'] = $row['user_course_id'];
             $_SESSION['role_name'] = $row['role_name'];
             if ($_SESSION['role_name'] == 'Administrator') {
-                echo "<script>window.location.href = 'admin_dashboard.php';</script>";
-            } elseif ($_SESSION['role_name'] == 'Student') {
-                echo "<script>window.location.href = 'student_dashboard.php';</script>";
-            } elseif ($_SESSION['role_name'] == 'Teacher') {
-                echo "<script>window.location.href = 'teacher_dashboard.php';</script>";
+                header('Location:admin_dashboard.php');
+            } else if ($_SESSION['role_name'] == 'Student') {
+                header('Location:student_dashboard.php');
+            } else if ($_SESSION['role_name'] == 'Teacher') {
+                header('Location:teacher_dashboard.php');
             } else {
-                echo "<script>window.location.href = 'index.php';</script>";
+                header('Location:index.php');
             }
         }
     }
-    if($email!='user_email' || $pass!='user_password'){
+    if ($email != 'user_email' || $pass != 'user_password') {
         echo "<script> alert('Invalid Email or password! Try Again'); </script>";
         echo "<script>window.location.href = 'login.php';</script>";
     }
 }
-
