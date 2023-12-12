@@ -10,6 +10,15 @@
     require_once('../inc/head.php');
     ?>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
         /* .dashboard-section {
             padding: 10px;
             width: 75%;
@@ -35,7 +44,7 @@
         }
 
         .text-center {
-            margin: 20px 0;
+            margin: 40px 0;
         }
     </style>
 </head>
