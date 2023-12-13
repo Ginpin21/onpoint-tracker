@@ -18,11 +18,11 @@
             font-family: "Poppins", sans-serif;
         }
 
-        .container {
+        .container-10 {
             color: black;
             padding: 50px 50px 50px 50px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
-            max-width: fit-content;
+            max-width: 1500px;
             text-align: center;
             height: auto;
             margin: 0 auto;
@@ -87,7 +87,7 @@
     ?>
 
             <div class="order-form m-4">
-                <div class="container pt-4">
+                <div class="container-10 pt-4">
                     <div class="row">
                         <div class="col-12 px-4">
                             <h1 style="text-align: center;">USER DETAILS</h1>

@@ -18,14 +18,15 @@
             font-family: "Poppins", sans-serif;
         }
 
-        .container {
+        .container-5{
             color: black;
+            padding: 50px 50px 50px 50px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
+            max-width: 1100px;
             text-align: left;
             height: auto;
-            max-width: 1000px;
-            padding: 50px;
-            margin: 100px 500px;
+            margin: auto;
+            margin-top: 50px;
         }
 
         .order-form-label {
@@ -33,11 +34,6 @@
             font-size: 14px;
             font-weight: bold;
         }
-
-        /* .order-form{
-            max-width: 1000px;
-            padding: 50px;
-        } */
 
         .btn-submit:hover {
             background-color: #0D47A1 !important;
@@ -92,7 +88,7 @@
     ?>
 
             <div class="order-form m-4">
-                <div class="container pt-4">
+                <div class="container-5 pt-4">
                     <div class="row">
                         <div class="col-12 px-4">
                             <h1 style="text-align: center;text-transform: uppercase;">Announcements</h1>
