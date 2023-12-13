@@ -82,6 +82,8 @@
             <li><a href="../pages/admin_add_module.php">Add New Modules</a></li>
             <li><a href="../pages/admin_manage_courses.php">Manage Courses</a></li>
             <li><a href="../pages/admin_view_module.php">Edit Attendance</a></li>
+            <li><a href="../pages/admin_make_announcement.php">Make Anouncement</a></li>
+            <li><a href="../pages/fetch_announcement.php">View Anouncements</a></li>
         </ul>
     </div>
 
