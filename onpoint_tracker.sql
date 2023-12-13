@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2023 at 07:46 AM
+-- Generation Time: Dec 13, 2023 at 08:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -69,7 +69,27 @@ INSERT INTO `attendance` (`attendance_id`, `attendance_student_id`, `attendance_
 (35, 13, 14, 'A'),
 (36, 14, 14, 'P'),
 (37, 16, 14, 'A'),
-(38, 17, 15, 'A');
+(38, 17, 15, 'A'),
+(39, 9, 16, 'P'),
+(40, 13, 16, 'P'),
+(41, 14, 16, 'L'),
+(42, 16, 16, 'A'),
+(43, 9, 17, 'P'),
+(44, 13, 17, 'L'),
+(45, 14, 17, 'P'),
+(46, 16, 17, 'L'),
+(47, 9, 18, 'P'),
+(48, 13, 18, 'P'),
+(49, 14, 18, 'P'),
+(50, 16, 18, 'P'),
+(51, 9, 19, 'P'),
+(52, 13, 19, 'A'),
+(53, 14, 19, 'P'),
+(54, 16, 19, 'P'),
+(55, 9, 20, 'P'),
+(56, 13, 20, 'P'),
+(57, 14, 20, 'P'),
+(58, 16, 20, 'A');
 
 -- --------------------------------------------------------
 
@@ -102,7 +122,12 @@ INSERT INTO `class` (`class_id`, `class_name`, `class_date`, `class_time`, `clas
 (12, 'Python intro', '2023-12-09', '09:30:00', 'room 4', 7),
 (13, 'ERP', '2023-12-09', '09:30:00', 'Room 5', 2),
 (14, 'Scrum introduction', '2023-12-09', '09:30:00', 'Room 5', 3),
-(15, 'Python Intro', '2023-12-10', '09:30:00', 'Lab 10', 7);
+(15, 'Python Intro', '2023-12-10', '09:30:00', 'Lab 10', 7),
+(16, 'Scrum introduction', '2023-12-13', '09:30:00', 'Room 5', 1),
+(17, 'Sprint Review', '2023-12-14', '09:30:00', 'Lab 2', 1),
+(18, 'JS', '2023-12-13', '09:30:00', 'Room 5', 5),
+(19, 'HTML', '2023-12-14', '09:30:00', 'Lab 2', 5),
+(20, 'CSS', '2023-12-15', '09:30:00', 'Room 5', 5);
 
 -- --------------------------------------------------------
 
@@ -173,8 +198,7 @@ INSERT INTO `module` (`module_id`, `module_name`, `module_course_id`, `module_tu
 
 CREATE TABLE `notification` (
   `notification_id` int(11) NOT NULL,
-  `notification_messsage` varchar(255) DEFAULT NULL,
-  `notification_user_id` int(11) DEFAULT NULL
+  `notification_messsage` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -276,8 +300,7 @@ ALTER TABLE `module`
 -- Indexes for table `notification`
 --
 ALTER TABLE `notification`
-  ADD PRIMARY KEY (`notification_id`),
-  ADD KEY `notification_user_id` (`notification_user_id`);
+  ADD PRIMARY KEY (`notification_id`);
 
 --
 -- Indexes for table `role`
@@ -301,13 +324,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `course`
@@ -368,12 +391,6 @@ ALTER TABLE `course`
 ALTER TABLE `module`
   ADD CONSTRAINT `module_ibfk_1` FOREIGN KEY (`module_tutor_id`) REFERENCES `user` (`user_id`),
   ADD CONSTRAINT `module_ibfk_2` FOREIGN KEY (`module_course_id`) REFERENCES `course` (`course_id`);
-
---
--- Constraints for table `notification`
---
-ALTER TABLE `notification`
-  ADD CONSTRAINT `notification_ibfk_1` FOREIGN KEY (`notification_user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Constraints for table `user`
