@@ -106,7 +106,7 @@
                                         <tbody>
                                             <?php
                                             require("../inc/conn.php");
-                                            $qry = "SELECT * FROM notification";
+                                            $qry = "SELECT * FROM notification ORDER BY notification_id DESC;";
                                             $result = mysqli_query($conn, $qry);
                                             $final = mysqli_num_rows($result);
                                             if ($final > 0) {
