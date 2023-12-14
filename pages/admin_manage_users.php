@@ -123,7 +123,7 @@
                                                     $role_id = $row['user_role_id'];
                                                     $course_id = $row['user_course_id'];
                                                     echo "<tr>
-                                <form method='post' action='update_user.php'>
+                                <form method='post' action='admin_update_user.php'>
                                 <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly </td>
                                 <td><input type='text' name='fname' value='$fname' size='15' style='text-align: center;'>  </td>
                                 <td><input type='text' name='lname' value='$lname' size='15' style='text-align: center;'>  </td>

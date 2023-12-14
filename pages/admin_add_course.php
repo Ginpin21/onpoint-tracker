@@ -130,7 +130,7 @@
 
             <section class="container">
                 <h1 class="mb-5">Add Course</h1>
-                <form action="addcourse_script.php" method="post">
+                <form action="../pages/admin_addcourse_script.php" method="post">
                     <div class="row">
 
                         <div class="col">

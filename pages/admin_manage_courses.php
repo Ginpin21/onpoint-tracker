@@ -129,7 +129,7 @@
                                                     $manager_fname = $row['user_fname'];
                                                     $manager_lname = $row['user_lname'];
                                                     echo "<tr>
-                                <form method='post' action='update_course.php'>
+                                <form method='post' action='admin_update_course.php'>
                                 <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly </td>
                                 <td><input type='text' name='fname' value='$name' style='text-align: center;'>  </td>
                                 <td><input type='text' name='manager_id' value='$manager_id' style='text-align: center;'>  </td>

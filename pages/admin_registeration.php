@@ -48,7 +48,7 @@
             <div class="container-1">
 
                 <div class="reg-form">
-                    <form action="regscript.php" id="registrationForm" method="post">
+                    <form action="../pages/admin_registeration_script.php" id="registrationForm" method="post">
                         <h1 id="heading">User Registeration</h1>
 
                         <div class="flex-container">
