@@ -60,7 +60,7 @@ session_start();
             position: absolute;
             left: 10px;
             top: 16px;
-            font-size: 25px;
+            font-size: 20px;
             cursor: pointer;
         }
 

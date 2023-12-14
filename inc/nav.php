@@ -37,7 +37,7 @@ session_start();
         color: black;
     }
 
-    .navbar-brand{
+    .navbar-brand {
         margin-left: 50px;
     }
 </style>

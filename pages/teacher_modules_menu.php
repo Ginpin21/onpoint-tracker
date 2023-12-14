@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <?php
     require_once('../inc/head.php');
-    require('../inc/conn.php');
     ?>
     <style>
         .navbar {
@@ -73,7 +72,7 @@
 
 <body>
     <div class="container-fluid">
-        <?php require_once('../inc/navbar.php'); ?>
+        <?php require_once('../inc/nav.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {

@@ -8,7 +8,7 @@
   <title>Home Screen</title>
   <link rel="stylesheet" href="../pages/student_home.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <?php require_once('..\pages\student_navbar.php'); ?>
+  <?php require_once('..\pages\student_nav.php'); ?>
   <style>
     .navbar {
       padding: 10px
@@ -68,33 +68,33 @@
     }
   </style>
   <?php
-// Assuming you have the student_id and teacher_id available
-// For demonstration purposes, replace these with the actual IDs
-$student_id = 1;  // Replace with the actual student ID
-$teacher_id = 1;  // Replace with the actual teacher ID
-?>
+  // Assuming you have the student_id and teacher_id available
+  // For demonstration purposes, replace these with the actual IDs
+  $student_id = 1;  // Replace with the actual student ID
+  $teacher_id = 1;  // Replace with the actual teacher ID
+  ?>
 </head>
 
 <body>
 
 
 
-  <?php require_once('..\pages\student_navbar.php'); ?>
-  <?php require_once('..\pages\student_sidebar.php'); ?> 
+  <?php require_once('..\pages\student_nav.php'); ?>
+  <?php require_once('..\pages\student_sidebar.php'); ?>
   <section class="container">
 
-<?php require_once('student_navbar.php'); // Include your header file ?>
-<div class="container">
-    <h2>Request for Leave</h2>
+    <?php require_once('student_nav.php'); // Include your header file 
+    ?>
+    <div class="container">
+      <h2>Request for Leave</h2>
 
-   <!-- Add leave request form or information here -->
-<form action="process_leave_request.php" method="post">
-    <input type="hidden" name="student_id" value="<?php echo $student_id; ?>">
-    <input type="hidden" name="teacher_id" value="<?php echo $teacher_id; ?>">
+      <!-- Add leave request form or information here -->
+      <form action="process_leave_request.php" method="post">
+        <input type="hidden" name="student_id" value="<?php echo $student_id; ?>">
+        <input type="hidden" name="teacher_id" value="<?php echo $teacher_id; ?>">
 
-    <label for="leave_reason">Reason for Leave:</label>
-    <textarea name="leave_reason" id="leave_reason" rows="4" required></textarea>
-    <br>
-    <button type="submit">Submit Leave Request</button>
-</form>
-
+        <label for="leave_reason">Reason for Leave:</label>
+        <textarea name="leave_reason" id="leave_reason" rows="4" required></textarea>
+        <br>
+        <button type="submit">Submit Leave Request</button>
+      </form>

@@ -8,25 +8,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <?php
     require('../inc/conn.php');
-    if (isset($_GET["class_id"])) 
+    if (isset($_GET["class_id"]))
         require_once('../inc/head.php'); ?>
-        <style>
-            .container {
-                margin: 70px;
-                padding-left: 25%;
-            }
+    <style>
+        .container {
+            margin: 70px;
+            padding-left: 25%;
+        }
 
-            .container-fluid {
-                top: 0;
-                position: fixed;
-                z-index: 1000;
-            }
-        </style>
-    </head>
+        .container-fluid {
+            top: 0;
+            position: fixed;
+            z-index: 1000;
+        }
+    </style>
+</head>
 
 <body>
     <?php
-    require_once('../pages/student_navbar.php');
+    require_once('../pages/student_nav.php');
     require_once('../pages/student_sidebar.php');
 
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {

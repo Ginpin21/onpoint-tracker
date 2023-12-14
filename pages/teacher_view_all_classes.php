@@ -70,7 +70,7 @@
 
 <body>
     <div class="container-fluid">
-        <?php require_once('..\inc\navbar.php'); ?>
+        <?php require_once('..\inc\nav.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
     ?>
@@ -84,6 +84,9 @@
         <table class="table">
             <thead>
                 <tr class="table-primary">
+                    <th scope="col">
+                        Module
+                    </th>
                     <th scope="col">
                         Class Date
                     </th>
@@ -122,7 +125,8 @@
                 SUM(attendance_status='P') as present,
                 SUM(attendance_status='L') as late,
                 SUM(attendance_status='A') as absent,
-                class.class_module_id
+                class.class_module_id,
+                module.module_name
                 FROM
                     class
                 JOIN
@@ -141,6 +145,9 @@
                     foreach ($result as $attendance) {
                 ?>
                         <tr>
+                            <td>
+                                <?php echo $attendance[9]; ?>
+                            </td>
                             <td>
                                 <?php echo date('d-m-Y', strtotime($attendance[1])); ?>
                             </td>

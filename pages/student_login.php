@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php require_once("../pages/student_navbar.php"); ?>
+    <?php require_once("../pages/student_nav.php"); ?>
     <div class="container">
         <div class="form">
             <h1>Login</h1>
@@ -40,4 +40,5 @@
 </body>
 
 </html>
+
 </html>
