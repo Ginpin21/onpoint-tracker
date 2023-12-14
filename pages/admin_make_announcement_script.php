@@ -5,7 +5,7 @@ if (isset($_POST['Upload_Notification'])) {
     $qry = "INSERT INTO notification (notification_messsage) values ('$notification');";
     $result = mysqli_query($conn, $qry);
     if ($result) {
-        echo "<script> alert('Invalid Email or password! Try Again'); </script>";
+        echo "<script> alert('Annoucement added successfully!'); </script>";
         header("Location: admin_dashboard.php");
     } else {
         echo "<script>alert('Sorry an error occured')</script>";
