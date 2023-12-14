@@ -11,7 +11,7 @@ body {
     background-color: white;
 }
 
-.container {
+.container-1 {
     width: 30%;
     height: auto;
     position: relative;
@@ -20,8 +20,9 @@ body {
     border-radius: 15px;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(225, 225, 225, .2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+     border: 2px solid rgb(225, 225, 225, .2); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2); 
+
 }
 
 .form {

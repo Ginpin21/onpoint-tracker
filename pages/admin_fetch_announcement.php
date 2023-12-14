@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users</title>
+    <title>View Announcements</title>
     <?php
     require_once("../inc/head.php");
     ?>
@@ -18,14 +18,15 @@
             font-family: "Poppins", sans-serif;
         }
 
-        .container-10 {
+        .container-5 {
             color: black;
             padding: 50px 50px 50px 50px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
-            max-width: 1500px;
-            text-align: center;
+            max-width: 1100px;
+            text-align: left;
             height: auto;
-            margin: 0 auto;
+            margin: auto;
+            margin-top: 50px;
         }
 
         .order-form-label {
@@ -87,10 +88,10 @@
     ?>
 
             <div class="order-form m-4">
-                <div class="container-10 pt-4">
+                <div class="container-5 pt-4">
                     <div class="row">
                         <div class="col-12 px-4">
-                            <h1 style="text-align: center;">USER DETAILS</h1>
+                            <h1 style="text-align: center;text-transform: uppercase;">Announcements</h1>
                         </div>
                         <div>
                             <div>
@@ -99,44 +100,25 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
-                                                <th scope="col">FNAME</th>
-                                                <th scope="col">LNAME</th>
-                                                <th scope="col">EMAIL</th>
-                                                <th scope="col">PASSWORD</th>
-                                                <th scope="col">ROLE ID</th>
-                                                <th scope="col">COURSE ID</th>
-                                                <th scope="col">ACTIONS</th>
+                                                <th scope="col">MESSAGE</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            require("../inc/connection.php");
-                                            $qry = "Select * from user";
+                                            require("../inc/conn.php");
+                                            $qry = "SELECT * FROM notification ORDER BY notification_id DESC;";
                                             $result = mysqli_query($conn, $qry);
                                             $final = mysqli_num_rows($result);
                                             if ($final > 0) {
                                                 while ($row = mysqli_fetch_array($result)) {
-                                                    $id = $row['user_id'];
-                                                    $fname = $row['user_fname'];
-                                                    $lname = $row['user_lname'];
-                                                    $email = $row['user_email'];
-                                                    $role_id = $row['user_role_id'];
-                                                    $course_id = $row['user_course_id'];
+                                                    $id = $row['notification_id'];
+                                                    $message = $row['notification_messsage'];
                                                     echo "<tr>
-                                <form method='post' action='admin_update_user.php'>
-                                <td><input type='text' name='id' value='$id' size='1' style='text-align: center; border: none;' readonly </td>
-                                <td><input type='text' name='fname' value='$fname' size='15' style='text-align: center;'>  </td>
-                                <td><input type='text' name='lname' value='$lname' size='15' style='text-align: center;'>  </td>
-                                <td><input type='text' name='email' value='$email' size='25' style='text-align: center;'>  </td>
-                                <td><input type='text' name='password' size='15' style='text-align: center;'>  </td>
-                                <td><input type='text' name='role_id' value='$role_id' size='6' style='text-align: center;'>  </td>
-                                <td><input type='text' name='course_id' value='$course_id' size='6' style='text-align: center;'>  </td>
-                                <td><input type='submit' name='update'  class='btn btn-primary' value='Update'> <input type='submit' name='delete' class='btn btn-danger' value='Delete'>   </td> 
-                                </form>
-                                </tr>";
+                                                    <td>$id</td>
+                                                    <td style='text-align: left;'>$message</zd>
+                                                    </tr>";
                                                 }
                                             } else {
-                                                echo "<script> The table is empty </script>";
                                             }
                                             ?>
                                         </tbody>

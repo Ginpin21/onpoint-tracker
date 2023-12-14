@@ -142,7 +142,7 @@
             <section class="container">
 
                 <h1 class="mb-5">Add Module</h1>
-                <form action="addmodule_script.php" method="post">
+                <form action="../pages/admin_addmodule_script.php" method="post">
                     <div class="row">
                         <div>
                             <label for=""> Module name</label><br>

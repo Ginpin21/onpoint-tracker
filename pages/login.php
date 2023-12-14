@@ -14,7 +14,7 @@
 
 <body>
     <?php require_once("../inc/nav.php"); ?>
-    <div class="container">
+    <div class="container-1">
         <div class="form">
             <h1>Login</h1>
             <form action="loginscript.php" method="post">

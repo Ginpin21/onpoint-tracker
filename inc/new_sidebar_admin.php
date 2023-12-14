@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,10 +84,36 @@
             <li><a href="../pages/admin_add_module.php">Add New Modules</a></li>
             <li><a href="../pages/admin_manage_courses.php">Manage Courses</a></li>
             <li><a href="../pages/admin_view_module.php">Edit Attendance</a></li>
+            <li><a href="../pages/admin_make_announcement.php">Make Announcement</a></li>
+            <li>
+                <a href="../pages/admin_fetch_announcement.php">
+                    <div id="notificationIcon" style="display: inline-block; margin-right: 5px;">
+                        <?php
+                        if (isset($_SESSION['newNotification']) && $_SESSION['newNotification']) {
+                            echo '<i class="fa fa-bell" style="color: black;"></i>';
+                            $_SESSION['newNotification'] = false;
+                        }
+                        ?>
+                    </div>
+                    View Announcements
+                </a>
+            </li>
         </ul>
     </div>
 
     <script src="../inc/sidebar.js"></script>
+    <script>
+        // Function to show the notification icon
+        function showNotificationIcon() {
+            document.getElementById("notificationIcon").style.display = "block";
+        }
+        var newNotification = <?php echo isset($_POST['Upload_Notification']) ? 'true' : 'false'; ?>;
+
+        if (newNotification) {
+            showNotificationIcon();
+        }
+    </script>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
