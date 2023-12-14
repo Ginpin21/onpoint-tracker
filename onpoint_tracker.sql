@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 08:47 PM
+-- Generation Time: Dec 14, 2023 at 09:53 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -89,7 +89,11 @@ INSERT INTO `attendance` (`attendance_id`, `attendance_student_id`, `attendance_
 (55, 9, 20, 'P'),
 (56, 13, 20, 'P'),
 (57, 14, 20, 'P'),
-(58, 16, 20, 'A');
+(58, 16, 20, 'A'),
+(59, 9, 21, 'P'),
+(60, 13, 21, 'P'),
+(61, 14, 21, 'L'),
+(62, 16, 21, 'L');
 
 -- --------------------------------------------------------
 
@@ -127,7 +131,8 @@ INSERT INTO `class` (`class_id`, `class_name`, `class_date`, `class_time`, `clas
 (17, 'Sprint Review', '2023-12-14', '09:30:00', 'Lab 2', 1),
 (18, 'JS', '2023-12-13', '09:30:00', 'Room 5', 5),
 (19, 'HTML', '2023-12-14', '09:30:00', 'Lab 2', 5),
-(20, 'CSS', '2023-12-15', '09:30:00', 'Room 5', 5);
+(20, 'CSS', '2023-12-15', '09:30:00', 'Room 5', 5),
+(21, 'Definition of Done', '2023-12-15', '10:30:00', 'Lab 3', 1);
 
 -- --------------------------------------------------------
 
@@ -198,7 +203,9 @@ INSERT INTO `module` (`module_id`, `module_name`, `module_course_id`, `module_tu
 
 CREATE TABLE `notification` (
   `notification_id` int(11) NOT NULL,
-  `notification_messsage` varchar(255) DEFAULT NULL
+  `notification_title` varchar(255) NOT NULL,
+  `notification_messsage` varchar(255) DEFAULT NULL,
+  `notification_date` date NOT NULL DEFAULT curdate()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -324,13 +331,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `course`
@@ -348,7 +355,7 @@ ALTER TABLE `module`
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `notification_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `notification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `role`

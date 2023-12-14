@@ -7,7 +7,7 @@
   <title>Home Screen</title>
   <link rel="stylesheet" href="../pages/student_home.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <?php require_once('..\pages\student_navbar.php'); ?>
+  <?php require_once('..\pages\student_nav.php'); ?>
   <style>
     .navbar {
       padding: 10px
@@ -72,8 +72,8 @@
 
 
 
-  <?php require_once('..\pages\student_navbar.php'); ?>
-  <?php require_once('..\pages\student_sidebar.php'); ?> 
+  <?php require_once('..\pages\student_nav.php'); ?>
+  <?php require_once('..\pages\student_sidebar.php'); ?>
   <section class="container">
 
     <h1>Attendance</h1>
@@ -119,8 +119,8 @@
           <a href="coursefour.php" class="btn btn-primary">Check Attendance</a>
         </div>
       </div>
-      
-      
+
+
       <div class="card col text-center" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Overall Attendance</h5>
@@ -142,7 +142,7 @@
       © 2023 Copyright:
       <a href="home.html" style="font-size: 20px; font: weight 600px; color:#003DB2; text-decoration:none">Onpoint
         Tracker.com</a> //Ask About home.html
-    </div> 
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

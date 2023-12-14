@@ -57,7 +57,7 @@
             position: absolute;
             left: 10px;
             top: 16px;
-            font-size: 25px;
+            font-size: 20px;
             cursor: pointer;
         }
 
@@ -73,7 +73,6 @@
     </div>
 
     <div class="sidebar">
-
         <ul class="nav-links">
             <li><a href="../pages/admin_dashboard.php">Home</a></li>
             <li><a href="../pages/admin_registeration.php">Add New User</a></li>
