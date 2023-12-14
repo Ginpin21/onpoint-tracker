@@ -89,10 +89,8 @@ session_start();
                 <a href="../pages/admin_fetch_announcement.php">
                     <div id="notificationIcon" style="display: inline-block; margin-right: 5px;">
                         <?php
-                        // Check if there is a new notification in the session
                         if (isset($_SESSION['newNotification']) && $_SESSION['newNotification']) {
                             echo '<i class="fa fa-bell" style="color: black;"></i>';
-                            // Reset the session variable
                             $_SESSION['newNotification'] = false;
                         }
                         ?>

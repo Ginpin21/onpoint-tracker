@@ -1,13 +1,18 @@
 <?php
+session_start();
+
 require("../inc/conn.php");
+
 if (isset($_POST['Upload_Notification'])) {
     $notification = $_POST['message'];
-    $qry = "INSERT INTO notification (notification_messsage) values ('$notification');";
+    $qry = "INSERT INTO notification (notification_messsage) VALUES ('$notification');";
     $result = mysqli_query($conn, $qry);
+
     if ($result) {
-        echo "<script> alert('Annoucement added successfully!'); </script>";
+        $_SESSION['newNotification'] = true;
         header("Location: admin_dashboard.php");
+        exit();
     } else {
-        echo "<script>alert('Sorry an error occured')</script>";
+        echo "<script>alert('Sorry, an error occurred: " . mysqli_error($conn) . "');</script>";
     }
 }
