@@ -29,21 +29,30 @@
         <?php require_once('..\inc\nav.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        if ($_SESSION["role_name"] == "Teacher") {
     ?>
-    <main class="container">
-        <h1>Make an Announcement</h1>
-        <form class="form-group d-flex flex-column gap-3" method="post" action="../functions/make_announcement.php">
-            <div class="form-group d-flex flex-column">
-                <label for="title">Announcement Title</label>
-                <input type="text" class="form-control" name="title" id="" aria-describedby="helpId" placeholder="">
-            </div>
-            <div class="form-group d-flex flex-column">
-                <label for="message">Write a message</label>
-                <textarea style="resize: none; padding:5px" class="form-control" name="message" cols="2" rows="3"></textarea>
-            </div>
-            <button type="submit" name="submit" value="submit" class="btn btn-primary">Make Announcement</button>
-        </form>
-    </main>
+            <main class="container">
+                <h1>Make an Announcement</h1>
+                <form class="form-group d-flex flex-column gap-3" method="post" action="../functions/make_announcement.php">
+                    <div class="form-group d-flex flex-column">
+                        <label for="title">Announcement Title</label>
+                        <input type="text" class="form-control" name="title" id="" aria-describedby="helpId" placeholder="" required>
+                    </div>
+                    <div class="form-group d-flex flex-column">
+                        <label for="message">Write a message</label>
+                        <textarea style="resize: none; padding:5px" class="form-control" name="message" cols="2" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Make Announcement</button>
+                </form>
+            </main>
+    <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    } ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 

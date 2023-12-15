@@ -78,55 +78,57 @@
         <?php require_once('..\inc\nav.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
+        if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+            if ($_SESSION["role_name"] == "Teacher") {
     ?>
 
-    <main class="container">
-        <?php
-        $module_id = $_GET["module_id"];
-        $module_name = "";
-        if ($result = mysqli_query($conn, "SELECT module_name from module where module_id=$module_id")) {
-            $row = mysqli_fetch_assoc($result);
-            $module_name = $row["module_name"];
-        }
+            <main class="container">
+                <?php
+                $module_id = $_GET["module_id"];
+                $module_name = "";
+                if ($result = mysqli_query($conn, "SELECT module_name from module where module_id=$module_id")) {
+                    $row = mysqli_fetch_assoc($result);
+                    $module_name = $row["module_name"];
+                }
 
-        ?>
-        <h1 class="mb-5">
-            <?php echo $module_name; ?> Attendance Graph
-        </h1>
-        <canvas id="attendanceChart" width="400" height="200"></canvas>
+                ?>
+                <h1 class="mb-5">
+                    <?php echo $module_name; ?> Attendance Graph
+                </h1>
+                <canvas id="attendanceChart" width="400" height="200"></canvas>
 
-        <section id="all-classes-section">
-            <h3 class="mt-5">All Classes for <?php echo $module_name ?></h3>
-            <table class="table">
-                <thead>
-                    <tr class="table-primary">
-                        <th scope="col">
-                            Class Date
-                        </th>
-                        <th scope="col">
-                            Class Time
-                        </th>
-                        <th scope="col">
-                            Class Name
-                        </th>
-                        <th scope="col">
-                            Class Location
-                        </th>
-                        <th scope="col">
-                            Present
-                        </th>
-                        <th scope="col">
-                            Late
-                        </th>
-                        <th scope="col">
-                            Absent
-                        </th>
+                <section id="all-classes-section">
+                    <h3 class="mt-5">All Classes for <?php echo $module_name ?></h3>
+                    <table class="table">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col">
+                                    Class Date
+                                </th>
+                                <th scope="col">
+                                    Class Time
+                                </th>
+                                <th scope="col">
+                                    Class Name
+                                </th>
+                                <th scope="col">
+                                    Class Location
+                                </th>
+                                <th scope="col">
+                                    Present
+                                </th>
+                                <th scope="col">
+                                    Late
+                                </th>
+                                <th scope="col">
+                                    Absent
+                                </th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $select_query = "SELECT
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $select_query = "SELECT
                     class.class_id,
                     class.class_date,
                     class.class_time,
@@ -146,149 +148,155 @@
                      attendance_class_id
                  ORDER BY
                      class.class_date ASC;";
-                    $get_query = mysqli_query($conn, $select_query);
-                    if ($get_query) {
-                        $result = mysqli_fetch_all($get_query);
-                        foreach ($result as $attendance) {
-                    ?>
-                            <tr>
-                                <td>
-                                    <?php echo date('d-m-Y', strtotime($attendance[1])); ?>
-                                </td>
-                                <td>
-                                    <?php echo date('h:i A', strtotime($attendance[2])); ?>
-                                </td>
-                                <td>
-                                    <?php echo $attendance[3]; ?>
-                                </td>
-                                <td>
-                                    <?php echo $attendance[4]; ?>
-                                </td>
-                                <td>
-                                    <?php echo $attendance[5]; ?>
-                                </td>
-                                <td>
-                                    <?php echo $attendance[6]; ?>
-                                </td>
-                                <td>
-                                    <?php echo $attendance[7]; ?>
-                                </td>
-                            </tr>
-                <?php
-                        }
-                    }
-                } else {
-                    header("Location:index.php");
-                }
-                ?>
-
-                </tbody>
-            </table>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Extract data from PHP to JavaScript
-                    const classDates = <?php echo json_encode(array_column($result, 1)); ?>;
-                    const presentCounts = <?php echo json_encode(array_map('intval', array_column($result, 5))); ?>;
-                    const lateCounts = <?php echo json_encode(array_map('intval', array_column($result, 6))); ?>;
-                    const absentCounts = <?php echo json_encode(array_map('intval', array_column($result, 7))); ?>;
-
-                    // Create a line chart
-                    const ctx = document.getElementById('attendanceChart').getContext('2d');
-                    const myChart = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: classDates,
-                            datasets: [{
-                                    label: 'Present',
-                                    data: presentCounts,
-                                    borderColor: 'rgba(75, 192, 192, 1)',
-                                    borderWidth: 1,
-                                    fill: false
-                                },
-                                {
-                                    label: 'Late',
-                                    data: lateCounts,
-                                    borderColor: 'rgba(255, 205, 86, 1)',
-                                    borderWidth: 1,
-                                    fill: false
-                                },
-                                {
-                                    label: 'Absent',
-                                    data: absentCounts,
-                                    borderColor: 'rgba(255, 99, 132, 1)',
-                                    borderWidth: 1,
-                                    fill: false
+                            $get_query = mysqli_query($conn, $select_query);
+                            if ($get_query) {
+                                $result = mysqli_fetch_all($get_query);
+                                foreach ($result as $attendance) {
+                            ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo date('d-m-Y', strtotime($attendance[1])); ?>
+                                        </td>
+                                        <td>
+                                            <?php echo date('h:i A', strtotime($attendance[2])); ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $attendance[3]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $attendance[4]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $attendance[5]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $attendance[6]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $attendance[7]; ?>
+                                        </td>
+                                    </tr>
+                        <?php
                                 }
-                            ]
-                        },
-                        options: {
-                            plugins: {
-                                legend: {
-                                    labels: {
-                                        font: {
-                                            size: 20
+                            }
+                        } else {
+                            header("Location:index.php");
+                        }
+                        ?>
+
+                        </tbody>
+                    </table>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Extract data from PHP to JavaScript
+                            const classDates = <?php echo json_encode(array_column($result, 1)); ?>;
+                            const presentCounts = <?php echo json_encode(array_map('intval', array_column($result, 5))); ?>;
+                            const lateCounts = <?php echo json_encode(array_map('intval', array_column($result, 6))); ?>;
+                            const absentCounts = <?php echo json_encode(array_map('intval', array_column($result, 7))); ?>;
+
+                            // Create a line chart
+                            const ctx = document.getElementById('attendanceChart').getContext('2d');
+                            const myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: classDates,
+                                    datasets: [{
+                                            label: 'Present',
+                                            data: presentCounts,
+                                            borderColor: 'rgba(75, 192, 192, 1)',
+                                            borderWidth: 1,
+                                            fill: false
+                                        },
+                                        {
+                                            label: 'Late',
+                                            data: lateCounts,
+                                            borderColor: 'rgba(255, 205, 86, 1)',
+                                            borderWidth: 1,
+                                            fill: false
+                                        },
+                                        {
+                                            label: 'Absent',
+                                            data: absentCounts,
+                                            borderColor: 'rgba(255, 99, 132, 1)',
+                                            borderWidth: 1,
+                                            fill: false
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    plugins: {
+                                        legend: {
+                                            labels: {
+                                                font: {
+                                                    size: 20
+                                                }
+                                            },
+                                            scales: {
+                                                xAxes: [{
+                                                    ticks: {
+                                                        font: {
+                                                            size: 30
+                                                        }
+                                                    }
+                                                }]
+                                            }
                                         }
                                     },
                                     scales: {
-                                        xAxes: [{
+                                        x: {
+                                            type: 'time',
+                                            time: {
+                                                unit: 'day',
+                                                displayFormats: {
+                                                    day: 'DD-MM-YYYY'
+                                                }
+                                            },
+                                            title: {
+                                                display: true,
+                                                text: 'Class Date',
+                                                font: {
+                                                    size: 20
+                                                }
+                                            },
                                             ticks: {
                                                 font: {
-                                                    size: 30
+                                                    size: 12 // Adjust the font size as needed
                                                 }
                                             }
-                                        }]
-                                    }
-                                }
-                            },
-                            scales: {
-                                x: {
-                                    type: 'time',
-                                    time: {
-                                        unit: 'day',
-                                        displayFormats: {
-                                            day: 'DD-MM-YYYY'
+                                        },
+                                        y: {
+                                            beginAtZero: true, // Start the axis at zero
+                                            title: {
+                                                display: true,
+                                                text: 'Attendance Count',
+                                                font: {
+                                                    size: 20
+                                                }
+                                            },
+                                            ticks: {
+                                                stepSize: 1, // Use whole numbers (integer values)
+                                                beginAtZero: true,
+                                                precision: 0,
+                                                font: {
+                                                    size: 15 // Adjust the font size as needed
+                                                }
+                                            }
                                         }
                                     },
-                                    title: {
-                                        display: true,
-                                        text: 'Class Date',
-                                        font: {
-                                            size: 20
-                                        }
-                                    },
-                                    ticks: {
-                                        font: {
-                                            size: 12 // Adjust the font size as needed
-                                        }
-                                    }
-                                },
-                                y: {
-                                    beginAtZero: true, // Start the axis at zero
-                                    title: {
-                                        display: true,
-                                        text: 'Attendance Count',
-                                        font: {
-                                            size: 20
-                                        }
-                                    },
-                                    ticks: {
-                                        stepSize: 1, // Use whole numbers (integer values)
-                                        beginAtZero: true,
-                                        precision: 0,
-                                        font: {
-                                            size: 15 // Adjust the font size as needed
-                                        }
-                                    }
-                                }
-                            },
 
-                        }
-                    });
-                });
-            </script>
-        </section>
-    </main>
-
+                                }
+                            });
+                        });
+                    </script>
+                </section>
+            </main>
+    <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    } ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
