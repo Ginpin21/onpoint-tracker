@@ -53,7 +53,7 @@
         }
 
         .container {
-            padding-left: 15%;
+            padding-left: 18.5%;
             margin: 0;
         }
 
@@ -89,7 +89,7 @@
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Student") { ?>
             <section class="container">
-                <h1 class="mb-5">List of Modules Attendance</h1>
+                
                 <div class="grid mt-5">
                     <?php
                     $tutor_id = $_SESSION["user_id"];

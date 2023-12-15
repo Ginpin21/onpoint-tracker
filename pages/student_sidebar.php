@@ -26,7 +26,7 @@
 </style>
 <div class="sidebar">
     <a href="student_dashboard.php">Home</a>
-    <a href="student_menutrial.php">Attendance History</a>
+    <a href="student_view_modules.php">Attendance History</a>
     <a href="student_leave_request.php">Request for Leave</a>
     <a href="student_fetch_annoucment.php">Important Announcement </a>
 </div>
