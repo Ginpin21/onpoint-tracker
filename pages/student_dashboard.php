@@ -17,7 +17,7 @@
 
 <body class="">
     <?php
-    require_once('..\pages\student_nav.php');
+    require_once('..\pages\student_navbar.php');
     ?>
     <main class="">
         <?php
