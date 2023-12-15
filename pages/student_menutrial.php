@@ -73,11 +73,16 @@
         .btn-primary {
             margin-top: auto;
         }
+        .container-fluid{
+            top: 0;
+            position: fixed;
+            z-index: 1000;
+        }
     </style>
 </head>
 
 <body>
-    <?php require_once('../pages/student_nav.php'); ?>
+    <?php require_once('../inc/nav.php'); ?>
     <?php require_once('../pages/student_sidebar.php');
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Student") { ?>

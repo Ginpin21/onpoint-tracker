@@ -8,10 +8,7 @@
   <title>Request for Leave forms</title>
   <link rel="stylesheet" href="../pages/student_home.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<<<<<<< HEAD
-=======
-  <?php require_once('..\pages\student_nav.php'); ?>
->>>>>>> ad649f0facffd689dab8efb6f38f54d95456c7f0
+  <?php require_once('..\inc\nav.php'); ?>
   <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
@@ -66,15 +63,12 @@
     }
     
   </style>
-<<<<<<< HEAD
-=======
   <?php
   // Assuming you have the student_id and teacher_id available
   // For demonstration purposes, replace these with the actual IDs
   $student_id = 1;  // Replace with the actual student ID
   $teacher_id = 1;  // Replace with the actual teacher ID
   ?>
->>>>>>> ad649f0facffd689dab8efb6f38f54d95456c7f0
 </head>
 <body>
   <?php require_once('..\inc\nav.php'); ?>
@@ -121,7 +115,7 @@ require('../inc/connection.php');
           <div class="col">
             <div>
               <label for="leave_module_name">Specify Module</label><br>
-              <select name="module" id="usercourse">
+              <select name="module"//course id="usercourse">
                             <?php
                             require("../inc/connection.php");
                             $student_course_id=$_SESSION['course_id'];
@@ -161,27 +155,4 @@ require('../inc/connection.php');
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
   </script>
 </body>
-
-<<<<<<< HEAD
 </html>
-=======
-  <?php require_once('..\pages\student_nav.php'); ?>
-  <?php require_once('..\pages\student_sidebar.php'); ?>
-  <section class="container">
-
-    <?php require_once('student_nav.php'); // Include your header file 
-    ?>
-    <div class="container">
-      <h2>Request for Leave</h2>
-
-      <!-- Add leave request form or information here -->
-      <form action="process_leave_request.php" method="post">
-        <input type="hidden" name="student_id" value="<?php echo $student_id; ?>">
-        <input type="hidden" name="teacher_id" value="<?php echo $teacher_id; ?>">
-
-        <label for="leave_reason">Reason for Leave:</label>
-        <textarea name="leave_reason" id="leave_reason" rows="4" required></textarea>
-        <br>
-        <button type="submit">Submit Leave Request</button>
-      </form>
->>>>>>> ad649f0facffd689dab8efb6f38f54d95456c7f0
