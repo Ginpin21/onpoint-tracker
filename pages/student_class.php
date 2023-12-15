@@ -69,12 +69,12 @@
     </style>
 </head>
 
-        
+
 </head>
 
 <body>
     <?php
-    require_once('../pages/student_navbar.php');
+    require_once('../inc/nav.php');
     require_once('../pages/student_sidebar.php');
 
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
@@ -215,7 +215,7 @@
                                             ?>
                                         </tbody>
                                     </table>
-                                    <a class="btn btn-primary rounded p-2" href="../functions/generate_class_report.php?class_id=<?php echo $class_id ?>">Generate Report</a> 
+                                    <a class="btn btn-primary rounded p-2" href="../functions/generate_class_report.php?class_id=<?php echo $class_id ?>">Generate Report</a>
                                 </div>
                             </div>
                     <?php

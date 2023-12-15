@@ -8,7 +8,9 @@ session_start();
     .navbar {
         padding: 10px;
         position: sticky;
+        top: 0;
         height: 8vh;
+        z-index: 100;
     }
 
     .navbar-nav .active a {

@@ -12,7 +12,6 @@
     require_once('../inc/head.php');
     ?>
     <style>
-    
         .navbar {
             padding: 10px
         }
@@ -78,7 +77,7 @@
 </head>
 
 <body>
-    <?php require_once('../pages/student_navbar.php'); ?>
+    <?php require_once('../inc/nav.php'); ?>
     <?php require_once('../pages/student_sidebar.php'); ?>
     <section class="container">
         <h1 class="mb-5">Select a module to check Attendance</h1>
@@ -101,7 +100,7 @@
 
                 if ($get_query) {
                     while ($module = mysqli_fetch_assoc($get_query)) {
-                        ?>
+            ?>
                         <div class="card" style="min-width: 20rem;">
                             <img src="https://images.unsplash.com/photo-1594729095022-e2f6d2eece9c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
                             <div class="card-body d-flex flex-column">

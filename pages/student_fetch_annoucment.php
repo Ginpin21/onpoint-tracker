@@ -74,7 +74,7 @@
 
 <body>
     <?php
-    require_once("../pages/student_navbar.php");
+    require_once("../inc/nav.php");
     ?>
 
     <?php

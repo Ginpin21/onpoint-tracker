@@ -77,7 +77,7 @@
 </head>
 
 <body>
-    <?php require_once('../pages/student_nav.php'); ?>
+    <?php require_once('../inc/nav.php'); ?>
     <?php require_once('../pages/student_sidebar.php');
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Student") { ?>
