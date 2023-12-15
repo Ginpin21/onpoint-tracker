@@ -29,27 +29,37 @@
         <?php require_once('..\inc\nav.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        if ($_SESSION["role_name"] == "Teacher") {
+
     ?>
-    <main class="container">
-        <h1>Announcements</h1>
-        <section>
-            <?php
-            $select_query = "SELECT * FROM notification ORDER BY notification_id DESC";
-            $result = mysqli_query($conn, $select_query);
-            $notifications = mysqli_fetch_all($result);
-            foreach ($notifications as $notification) { ?>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading"><?php echo "$notification[1]"; ?></h4>
-                    <p><?php echo "$notification[2]"; ?></p>
-                    <p><?php echo date("d/m/Y", strtotime($notification[3])); ?></p>
-                </div>
-            <?php
-            }
-            ?>
-        </section>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+            <main class="container">
+                <h1>Announcements</h1>
+                <section>
+                    <?php
+                    $select_query = "SELECT * FROM notification ORDER BY notification_id DESC";
+                    $result = mysqli_query($conn, $select_query);
+                    $notifications = mysqli_fetch_all($result);
+                    foreach ($notifications as $notification) { ?>
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading"><?php echo "$notification[1]"; ?></h4>
+                            <p><?php echo "$notification[2]"; ?></p>
+                            <p><?php echo date("d/m/Y", strtotime($notification[3])); ?></p>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </section>
+        <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    } ?>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+            </script>
 
 </body>
 

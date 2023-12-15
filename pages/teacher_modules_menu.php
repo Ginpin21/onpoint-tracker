@@ -95,7 +95,15 @@
                                     <h5 class="card-title"><?php echo "$module[1] " ?></h5>
                                     <p class="card-subtitle"><b>Tutor: </b><?php echo "$module[2] $module[3]" ?></p>
                                     <p class="card-text"><b>Course: </b><?php echo "$module[4]" ?></p>
-                                    <a href="teacher_add_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">Create Class</a>
+                                    <?php
+                                    if (isset($_GET["create"])) {
+                                    ?>
+                                        <a href="teacher_add_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">Create Class</a>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <a href="teacher_view_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">View Classes</a>
+                                    <?php } ?>
                                 </div>
                             </div>
             <?php
@@ -110,17 +118,6 @@
             ?>
                 </div>
             </section>
-
-
-
-            <footer class="bg-light text-center text-lg-start">
-                <div class="text-center p-4" style="background-color: white; color:black; font-size: 20px; font-weight:600; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); ">
-                    © 2023 Copyright:
-                    <a href="home.html" style="font-size: 20px; font: weight 600px; color:#003DB2; text-decoration:none">Onpoint
-                        Tracker.com</a>
-                </div>
-            </footer>
-
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
             </script>
 
