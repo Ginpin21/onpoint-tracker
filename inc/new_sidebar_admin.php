@@ -72,7 +72,7 @@ session_start();
 </head>
 
 <body>
-    <div class="nav-header">
+    <div class="nav-header" onclick="display_nav()">
         <i class="fa fa-bars"></i>
     </div>
 

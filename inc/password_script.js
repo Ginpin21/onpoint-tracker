@@ -15,16 +15,16 @@ function toggle() {
 	}
 }
 
-var state = false;
+var state = false; 
 function toggle2() {
-	if (state) {
-		document.getElementById("confmpass").setAttribute("type", "password");
+	if (state==false) {
+		document.getElementById("confmpass").setAttribute("type", "text");
 		document.getElementById("eye2").style.color = '#7a797e';
-		state = false;
+		state = true;
 	}
 	else {
-		document.getElementById("confmpass").setAttribute("type", "text");
+		document.getElementById("confmpass").setAttribute("type", "password");
 		document.getElementById("eye2").style.color = 'black';
-		state = true;
+		state = false;
 	}
 }
