@@ -3,9 +3,10 @@ session_start();
 
 require("../inc/conn.php");
 
-if (isset($_POST['Upload_Notification'])) {
-    $notification = $_POST['message'];
-    $qry = "INSERT INTO notification (notification_messsage) VALUES ('$notification');";
+if (isset($_POST['Upload_Announcement'])) {
+    $title = $_POST['title'];
+    $message = $_POST['message'];
+    $qry = "INSERT INTO notification (notification_title, notification_messsage) VALUES ('$title', '$message');";
     $result = mysqli_query($conn, $qry);
 
     if ($result) {

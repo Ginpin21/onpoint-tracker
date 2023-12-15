@@ -50,14 +50,9 @@
             margin-top: 20px;
         }
 
-        td,
-        th {
-            text-align: center;
-        }
-
-        td,
-        th {
+        td,th {
             padding: 12px;
+            text-align: center;
         }
 
         .btn-primary {
@@ -98,24 +93,30 @@
                                 <div>
                                     <table class="table table-striped table-hover table-bordered">
                                         <thead>
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">MESSAGE</th>
-                                            </tr>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">ANNOUNCEMENT TITLE</th>
+                                                    <th scope="col">ANNOUNCEMENT MESSAGE</th>
+                                                    <th scope="col">ANNOUNCEMENT DATE</th>
+                                                </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             require("../inc/conn.php");
-                                            $qry = "SELECT * FROM notification ORDER BY notification_id DESC;";
+                                            $qry = "SELECT * FROM notification ORDER BY notification_date DESC;";
                                             $result = mysqli_query($conn, $qry);
                                             $final = mysqli_num_rows($result);
                                             if ($final > 0) {
                                                 while ($row = mysqli_fetch_array($result)) {
                                                     $id = $row['notification_id'];
+                                                    $title = $row['notification_title'];
                                                     $message = $row['notification_messsage'];
+                                                    $date = $row['notification_date'];
                                                     echo "<tr>
                                                     <td>$id</td>
-                                                    <td style='text-align: left;'>$message</zd>
+                                                    <td>$title</td>
+                                                    <td style='text-align:left;'>$message</td>
+                                                    <td>$date</td>
                                                     </tr>";
                                                 }
                                             } else {

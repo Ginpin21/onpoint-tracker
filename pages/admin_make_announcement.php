@@ -39,12 +39,16 @@
         }
 
         .text {
-            width: calc(100% - 16px);
+            width: 100%;
             padding: 8px;
             margin-bottom: 16px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+        }
+
+        .button{
+            margin: 5px 240px;
         }
     </style>
 </head>
@@ -57,10 +61,12 @@
     <header>
         <h1>Make Announcement</h1>
     </header>
-    <form action="../pages/admin_make_announcement_script.php" method="post" class="form-tag text-center">
+    <form action="../pages/admin_make_announcement_script.php" method="post" class="form-tag">
+        <label for="" class="label-tag">Annoucement Title</label>
+        <input type="text" name="title" id="" class="text" required>
         <label for="" class="label-tag">Write a Message</label>
-        <textarea name="message" id="" class="text" rows="5"></textarea>
-        <input type="submit" value="Upload Notification" name="Upload_Notification" class="btn btn-primary" style="padding: 8px;">
+        <textarea name="message" id="" class="text" rows="5" required></textarea>
+        <input type="submit" value="Upload Notification" name="Upload_Announcement" class="btn btn-primary button" style="padding: 8px;">
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
