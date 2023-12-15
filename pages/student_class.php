@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,6 +70,8 @@
 </head>
 
 
+</head>
+
 <body>
     <?php
     require_once('../inc/nav.php');
@@ -125,7 +126,96 @@
                                     <p class="card-text"><b>Present: </b><?php echo $attendance[5]; ?></p>
                                     <p class="card-text"><b>Late: </b><?php echo $attendance[6]; ?></p>
                                     <p class="card-text"><b>Absent: </b><?php echo $attendance[7]; ?></p>
-                                    <a href="student_attendance.php?class_id=<?php echo $attendance[0]; ?>" class="btn btn-primary">View class</a>
+                                    <h6>Attendance for Class</h6>
+                                    <!-- Include attendance information here -->
+                                    <?php
+                                    $class_id = $attendance[0];
+                                    $class_query = "SELECT * FROM
+                                        class
+                                        JOIN module
+                                        WHERE class_id=$class_id 
+                                        AND class.class_module_id=module.module_id";
+                                    $get_class_query = mysqli_query($conn, $class_query);
+                                    if ($get_class_query) {
+                                        $class_result = mysqli_fetch_all($get_class_query);
+                                        foreach ($class_result as $class) {
+                                    ?>
+                                            <div class="d-flex gap-5 mb-4">
+                                                <h6>Date: <?php echo date('d-m-Y', strtotime($class[2])); ?></h6>
+                                                <h6>Time: <?php echo date('h:i A', strtotime($class[3])); ?></h6>
+                                                <h6>Location: <?php echo $class[4]; ?></h6>
+                                            </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                    <table class="table">
+                                        <thead>
+                                            <tr class="table-primary">
+                                                <th scope="col">ID</th>
+                                                <th scope="col">First Name</th>
+                                                <th scope="col">Last Name</th>
+                                                <th scope="col">Course</th>
+                                                <th scope="col">Attendance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $get_attendance_query = "SELECT
+                                                user.user_id,
+                                                user.user_fname,
+                                                user.user_lname,
+                                                course.course_name,
+                                                attendance.attendance_status
+                                            FROM
+                                                attendance
+                                            JOIN user ON attendance.attendance_student_id=user.user_id
+                                            JOIN course ON user.user_course_id=course.course_id
+                                            WHERE
+                                                attendance.attendance_class_id=$class_id
+                                                AND user.user_id=$student_id
+                                                AND user.user_course_id = (SELECT user_course_id FROM user WHERE user_id = $student_id);";
+                                            if ($result = mysqli_query($conn, $get_attendance_query)) {
+                                                $attendance_rows = mysqli_fetch_all($result);
+                                                foreach ($attendance_rows as $attendance) {
+                                            ?>
+                                                    <tr>
+                                                        <td><?php echo $attendance[0]; ?></td>
+                                                        <td><?php echo $attendance[1]; ?></td>
+                                                        <td><?php echo $attendance[2]; ?></td>
+                                                        <td><?php echo $attendance[3]; ?></td>
+                                                        <td>
+                                                            <?php
+                                                            $attendance_status = "";
+                                                            $attendance_class = "";
+                                                            switch ($attendance[4]) {
+                                                                case 'P':
+                                                                    $attendance_status = "Present";
+                                                                    $attendance_class = "w-100 p-2 block text-white bg-success";
+                                                                    break;
+                                                                case 'L':
+                                                                    $attendance_status = "Late";
+                                                                    $attendance_class = "w-100 p-2 block text-white bg-warning";
+                                                                    break;
+                                                                case 'A':
+                                                                    $attendance_status = "Absent";
+                                                                    $attendance_class = "w-100 p-2 block text-white bg-danger";
+                                                                    break;
+                                                                default:
+                                                                    $attendance_status = "Absent";
+                                                                    break;
+                                                            };
+                                                            ?>
+                                                            <div class="<?php echo $attendance_class ?>"><?php echo $attendance_status ?></div>
+                                                        </td>
+                                                    </tr>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                    <a class="btn btn-primary rounded p-2" href="../functions/generate_class_report.php?class_id=<?php echo $class_id ?>">Generate Report</a>
                                 </div>
                             </div>
                     <?php

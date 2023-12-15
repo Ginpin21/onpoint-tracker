@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2023 at 09:53 PM
+-- Generation Time: Dec 15, 2023 at 05:08 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -172,6 +172,28 @@ CREATE TABLE `course_manager_name` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `leave_request`
+--
+
+CREATE TABLE `leave_request` (
+  `leave_id` int(11) NOT NULL,
+  `leave_student_id` int(11) DEFAULT NULL,
+  `leave_module_id` int(11) DEFAULT NULL,
+  `leave_reason` varchar(255) DEFAULT NULL,
+  `leave_date` date DEFAULT NULL,
+  `leave_status` char(1) DEFAULT 'P'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `leave_request`
+--
+
+INSERT INTO `leave_request` (`leave_id`, `leave_student_id`, `leave_module_id`, `leave_reason`, `leave_date`, `leave_status`) VALUES
+(1, 9, 4, 'sick', '2023-11-28', 'P');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `module`
 --
 
@@ -207,6 +229,14 @@ CREATE TABLE `notification` (
   `notification_messsage` varchar(255) DEFAULT NULL,
   `notification_date` date NOT NULL DEFAULT curdate()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`notification_id`, `notification_title`, `notification_messsage`, `notification_date`) VALUES
+(5, 'Clas is gone', 'SWE6202 Class cancelled', '2023-12-15'),
+(6, 'All classes are cancelled tommrow due to bad weather.', 'Weather Warning', '2023-12-15');
 
 -- --------------------------------------------------------
 
@@ -296,6 +326,14 @@ ALTER TABLE `course`
   ADD KEY `course_manager_id` (`course_manager_id`);
 
 --
+-- Indexes for table `leave_request`
+--
+ALTER TABLE `leave_request`
+  ADD PRIMARY KEY (`leave_id`),
+  ADD KEY `leave_student_id` (`leave_student_id`),
+  ADD KEY `leave_module_id` (`leave_module_id`);
+
+--
 -- Indexes for table `module`
 --
 ALTER TABLE `module`
@@ -346,6 +384,12 @@ ALTER TABLE `course`
   MODIFY `course_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `leave_request`
+--
+ALTER TABLE `leave_request`
+  MODIFY `leave_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `module`
 --
 ALTER TABLE `module`
@@ -355,7 +399,7 @@ ALTER TABLE `module`
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `notification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `notification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -391,6 +435,13 @@ ALTER TABLE `class`
 --
 ALTER TABLE `course`
   ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`course_manager_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `leave_request`
+--
+ALTER TABLE `leave_request`
+  ADD CONSTRAINT `leave_request_ibfk_1` FOREIGN KEY (`leave_student_id`) REFERENCES `user` (`user_id`),
+  ADD CONSTRAINT `leave_request_ibfk_2` FOREIGN KEY (`leave_module_id`) REFERENCES `module` (`module_id`);
 
 --
 -- Constraints for table `module`
