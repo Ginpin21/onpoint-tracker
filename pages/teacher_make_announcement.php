@@ -32,7 +32,7 @@
     ?>
     <main class="container">
         <h1>Make an Announcement</h1>
-        <form class="form-group d-flex flex-column gap-2" method="post" action="../functions/make_announcement.php">
+        <form class="form-group d-flex flex-column gap-3" method="post" action="../functions/make_announcement.php">
             <div class="form-group d-flex flex-column">
                 <label for="title">Announcement Title</label>
                 <input type="text" class="form-control" name="title" id="" aria-describedby="helpId" placeholder="">
