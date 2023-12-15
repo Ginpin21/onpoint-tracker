@@ -1,14 +1,17 @@
-var state = false;
+/*
+false=type (password) true=type (text)
+*/
+var state = false; 
 function toggle() {
-	if (state) {
-		document.getElementById("password").setAttribute("type", "password");
+	if (state==false) {
+		document.getElementById("password").setAttribute("type", "text");
 		document.getElementById("eye").style.color = '#7a797e';
-		state = false;
+		state = true;
 	}
 	else {
-		document.getElementById("password").setAttribute("type", "text");
+		document.getElementById("password").setAttribute("type", "password");
 		document.getElementById("eye").style.color = 'black';
-		state = true;
+		state = false;
 	}
 }
 
