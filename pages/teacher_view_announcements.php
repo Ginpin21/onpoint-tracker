@@ -39,8 +39,9 @@
             $notifications = mysqli_fetch_all($result);
             foreach ($notifications as $notification) { ?>
                 <div class="alert alert-success" role="alert">
-                    <p><?php echo "$notification[0]"; ?></p>
-                    <p><?php echo "$notification[1]"; ?></p>
+                    <h4 class="alert-heading"><?php echo "$notification[1]"; ?></h4>
+                    <p><?php echo "$notification[2]"; ?></p>
+                    <p><?php echo date("d/m/Y", strtotime($notification[3])); ?></p>
                 </div>
             <?php
             }
