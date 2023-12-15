@@ -30,7 +30,7 @@
         <a href="student_menutrial.php">Attendance History</a>
         <a href="student_dashboard.php">Course & Schedule Information</a>
         <a href="student_requestforleave.php">Request for Leave</a>
-        <a href="student_dashboard.php">Important Announcement </a>
+        <a href="student_fetch_annoucment.php">Important Announcement </a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

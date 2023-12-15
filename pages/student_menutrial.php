@@ -12,6 +12,7 @@
     require_once('../inc/head.php');
     ?>
     <style>
+    
         .navbar {
             padding: 10px
         }
@@ -78,47 +79,50 @@
 
 <body>
     <?php require_once('../pages/student_navbar.php'); ?>
-    <?php require_once('../pages/student_sidebar.php');
-    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
-        if ($_SESSION["role_name"] == "Student") { ?>
-            <section class="container">
-                <h1 class="mb-5">List of Modules Attendance</h1>
-                <div class="grid mt-5">
-                    <?php
-                    $tutor_id = $_SESSION["user_id"];
-                    $select_query = "SELECT module_id,module_name,user_fname,user_lname,course_name 
-                    FROM module,user,course 
-                    where user.user_id=module.module_tutor_id 
-                    and module.module_course_id=course.course_id";
-                    $get_query = mysqli_query($conn, $select_query);
-
-                    if ($get_query) {
-                        $result = mysqli_fetch_all($get_query);
-                        foreach ($result as $module) { ?>
-                            <div class="card" style="min-width: 20rem;">
-                                <img src="https://images.unsplash.com/photo-1594729095022-e2f6d2eece9c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title"><?php echo "$module[1] " ?></h5>
-                                    <p class="card-subtitle"><b>Tutor: </b><?php echo "$module[2] $module[3]" ?></p>
-                                    <p class="card-text"><b>Course: </b><?php echo "$module[4]" ?></p>
-                                    <a href="student_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">View class</a>
-                                </div>
-                            </div>
+    <?php require_once('../pages/student_sidebar.php'); ?>
+    <section class="container">
+        <h1 class="mb-5">Select a module to check Attendance</h1>
+        <div class="grid mt-5">
             <?php
-                        }
+            if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] && $_SESSION["role_name"] == "Student") {
+                $student_id = $_SESSION["user_id"];
+                $select_query = "SELECT DISTINCT module.module_id, module.module_name, user.user_fname, user.user_lname, course.course_name 
+                FROM module 
+                INNER JOIN class ON module.module_id = class.class_module_id
+                INNER JOIN user ON module.module_tutor_id = user.user_id
+                INNER JOIN course ON module.module_course_id = course.course_id
+                WHERE class.class_id IN (
+                    SELECT DISTINCT attendance.attendance_class_id
+                    FROM attendance
+                    WHERE attendance.attendance_student_id = $student_id
+                )";
+
+                $get_query = mysqli_query($conn, $select_query);
+
+                if ($get_query) {
+                    while ($module = mysqli_fetch_assoc($get_query)) {
+                        ?>
+                        <div class="card" style="min-width: 20rem;">
+                            <img src="https://images.unsplash.com/photo-1594729095022-e2f6d2eece9c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><?php echo $module["module_name"] ?></h5>
+                                <p class="card-subtitle"><b>Tutor: </b><?php echo $module["user_fname"] . " " . $module["user_lname"] ?></p>
+                                <p class="card-text"><b>Course: </b><?php echo $module["course_name"] ?></p>
+                                <a href="student_class.php?module_id=<?php echo $module['module_id']; ?>" class="btn btn-primary">View Class Attendance</a>
+                            </div>
+                        </div>
+            <?php
                     }
                 } else {
-                    header("Location:index.php");
+                    echo "Error: " . mysqli_error($conn);
                 }
             } else {
                 header("Location:index.php");
             }
             ?>
-                </div>
-            </section>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-            </script>
-
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
