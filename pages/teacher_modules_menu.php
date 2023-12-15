@@ -95,7 +95,15 @@
                                     <h5 class="card-title"><?php echo "$module[1] " ?></h5>
                                     <p class="card-subtitle"><b>Tutor: </b><?php echo "$module[2] $module[3]" ?></p>
                                     <p class="card-text"><b>Course: </b><?php echo "$module[4]" ?></p>
-                                    <a href="teacher_add_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">Create Class</a>
+                                    <?php
+                                    if (isset($_GET["create"])) {
+                                    ?>
+                                        <a href="teacher_add_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">Create Class</a>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <a href="teacher_view_class.php?module_id=<?php echo $module[0]; ?>" class="btn btn-primary">View Classes</a>
+                                    <?php } ?>
                                 </div>
                             </div>
             <?php
