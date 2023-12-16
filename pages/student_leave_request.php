@@ -80,7 +80,9 @@
   <?php require_once('..\inc\nav.php'); ?>
   <?php require_once('..\pages\student_sidebar.php'); ?>
   <main class="container">
-    <?php
+    <section id="create-class-section">
+      <h1 class="mb-5"> Leave Form</h1>
+      <?php
     require('../inc/connection.php');
     if (isset($_POST['submit'])) {
       $user_id = $_SESSION['user_id'];
@@ -93,14 +95,20 @@
       $result = mysqli_query($conn, $insert_query);
 
       if ($result === true) {
-        echo "Successfully inserted values";
+        ?>
+                 <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <i class="bi bi-check-circle"></i>
+  <strong>Success!</strong> Leave request submitted successfully.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+            </div>
+            <br>
+        <?php
       } else {
         echo "Error submitting leave request: " . mysqli_error($conn);
       }
     }
     ?>
-    <section id="create-class-section">
-      <h1 class="mb-5"> Leave Form</h1>
       <form class="shadow px-5 py-3 rounded" method="POST" action="..\pages\student_leave_request.php">
         <div class="row">
           <div class="col">
