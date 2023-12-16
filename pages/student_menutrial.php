@@ -96,6 +96,9 @@
                     where user.user_id=module.module_tutor_id 
                     and module.module_course_id=course.course_id";
                     $get_query = mysqli_query($conn, $select_query);
+        }
+    }
+                    ?>
     <?php require_once('../inc/nav.php'); ?>
     <?php require_once('../pages/student_sidebar.php'); ?>
     <section class="container">
