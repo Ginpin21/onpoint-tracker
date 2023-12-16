@@ -73,50 +73,52 @@
         <?php require_once('..\inc\nav.php'); ?>
     </div>
     <?php require_once('..\inc\teacher_sidebar.php');
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        if ($_SESSION["role_name"] == "Teacher") {
     ?>
 
-    <section class="container">
-        <h1 class="mb-5">
-            Classes
-        </h1>
-        <h3 class="mt-5">All Classes for <?php echo $_SESSION["first_name"] . " " . $_SESSION["last_name"] ?></h3>
+            <section class="container">
+                <h1 class="mb-5">
+                    Classes
+                </h1>
+                <h3 class="mt-5">All Classes for <?php echo $_SESSION["first_name"] . " " . $_SESSION["last_name"] ?></h3>
 
-        <table class="table">
-            <thead>
-                <tr class="table-primary">
-                    <th scope="col">
-                        Module
-                    </th>
-                    <th scope="col">
-                        Class Date
-                    </th>
-                    <th scope="col">
-                        Class Time
-                    </th>
-                    <th scope="col">
-                        Class Name
-                    </th>
-                    <th scope="col">
-                        Class Location
-                    </th>
-                    <th scope="col">
-                        Present
-                    </th>
-                    <th scope="col">
-                        Late
-                    </th>
-                    <th scope="col">
-                        Absent
-                    </th>
-                    <th scope="col">
-                        Actions
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $tutor_id = $_SESSION["user_id"];
-                $select_query = "SELECT
+                <table class="table">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">
+                                Module
+                            </th>
+                            <th scope="col">
+                                Class Date
+                            </th>
+                            <th scope="col">
+                                Class Time
+                            </th>
+                            <th scope="col">
+                                Class Name
+                            </th>
+                            <th scope="col">
+                                Class Location
+                            </th>
+                            <th scope="col">
+                                Present
+                            </th>
+                            <th scope="col">
+                                Late
+                            </th>
+                            <th scope="col">
+                                Absent
+                            </th>
+                            <th scope="col">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $tutor_id = $_SESSION["user_id"];
+                        $select_query = "SELECT
                 class.class_id,
                 class.class_date,
                 class.class_time,
@@ -139,61 +141,61 @@
                     attendance_class_id
                 ORDER BY
                     class.class_date DESC;";
-                $get_query = mysqli_query($conn, $select_query);
-                if ($get_query) {
-                    $result = mysqli_fetch_all($get_query);
-                    foreach ($result as $attendance) {
-                ?>
-                        <tr>
-                            <td>
-                                <?php echo $attendance[9]; ?>
-                            </td>
-                            <td>
-                                <?php echo date('d-m-Y', strtotime($attendance[1])); ?>
-                            </td>
-                            <td>
-                                <?php echo date('h:i A', strtotime($attendance[2])); ?>
-                            </td>
-                            <td>
-                                <?php echo $attendance[3]; ?>
-                            </td>
-                            <td>
-                                <?php echo $attendance[4]; ?>
-                            </td>
-                            <td>
-                                <?php echo $attendance[5]; ?>
-                            </td>
-                            <td>
-                                <?php echo $attendance[6]; ?>
-                            </td>
-                            <td>
-                                <?php echo $attendance[7]; ?>
-                            </td>
-                            <td>
-                                <a class="btn btn-primary" href="teacher_edit_attendance.php?class_id=<?php echo $attendance[0] ?>">Edit</a>
-                                <a class="btn btn-outline-primary" href="teacher_view_attendance.php?class_id=<?php echo $attendance[0] ?>">View</a>
-                            </td>
-                        </tr>
+                        $get_query = mysqli_query($conn, $select_query);
+                        if ($get_query) {
+                            $result = mysqli_fetch_all($get_query);
+                            foreach ($result as $attendance) {
+                        ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $attendance[9]; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo date('d-m-Y', strtotime($attendance[1])); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo date('h:i A', strtotime($attendance[2])); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $attendance[3]; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $attendance[4]; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $attendance[5]; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $attendance[6]; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $attendance[7]; ?>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary" href="teacher_edit_attendance.php?class_id=<?php echo $attendance[0] ?>">Edit</a>
+                                        <a class="btn btn-outline-primary" href="teacher_view_attendance.php?class_id=<?php echo $attendance[0] ?>">View</a>
+                                    </td>
+                                </tr>
 
-                <?php
-                    }
-                }
-                ?>
-            </tbody>
-        </table>
-    </section>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </tbody>
+                </table>
+        <?php
+        } else {
+            header("Location:index.php");
+        }
+    } else {
+        header("Location:index.php");
+    } ?>
+            </section>
 
 
-    <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-4" style="background-color: white; color:black; font-size: 20px; font-weight:600; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); ">
-            © 2023 Copyright:
-            <a href="home.html" style="font-size: 20px; font: weight 600px; color:#003DB2; text-decoration:none">Onpoint
-                Tracker.com</a>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+            </script>
 
 </body>
 

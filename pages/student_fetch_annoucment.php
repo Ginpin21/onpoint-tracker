@@ -69,6 +69,10 @@
             color: black;
             border: 2px solid black;
         }
+
+        .container {
+            padding-left: 25%;
+        }
     </style>
 </head>
 
@@ -86,57 +90,32 @@
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         if ($_SESSION["role_name"] == "Student") {
     ?>
-
-            <div class="order-form m-4">
-                <div class="container-5 pt-4">
-                    <div class="row">
-                        <div class="col-12 px-4">
-                            <h1 style="text-align: center;text-transform: uppercase;">Announcements</h1>
+            <main class="container">
+                <section>
+                    <h1 style="color:black;margin:10px 0;">Announcements</h1>
+                    <?php
+                    $select_query = "SELECT * FROM notification ORDER BY notification_id DESC";
+                    $result = mysqli_query($conn, $select_query);
+                    $notifications = mysqli_fetch_all($result);
+                    foreach ($notifications as $notification) { ?>
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading"><?php echo "$notification[1]"; ?></h4>
+                            <p><?php echo "$notification[2]"; ?></p>
+                            <p><?php echo date("d/m/Y", strtotime($notification[3])); ?></p>
                         </div>
-                        <div>
-                            <div>
-                                <div>
-                                    <table class="table table-striped table-hover table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">MESSAGE</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            require("../inc/conn.php");
-                                            $qry = "SELECT * FROM notification ORDER BY notification_id DESC;";
-                                            $result = mysqli_query($conn, $qry);
-                                            $final = mysqli_num_rows($result);
-                                            if ($final > 0) {
-                                                while ($row = mysqli_fetch_array($result)) {
-                                                    $id = $row['notification_id'];
-                                                    $message = $row['notification_messsage'];
-                                                    echo "<tr>
-                                                    <td>$id</td>
-                                                    <td style='text-align: left;'>$message</zd>
-                                                    </tr>";
-                                                }
-                                            } else {
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    <?php
+                    <?php
+                    }
+                    ?>
+                </section>
+        <?php
         } else {
             header("Location:index.php");
         }
     } else {
         header("Location:index.php");
-    }
-    ?>
+    } ?>
+            </main>
+
 </body>
 
 </html>

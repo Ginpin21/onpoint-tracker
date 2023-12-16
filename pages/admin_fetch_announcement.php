@@ -22,7 +22,7 @@
             color: black;
             padding: 50px 50px 50px 50px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, .1);
-            max-width: 1100px;
+            max-width: 1200px;
             text-align: left;
             height: auto;
             margin: auto;
@@ -53,6 +53,10 @@
         td,th {
             padding: 12px;
             text-align: center;
+        }
+
+        tr{
+            text-align: center; 
         }
 
         .btn-primary {
@@ -115,7 +119,7 @@
                                                     echo "<tr>
                                                     <td>$id</td>
                                                     <td>$title</td>
-                                                    <td style='text-align:left;'>$message</td>
+                                                    <td>$message</td>
                                                     <td>$date</td>
                                                     </tr>";
                                                 }

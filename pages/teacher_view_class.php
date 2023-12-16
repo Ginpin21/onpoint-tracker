@@ -7,10 +7,6 @@
     <title>Onpoint Tracker</title>
     <link rel="stylesheet" href="../inc/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
-
     <?php
     if (isset($_GET["module_id"])) {
         require_once('..\inc\head.php'); ?>
@@ -93,10 +89,8 @@
 
                 ?>
                 <h1 class="mb-5">
-                    <?php echo $module_name; ?> Attendance Graph
+                    <?php echo $module_name; ?> Classes
                 </h1>
-                <canvas id="attendanceChart" width="400" height="200"></canvas>
-
                 <section id="all-classes-section">
                     <h3 class="mt-5">All Classes for <?php echo $module_name ?></h3>
                     <table class="table">
@@ -123,7 +117,9 @@
                                 <th scope="col">
                                     Absent
                                 </th>
-
+                                <th scope="col">
+                                    Actions
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -147,7 +143,7 @@
                  GROUP BY
                      attendance_class_id
                  ORDER BY
-                     class.class_date ASC;";
+                     class.class_date DESC;";
                             $get_query = mysqli_query($conn, $select_query);
                             if ($get_query) {
                                 $result = mysqli_fetch_all($get_query);
@@ -175,6 +171,10 @@
                                         <td>
                                             <?php echo $attendance[7]; ?>
                                         </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="teacher_edit_attendance.php?class_id=<?php echo $attendance[0] ?>">Edit</a>
+                                            <a class="btn btn-outline-primary" href="teacher_view_attendance.php?class_id=<?php echo $attendance[0] ?>">View</a>
+                                        </td>
                                     </tr>
                         <?php
                                 }
@@ -186,108 +186,8 @@
 
                         </tbody>
                     </table>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Extract data from PHP to JavaScript
-                            const classDates = <?php echo json_encode(array_column($result, 1)); ?>;
-                            const presentCounts = <?php echo json_encode(array_map('intval', array_column($result, 5))); ?>;
-                            const lateCounts = <?php echo json_encode(array_map('intval', array_column($result, 6))); ?>;
-                            const absentCounts = <?php echo json_encode(array_map('intval', array_column($result, 7))); ?>;
-
-                            // Create a line chart
-                            const ctx = document.getElementById('attendanceChart').getContext('2d');
-                            const myChart = new Chart(ctx, {
-                                type: 'line',
-                                data: {
-                                    labels: classDates,
-                                    datasets: [{
-                                            label: 'Present',
-                                            data: presentCounts,
-                                            borderColor: 'rgba(75, 192, 192, 1)',
-                                            borderWidth: 1,
-                                            fill: false
-                                        },
-                                        {
-                                            label: 'Late',
-                                            data: lateCounts,
-                                            borderColor: 'rgba(255, 205, 86, 1)',
-                                            borderWidth: 1,
-                                            fill: false
-                                        },
-                                        {
-                                            label: 'Absent',
-                                            data: absentCounts,
-                                            borderColor: 'rgba(255, 99, 132, 1)',
-                                            borderWidth: 1,
-                                            fill: false
-                                        }
-                                    ]
-                                },
-                                options: {
-                                    plugins: {
-                                        legend: {
-                                            labels: {
-                                                font: {
-                                                    size: 20
-                                                }
-                                            },
-                                            scales: {
-                                                xAxes: [{
-                                                    ticks: {
-                                                        font: {
-                                                            size: 30
-                                                        }
-                                                    }
-                                                }]
-                                            }
-                                        }
-                                    },
-                                    scales: {
-                                        x: {
-                                            type: 'time',
-                                            time: {
-                                                unit: 'day',
-                                                displayFormats: {
-                                                    day: 'DD-MM-YYYY'
-                                                }
-                                            },
-                                            title: {
-                                                display: true,
-                                                text: 'Class Date',
-                                                font: {
-                                                    size: 20
-                                                }
-                                            },
-                                            ticks: {
-                                                font: {
-                                                    size: 12 // Adjust the font size as needed
-                                                }
-                                            }
-                                        },
-                                        y: {
-                                            beginAtZero: true, // Start the axis at zero
-                                            title: {
-                                                display: true,
-                                                text: 'Attendance Count',
-                                                font: {
-                                                    size: 20
-                                                }
-                                            },
-                                            ticks: {
-                                                stepSize: 1, // Use whole numbers (integer values)
-                                                beginAtZero: true,
-                                                precision: 0,
-                                                font: {
-                                                    size: 15 // Adjust the font size as needed
-                                                }
-                                            }
-                                        }
-                                    },
-
-                                }
-                            });
-                        });
-                    </script>
+                    <a class="btn btn-primary rounded p-2" href="../functions/generate_module_report.php?module_id=<?php echo $module_id ?>">Generate Module Report</a>
+                    <a class="btn btn-success rounded p-2" href="teacher_visualize_attendance.php?module_id=<?php echo $module_id ?>">Visualize Module Attendance</a>
                 </section>
             </main>
     <?php

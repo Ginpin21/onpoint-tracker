@@ -26,11 +26,12 @@
 </style>
 <div class="sidebar">
     <a href="teacher_dashboard.php">Home</a>
-    <a href="teacher_modules_menu.php">Mark Attendance</a>
+    <a href="teacher_modules_menu.php?create=1">Mark Attendance</a>
     <a href="teacher_view_all_classes.php">View Classes</a>
     <a href="teacher_modules_menu.php">View Modules</a>
     <a href="teacher_make_announcement.php">Make Announcement</a>
     <a href="teacher_view_announcements.php">View Announcements</a>
+    <a href="teacher_leave_request.php">View Leave Requests</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
